@@ -1,18 +1,20 @@
-package Library;
+package LogInScene;
 
+import Library.Office;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MultipleController {
+public class LogInController {
     private Office lib = new Office();
 
-    @FXML
-    private Pane pane1;
     @FXML
     private TextField loginText;
     @FXML
@@ -23,8 +25,13 @@ public class MultipleController {
         if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
             System.out.println("Uzivatel prihlaseny");
             //(lib.getActiveUser()).reserveBook(lib.getBook());
-            Pane root = FXMLLoader.load(getClass().getResource("secondscene.fxml"));
-            pane1.getChildren().setAll(root);
+            Pane root = FXMLLoader.load(getClass().getResource("../LogInScene/logOutScene.fxml"));
+            Scene scene = new Scene(root);
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(scene);
+            window.show();
         }
         else
         {
@@ -32,13 +39,6 @@ public class MultipleController {
         }
     }
 
-    @FXML
-    private void logOutButtonClicked(ActionEvent event) throws IOException {
 
-        System.out.println("Uzivatel odhlaseny");
-        lib.getActiveUser().userLogOut();
-        Pane root = FXMLLoader.load(getClass().getResource("logInScene.fxml"));
-        pane1.getChildren().setAll(root);
-    }
 }
 
