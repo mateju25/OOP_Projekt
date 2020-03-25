@@ -2,17 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogInScene/logOutSceneClient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts.out" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/MultipleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/logInScene.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/secondscene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/Office.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Library/Office.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/Starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/Starter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/MultipleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/logInScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/logInScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/secondscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/logOutScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/logInScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/logInScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/logOutScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Services/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/AdultAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Services/AdultAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/ChildrenAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Services/ChildrenAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/DeskWorkerAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Services/DeskWorkerAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/StudentAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Services/StudentAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/Office.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Office.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogInScene/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/logInScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/logInScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/logOutScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/logOutSceneLibrarian.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/AdultBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/AdultBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/ChildBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/ChildBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/AdultAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/AdultAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ChildrenAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ChildrenAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/DeskWorkerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/DeskWorkerAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/StudentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/StudentAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Logo.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +236,7 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1585125769280" duration="18405000" />
+      <workItem from="1585125769280" duration="24464000" />
     </task>
     <servers />
   </component>
@@ -241,50 +260,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585153986808" />
-    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1585152674679">
+    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1585164019966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585152674679" />
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585157652486">
+    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585164019966" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585161560903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585157652486" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585161560903" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585126753952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585126753952" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1585159215128">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1585165275429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585159215128" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1585159215128">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585165275429" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1585165275429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585159215128" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1585159215128">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585165275429" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1585165275429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585159215128" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1585159215128">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585165275429" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1585165275429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585159215128" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585155706067">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585165275429" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585164846242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585155706067" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585155706067">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585164846242" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585164846242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585155706067" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585155706067">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585164846242" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585164846242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585155706067" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585155706067">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585164846242" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585164846242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585155706067" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585164846242" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1585126756322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -293,5 +312,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="149" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585148603402" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="lib.getActiveUser().startScene()" language="JAVA" />
+        <watch expression="lib.getActiveUser()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

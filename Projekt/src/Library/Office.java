@@ -21,8 +21,8 @@ public class Office {
             citatel.setIdNumber(100 + i);
             switch (i)
             {
-                case 0: {citatel.setName("Matej");listAcc.add(new StudentAccount(citatel));break;}
-                case 1: {citatel.setName("Jozo");listAcc.add(new ChildrenAccount(citatel));break;}
+                case 0: {citatel.setName("Matej");listAcc.add(new AdultAccount(citatel));break;}
+                case 1: {citatel.setName("Jozo");listAcc.add(new AdultAccount(citatel));break;}
                 case 2: {citatel.setName("Jano");listAcc.add(new AdultAccount(citatel));break;}
             }
         }
@@ -31,9 +31,9 @@ public class Office {
         pracovnik.setWorkNumber(100 + 10);
         listAcc.add(new DeskWorkerAccount(pracovnik));
 
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5));
+        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 1));
+        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 2));
+        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 3));
         try {
             serialize();
         } catch (ClassNotFoundException e) {

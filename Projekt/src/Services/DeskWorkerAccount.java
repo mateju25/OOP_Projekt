@@ -1,9 +1,11 @@
 package Services;
 
 import Library.Office;
+import LogInScene.LogOutController;
 import People.Human;
 import Products.Book;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -30,8 +32,8 @@ public class DeskWorkerAccount extends Account {
 	}
 
 	@Override
-	public Pane startScene() throws IOException {
-		return FXMLLoader.load(getClass().getResource("secondscene.fxml"));
+	public String startScene() throws IOException {
+		return "logOutSceneLibrarian.fxml";
 	}
 
 	/*@Override

@@ -3,6 +3,7 @@ package Services;
 import People.*;
 import Products.*;
 import Library.*;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -21,6 +22,11 @@ public abstract class Account implements Serializable {
         login = '.' + paNewOwner.getName();
         KeyGenerator gen = new KeyGenerator();
         password = gen.getPassword();
+
+        //
+        password = "x";
+        //
+
         loginState = 0;
         bill = 0;
         System.out.println(login);
@@ -54,7 +60,7 @@ public abstract class Account implements Serializable {
 
     public abstract int reserveBook(Book paBook);
     public abstract int unreserveBook(Book paBook);
-    public abstract Pane startScene() throws IOException;
+    public abstract String startScene() throws IOException;
 
 }
 

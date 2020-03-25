@@ -3,9 +3,9 @@ package Products;
 import Services.*;
 
 public class AdultBook extends Book{
-	public AdultBook(String paTitle, int paNumOfPages, double paRating)
+	public AdultBook(String paTitle, int paNumOfPages, double paRating, int ID)
 	{
-		super(paTitle, paNumOfPages, paRating);
+		super(paTitle, paNumOfPages, paRating, ID);
 	}
 
 	public boolean reserve(ChildrenAccount acc)

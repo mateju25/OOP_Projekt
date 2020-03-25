@@ -32,8 +32,8 @@ public class ChildrenAccount extends Account{
     }
 
     @Override
-    public Pane startScene() throws IOException {
-        return FXMLLoader.load(getClass().getResource("secondscene.fxml"));
+    public String startScene() throws IOException {
+        return "logOutSceneClient.fxml";
     }
 }
 
