@@ -54,7 +54,7 @@ public abstract class Account implements Serializable {
 
     public abstract int reserveBook(Book paBook);
     public abstract int unreserveBook(Book paBook);
-    public abstract Pane startScene(Office lib) throws IOException;
+    public abstract Pane startScene() throws IOException;
 
 }
 

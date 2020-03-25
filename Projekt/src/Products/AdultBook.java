@@ -1,8 +1,6 @@
 package Products;
 
-import Services.AdultAccount;
-import Services.ChildrenAccount;
-import Services.StudentAccount;
+import Services.*;
 
 public class AdultBook extends Book{
 	public AdultBook(String paTitle, int paNumOfPages, double paRating)

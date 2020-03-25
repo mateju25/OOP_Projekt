@@ -32,8 +32,7 @@ public class ChildrenAccount extends Account{
     }
 
     @Override
-    public Pane startScene(Office lib) throws IOException {
-        // TODO Auto-generated method stub
+    public Pane startScene() throws IOException {
         return FXMLLoader.load(getClass().getResource("secondscene.fxml"));
     }
 }

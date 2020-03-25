@@ -15,10 +15,20 @@ public class Book {
 		this.reserved = false;
 	}
 
-	public boolean reserve(Account paAcc)
+
+	public boolean reserve(ChildrenAccount acc)
 	{
 		return false;
 	};
+	public boolean reserve(StudentAccount acc)
+	{
+		return false;
+	};
+	public boolean reserve(AdultAccount acc)
+	{
+		return false;
+	};
+
 	public boolean unreserve()
 	{
 		this.reserved = false;

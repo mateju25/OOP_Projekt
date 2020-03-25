@@ -1,6 +1,8 @@
 package People;
 
-public class Reader implements Client {
+import java.io.Serializable;
+
+public class Reader implements Client, Serializable {
     private int idNumber;
     private String name;
 

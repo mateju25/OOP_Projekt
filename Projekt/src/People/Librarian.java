@@ -1,6 +1,8 @@
 package People;
 
-public class Librarian implements Worker {
+import java.io.Serializable;
+
+public class Librarian implements Worker, Serializable {
     private int workNumber;
     private String name;
 

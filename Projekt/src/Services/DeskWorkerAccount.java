@@ -18,21 +18,19 @@ public class DeskWorkerAccount extends Account {
 	@Override
 	public int reserveBook(Book paBook) {
 		// TODO Auto-generated method stub
-		System.out.println("Kniha zarezervovana");
-		paBook.reserve(this);
-		return 1;
+
+		return 0;
 	}
 
 	@Override
 	public int unreserveBook(Book paBook) {
 		// TODO Auto-generated method stub
-		paBook.unreserve();
-		System.out.println("Kniha vratena");
-		return 1;
+
+		return 0;
 	}
 
 	@Override
-	public Pane startScene(Office lib) throws IOException {
+	public Pane startScene() throws IOException {
 		return FXMLLoader.load(getClass().getResource("secondscene.fxml"));
 	}
 
