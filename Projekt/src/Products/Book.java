@@ -1,7 +1,7 @@
 package Products;
 import Services.*;
 
-public abstract class Book {
+public class Book {
 	protected String title;
 	protected int numOfPages;
 	protected double rating;
@@ -15,7 +15,13 @@ public abstract class Book {
 		this.reserved = false;
 	}
 
-	protected abstract boolean reserveBook(ChildrenAccount paAcc);
-	protected abstract boolean reserveBook(StudentAccount paAcc);
-	protected abstract boolean reserveBook(AdultAccount paAcc);
+	public boolean reserve(Account paAcc)
+	{
+		return false;
+	};
+	public boolean unreserve()
+	{
+		this.reserved = false;
+		return true;
+	};
 }

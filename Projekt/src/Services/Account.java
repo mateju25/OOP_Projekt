@@ -2,6 +2,10 @@ package Services;
 
 import People.*;
 import Products.*;
+import Library.*;
+import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 import java.io.Serializable;
 
 public abstract class Account implements Serializable {
@@ -50,7 +54,7 @@ public abstract class Account implements Serializable {
 
     public abstract int reserveBook(Book paBook);
     public abstract int unreserveBook(Book paBook);
-    public abstract FlowPane startScene(Office lib, FlowPane pane);
+    public abstract Pane startScene(Office lib) throws IOException;
 
 }
 

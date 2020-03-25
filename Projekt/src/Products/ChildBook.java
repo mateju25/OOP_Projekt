@@ -10,7 +10,7 @@ public class ChildBook extends Book{
 		super(title, numOfPages, rating);
 	}
 	
-	public boolean reserveBook(ChildrenAccount acc)
+	public boolean reserve(ChildrenAccount acc)
 	{
 		if(this.reserved = false) {
 			this.reserved = true;
@@ -19,7 +19,7 @@ public class ChildBook extends Book{
 		} 
 		return false;
 	}
-	public boolean reserveBook(StudentAccount acc)
+	public boolean reserve(StudentAccount acc)
 	{
 		if(this.reserved = false) {
 			this.reserved = true;
@@ -28,7 +28,7 @@ public class ChildBook extends Book{
 		} 
 		return false;
 	}
-	public boolean reserveBook(AdultAccount acc)
+	public boolean reserve(AdultAccount acc)
 	{
 		System.out.println("Kniha nemoze byt rezervovana dospelym");
 		return false;

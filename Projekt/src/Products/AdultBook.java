@@ -10,12 +10,12 @@ public class AdultBook extends Book{
 		super(paTitle, paNumOfPages, paRating);
 	}
 
-	public boolean reserveBook(ChildrenAccount acc)
+	public boolean reserve(ChildrenAccount acc)
 	{
 		System.out.println("Kniha nemoze byt rezervovana dietatom");
 		return false;
 	}
-	public boolean reserveBook(StudentAccount acc)
+	public boolean reserve(StudentAccount acc)
 	{
 		if(this.reserved = false) {
 			this.reserved = true;
@@ -24,7 +24,7 @@ public class AdultBook extends Book{
 		} 
 		return false;
 	}
-	public boolean reserveBook(AdultAccount acc)
+	public boolean reserve(AdultAccount acc)
 	{
 		if(this.reserved = false) {
 			this.reserved = true;

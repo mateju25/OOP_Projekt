@@ -2,6 +2,11 @@ package Services;
 
 import Library.Office;
 import People.Human;
+import Products.Book;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 
 
 public class ChildrenAccount extends Account{
@@ -21,19 +26,15 @@ public class ChildrenAccount extends Account{
     @Override
     public int unreserveBook(Book paBook) {
         // TODO Auto-generated method stub
-        paBook.setReserved(false);
+        paBook.unreserve();
         System.out.println("Kniha vratena");
         return 1;
     }
 
     @Override
-    public FlowPane startScene(Office lib, FlowPane pane) {
+    public Pane startScene(Office lib) throws IOException {
         // TODO Auto-generated method stub
-        TextField textForBooks = new TextField();
-
-        pane.getChildren().add(textForBooks);
-
-        return pane;
+        return FXMLLoader.load(getClass().getResource("secondscene.fxml"));
     }
 }
 
