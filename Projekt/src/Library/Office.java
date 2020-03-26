@@ -24,15 +24,15 @@ public class Office {
             citatel.setIdNumber(100 + i);
             switch (i)
             {
-                case 0: {citatel.setName("Matej");listAcc.add(new AdultAccount(citatel));break;}
-                case 1: {citatel.setName("Jozo");listAcc.add(new AdultAccount(citatel));break;}
-                case 2: {citatel.setName("Jano");listAcc.add(new AdultAccount(citatel));break;}
+                case 0: {citatel.setName("Matej");listAcc.add(new Account(citatel));break;}
+                case 1: {citatel.setName("Jozo");listAcc.add(new Account(citatel));break;}
+                case 2: {citatel.setName("Jano");listAcc.add(new Account(citatel));break;}
             }
         }
         Librarian pracovnik = new Librarian();
         pracovnik.setName("Peter");
         pracovnik.setWorkNumber(100 + 10);
-        listAcc.add(new DeskWorkerAccount(pracovnik));
+        listAcc.add(new Account(pracovnik));
 
         Book skuska = new ChildBook("Skuskova kniha", 10, 4.5, 1);
         Book skuska2 = new ChildBook("Skuskova kniha2", 10, 4.5, 2);
@@ -130,6 +130,18 @@ public class Office {
         if(currReq != 0) currReq--;
     }
 
+    public void createRequest(Request paNew)
+    {
+        listReq.add(paNew);
+    }
+    public Book findBook(int paID)
+    {
+        for(Book book : listBook)
+        {
+            if (book.getID() == paID) return book;
+        }
+        return null;
+    }
 
 
     public int findUser(String paLogin, String paPass)

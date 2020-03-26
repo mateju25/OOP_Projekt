@@ -1,22 +1,24 @@
 package Services;
 
 import People.*;
-import Products.*;
-import Library.*;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
-
-import java.io.IOException;
 import java.io.Serializable;
 
-public abstract class Account implements Serializable {
-    protected String login;
-    protected String password;
-    protected Human owner;
-    protected int loginState;
-    protected double bill;
+public class Account implements Serializable {
+    private String login;
+    private String password;
+    private Human owner;
+    private int loginState;
 
-    protected Account(Human paNewOwner)
+    public Human getOwner()
+    {
+        return owner;
+    }
+    public int getLoginState()
+    {
+        return loginState;
+    }
+
+    public Account(Human paNewOwner)
     {
         owner = paNewOwner;
         login = '.' + paNewOwner.getName();
@@ -28,28 +30,18 @@ public abstract class Account implements Serializable {
         //
 
         loginState = 0;
-        bill = 0;
         System.out.println(login);
         System.out.println(password);
     }
 
 
-    public Human getOwner()
-    {
-        return owner;
-    }
-    public int getLoginState()
-    {
-        return loginState;
-    }
+
 
     public int userLogin(String paLogin, String paPass)
     {
         if ((paLogin.equals(login)) && (password.equals(paPass))) {
             loginState = 1;
-            System.out.println(bill);
         }
-        else loginState = 0;
         return loginState;
     }
 
@@ -58,9 +50,17 @@ public abstract class Account implements Serializable {
         loginState = 0;
     }
 
-    public abstract int reserveBook(Book paBook);
-    public abstract int unreserveBook(Book paBook);
-    public abstract String startScene() throws IOException;
+    public String getInfo()
+    {
+        String s;
+        if(owner instanceof Librarian)
+            s = String.format("%4d - Pracovnik: %s",((Librarian)(this.owner)).getWorkNumber(), ((Librarian)(this.owner)).getName());
+        else
+            s = String.format("%4d - Zakaznik: %s",((Reader)(this.owner)).getIdNumber(), ((Librarian)(this.owner)).getName());
+        return s;
+    }
+
+
 
 }
 

@@ -2,6 +2,7 @@ package LogInScene;
 
 import Library.Office;
 import Library.Request;
+import People.Worker;
 import Services.Account;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,7 +28,7 @@ public class RequestController {
 
     @FXML
     private void goBackButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().startScene())));
+        FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
         Parent root = loader.load();
         LogOutController logOutController = loader.getController();
         logOutController.transferData(this.lib);
@@ -78,7 +79,7 @@ public class RequestController {
     @FXML
     private void acceptRequestButton(ActionEvent event) throws IOException {
         Request req = lib.getCurrRequest();
-        req.acceptRequest();
+        req.acceptRequest((Worker)(lib.getActiveUser().getOwner()));
         lib.deleteRequest();
         plainText.clear();
     }

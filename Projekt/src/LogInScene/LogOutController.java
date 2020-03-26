@@ -1,5 +1,6 @@
 package LogInScene;
 
+import Library.BookRequest;
 import Library.Office;
 import Products.Book;
 import Services.Account;
@@ -9,9 +10,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 
@@ -19,12 +22,31 @@ public class LogOutController {
     private Office lib;
 
     @FXML
-    private TextArea plainText;
+    private ListView plainText;
+    @FXML
+    private TextField enterIDText;
 
     @FXML
-    private void logOutButtonClicked(ActionEvent event) throws IOException {
+    public void initialize() {
+        plainText.setCellFactory(param -> new ListCell<Object>() {
+                @Override
+                protected void updateItem(Object item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (item == null) {
+                        setText(null);
+                    } else if (item instanceof Account) {
+                        setText(((Account) item).getOwner().getInfo());
+                    } else {
+                        setText(((Book) item).getInfo());
+                    }
+                }
+        });
 
-        System.out.println("Uzivatel odhlaseny");
+    }
+
+    @FXML
+    private void logOutButtonClicked(ActionEvent event) throws IOException
+    {
         lib.getActiveUser().userLogOut();
         FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
         Parent root = loader.load();
@@ -38,21 +60,14 @@ public class LogOutController {
     }
     @FXML
     private void showAccountsButton(ActionEvent event) throws IOException {
-        System.out.println("Uzivatel vyhladal vsetky ucty");
-        plainText.clear();
-        for(Account a : lib.getAccounts()) {
-            plainText.appendText(a.getOwner().getName() + "\n");
-        }
+        plainText.getItems().clear();
+        plainText.getItems().addAll(lib.getAccounts());
     }
 
     @FXML
     private void showBooksButton(ActionEvent event) throws IOException {
-        System.out.println("Uzivatel vyhladal vsetky knihy");
-        plainText.clear();
-        for(Book a : lib.getBooks()) {
-            plainText.appendText(a.getID() + ": " + a.getTitle() + "\n");
-
-        }
+        plainText.getItems().clear();
+        plainText.getItems().addAll(lib.getBooks());
     }
 
     @FXML
@@ -68,9 +83,16 @@ public class LogOutController {
         window.show();
     }
 
+    @FXML
+    private void makeNewRequest(ActionEvent event) throws IOException {
+        lib.createRequest(new BookRequest(lib.findBook(((Book)plainText.getSelectionModel().getSelectedItem()).getID()), lib.getActiveUser()));
+    }
+
     public void transferData(Office paLib)
     {
         this.lib = paLib;
     }
+
+
 }
 

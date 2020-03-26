@@ -1,5 +1,8 @@
 package People;
 
+import Products.Book;
+
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Reader implements Client, Serializable {
@@ -22,4 +25,15 @@ public class Reader implements Client, Serializable {
     {
         name = paName;
     };
+
+    public void reserveBook(Book paBook){};
+    public void unreserveBook(Book paBook){};
+    public String startScene() throws IOException {
+        return "logOutSceneClient.fxml";
+    };
+
+    public String getInfo()
+    {
+        return String.format("%4d - Zakaznik: %s",(this).idNumber, (this).getName());
+    }
 }

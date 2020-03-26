@@ -1,5 +1,7 @@
 package Library;
 
+import People.Librarian;
+import People.Worker;
 import Products.Book;
 import Services.Account;
 
@@ -10,11 +12,11 @@ public class BookRequest implements Request {
     public Account getRequester() {
         return requester;
     }
-
     public Book getWantedBook() {
         return wantedBook;
     }
-    BookRequest(Book paBook, Account paRequester)
+
+    public BookRequest(Book paBook, Account paRequester)
     {
         this.wantedBook = paBook;
         this.requester = paRequester;
@@ -25,9 +27,9 @@ public class BookRequest implements Request {
         return requester.getOwner().getName() + " poziadal o knihu " + wantedBook.getTitle() + " s ID: " + wantedBook.getID() + "\n";
     }
 
-    public void acceptRequest()
+    public void acceptRequest(Worker paAccepter)
     {
-        requester.reserveBook(wantedBook);
+        paAccepter.reserveBook(wantedBook);
     }
 
 }

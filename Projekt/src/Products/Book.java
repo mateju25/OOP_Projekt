@@ -40,4 +40,14 @@ public class Book {
 	{
 		this.reserved = paRes;
 	};
+
+	public String getInfo()
+	{
+		String s;
+		if(reserved)
+			s = String.format("%4d: %-30s - %s", this.ID, this.title, "rezervovana");
+		else
+			s = String.format("%4d: %-30s - %s", this.ID, this.title, "volna");
+		return s;
+	}
 }

@@ -24,10 +24,9 @@ public class LogInController {
 
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
-        if(lib.findUser(".Peter", "x") == 1) {
+        if(lib.findUser(loginText.getText(), "x") == 1) {
        // if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
-            System.out.println("Uzivatel prihlaseny");
-            FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().startScene())));
+            FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
             Parent root = loader.load();
             LogOutController logOutController = loader.getController();
             logOutController.transferData(this.lib);
@@ -37,10 +36,6 @@ public class LogInController {
 
             window.setScene(scene);
             window.show();
-        }
-        else
-        {
-            System.out.println("Uzivatel neprihlaseny");
         }
     }
 

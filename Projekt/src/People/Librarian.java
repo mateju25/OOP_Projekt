@@ -1,5 +1,8 @@
 package People;
 
+import Products.Book;
+
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Librarian implements Worker, Serializable {
@@ -22,4 +25,19 @@ public class Librarian implements Worker, Serializable {
     {
         name = paName;
     };
+
+    public void reserveBook(Book paBook){
+        paBook.setReserve(true);
+    };
+    public void unreserveBook(Book paBook){
+        paBook.setReserve(false);
+    };
+    public String startScene() throws IOException{
+        return "logOutSceneLibrarian.fxml";
+    };
+
+    public String getInfo()
+    {
+        return String.format("%4d - Pracovnik: %s",(this).getWorkNumber(), (this).getName());
+    }
 }
