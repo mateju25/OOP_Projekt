@@ -4,7 +4,9 @@ import People.Worker;
 import Products.Book;
 import Services.Account;
 
-public interface Request {
+import java.io.Serializable;
+
+public interface Request extends Serializable {
     String showMessage();
     Account getRequester();
     Book getWantedBook();

@@ -9,21 +9,18 @@ public class Reader implements Client, Serializable {
     private int idNumber;
     private String name;
 
+    public Reader(int idNumber, String name) {
+        this.idNumber = idNumber;
+        this.name = name;
+    }
+
     public int getIdNumber()
     {
         return idNumber;
     };
-    public void setIdNumber(int paNum)
-    {
-        idNumber = paNum;
-    };
     public String getName()
     {
         return name;
-    };
-    public void setName(String paName)
-    {
-        name = paName;
     };
 
     public void reserveBook(Book paBook){};

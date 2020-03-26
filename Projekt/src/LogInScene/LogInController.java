@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -24,19 +25,29 @@ public class LogInController {
 
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
-        if(lib.findUser(loginText.getText(), "x") == 1) {
-       // if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
-            FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
-            Parent root = loader.load();
-            LogOutController logOutController = loader.getController();
-            logOutController.transferData(this.lib);
-            Scene scene = new Scene(root);
+       // if(lib.findUser(loginText.getText(), "x") == 1) {
+        if(loginText.getText().equals("") || passText.getText().equals(""))
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacia");
+            alert.setHeaderText(null);
+            alert.setContentText("Zadaj login a heslo");
 
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            window.setScene(scene);
-            window.show();
+            alert.showAndWait();
         }
+        else
+            if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
+                FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
+                Parent root = loader.load();
+                LogOutController logOutController = loader.getController();
+                logOutController.transferData(this.lib);
+                Scene scene = new Scene(root);
+
+                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+                window.setScene(scene);
+                window.show();
+            }
     }
 
     @FXML

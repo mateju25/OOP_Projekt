@@ -1,9 +1,11 @@
 package Products;
 
-public class ChildBook extends Book{
-	public ChildBook(String title, int numOfPages, double rating, int ID)
+import java.io.Serializable;
+
+public class ChildBook extends Book implements Serializable {
+	public ChildBook(String paTitle, int paNumOfPages, int paID, String paISBN)
 	{
-		super(title, numOfPages, rating, ID);
+		super(paTitle, paNumOfPages, paID, paISBN);
 	}
 	public String getInfo()
 	{

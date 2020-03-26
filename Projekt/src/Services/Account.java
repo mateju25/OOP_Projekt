@@ -21,7 +21,7 @@ public class Account implements Serializable {
     public Account(Human paNewOwner)
     {
         owner = paNewOwner;
-        login = '.' + paNewOwner.getName();
+        login = "xz" + paNewOwner.getName().substring(0, 5);
         KeyGenerator gen = new KeyGenerator();
         password = gen.getPassword();
 

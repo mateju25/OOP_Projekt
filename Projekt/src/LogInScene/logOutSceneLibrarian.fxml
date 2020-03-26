@@ -18,7 +18,7 @@
             <Button fx:id="showBooks" layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBooksButton" prefHeight="25.0" prefWidth="97.0" text="Show Books" />
             <Button layoutX="889.0" layoutY="61.0" mnemonicParsing="false" onAction="#requestButton" prefHeight="25.0" prefWidth="97.0" text="Requests" />
             <Line endX="122.0" layoutX="828.0" layoutY="50.0" startX="-123.0" />
-            <ListView fx:id="plainText" layoutX="14.0" layoutY="14.0" prefHeight="542.0" prefWidth="607.0" />
+            <ListView fx:id="plainText" layoutX="14.0" layoutY="14.0" prefHeight="542.0" prefWidth="607.0" stylesheets="@styles.css" />
             </children>
         </Pane>
     </children>

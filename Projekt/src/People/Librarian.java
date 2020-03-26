@@ -9,21 +9,18 @@ public class Librarian implements Worker, Serializable {
     private int workNumber;
     private String name;
 
+    public Librarian(int workNumber, String name) {
+        this.workNumber = workNumber;
+        this.name = name;
+    }
+
     public int getWorkNumber()
     {
         return workNumber;
     };
-    public void setWorkNumber(int paNum)
-    {
-        workNumber = paNum;
-    };
     public String getName()
     {
         return name;
-    };
-    public void setName(String paName)
-    {
-        name = paName;
     };
 
     public void reserveBook(Book paBook){

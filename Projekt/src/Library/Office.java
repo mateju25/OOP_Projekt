@@ -1,6 +1,7 @@
 package Library;
-import People.Librarian;
-import People.Reader;
+import People.*;
+
+import Products.AdultBook;
 import Products.Book;
 import Products.ChildBook;
 import Services.*;
@@ -17,58 +18,21 @@ public class Office {
 
     public Office()
     {
-        Reader citatel = new Reader();
-        for(int i =0; i < 1; i++)
-        {
+        listAcc.add(new Account(new ChildReader(1, "Matej Delinčák")));
+        listAcc.add(new Account(new AdultReader(1, "Peter Plevko")));
+        listAcc.add(new Account(new AdultReader(1, "Radovan Cyprich")));
+        listAcc.add(new Account(new Librarian(1, "Pirky")));
+        listAcc.add(new Account(new Librarian(1, "Roman Páleník")));
 
-            citatel.setIdNumber(100 + i);
-            switch (i)
-            {
-                case 0: {citatel.setName("Matej");listAcc.add(new Account(citatel));break;}
-                case 1: {citatel.setName("Jozo");listAcc.add(new Account(citatel));break;}
-                case 2: {citatel.setName("Jano");listAcc.add(new Account(citatel));break;}
-            }
-        }
-        Librarian pracovnik = new Librarian();
-        pracovnik.setName("Peter");
-        pracovnik.setWorkNumber(100 + 10);
-        listAcc.add(new Account(pracovnik));
 
-        Book skuska = new ChildBook("Skuskova kniha", 10, 4.5, 1);
-        Book skuska2 = new ChildBook("Skuskova kniha2", 10, 4.5, 2);
+        Book skuska = new ChildBook("Rozprávky Hansa Christiana Andersena", 592, 1, "ISBN 80-7145-980-1");
+        Book skuska2 = new AdultBook("Teória literatúry", 254, 2, "ISBN 80-85684-05-5");
         listBook.add(skuska);
         listBook.add(skuska2);
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 3));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 4));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 5));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 6));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 7));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 8));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 9));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 10));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 11));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 12));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 13));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 14));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 15));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 1));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 2));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 3));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 4));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 5));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 6));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 7));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 8));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 9));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 10));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 11));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 12));
-        listBook.add(new ChildBook("Skuskova kniha", 10, 4.5, 13));
-        listBook.add(new ChildBook("Skuskova kniha2", 10, 4.5, 14));
-        listBook.add(new ChildBook("Skuskova kniha3", 10, 4.5, 15));
+        listBook.add(new AdultBook("Psychológia a pedagogika dieťaťa", 292, 3, "ISBN 80-7178-585-7"));
 
-        listReq.add(new BookRequest(skuska, listAcc.get(0)));
-        listReq.add(new BookRequest(skuska2, listAcc.get(0)));
+        //listReq.add(new BookRequest(skuska, listAcc.get(0)));
+        //listReq.add(new BookRequest(skuska2, listAcc.get(0)));
         try {
             serialize();
         } catch (ClassNotFoundException e) {
@@ -130,6 +94,15 @@ public class Office {
         if(currReq != 0) currReq--;
     }
 
+    public boolean existsReq(Book paBook, Account paAcc)
+    {
+        for (Request req : listReq)
+        {
+            if  ((req.getWantedBook().equals(paBook)) && (req.getRequester().equals(paAcc))) return true;
+        }
+        return false;
+    }
+
     public void createRequest(Request paNew)
     {
         listReq.add(paNew);
@@ -159,17 +132,33 @@ public class Office {
 
     public void serialize() throws ClassNotFoundException, IOException
     {
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("accounts.out"));
-        out.writeObject(listAcc);
-        out.close();
+        ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
+        outA.writeObject(listAcc);
+        outA.close();
+
+        ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("books.out"));
+        outB.writeObject(listBook);
+        outB.close();
+
+        ObjectOutputStream outC = new ObjectOutputStream(new FileOutputStream("requests.out"));
+        outC.writeObject(listReq);
+        outC.close();
     }
 
 
     public void deserialize() throws ClassNotFoundException, IOException
     {
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("accounts.out"));
-        listAcc = (LinkedList<Account>)in.readObject();
-        in.close();
+        ObjectInputStream inA = new ObjectInputStream(new FileInputStream("accounts.out"));
+        listAcc = (LinkedList<Account>)inA.readObject();
+        inA.close();
+
+        ObjectInputStream inB = new ObjectInputStream(new FileInputStream("books.out"));
+        listBook = (LinkedList<Book>)inB.readObject();
+        inB.close();
+
+        ObjectInputStream inC = new ObjectInputStream(new FileInputStream("requests.out"));
+        listReq = (LinkedList<Request>)inC.readObject();
+        inC.close();
     }
 
 }

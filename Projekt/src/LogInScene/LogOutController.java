@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -85,7 +86,29 @@ public class LogOutController {
 
     @FXML
     private void makeNewRequest(ActionEvent event) throws IOException {
-        lib.createRequest(new BookRequest(lib.findBook(((Book)plainText.getSelectionModel().getSelectedItem()).getID()), lib.getActiveUser()));
+        if (plainText.getSelectionModel().getSelectedItem() == null)
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Pozor");
+            alert.setHeaderText(null);
+            alert.setContentText("Nevybral si ziadnu knihu");
+
+            alert.showAndWait();
+        }
+        else {
+            if (lib.existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getActiveUser()) == false)
+                lib.createRequest(new BookRequest(lib.findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getActiveUser()));
+            else
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Pozor");
+                alert.setHeaderText(null);
+                alert.setContentText("Zadana poziadavka uz existuje");
+
+                alert.showAndWait();
+            }
+
+        }
     }
 
     public void transferData(Office paLib)

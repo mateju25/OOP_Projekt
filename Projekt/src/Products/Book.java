@@ -1,11 +1,13 @@
 package Products;
 import Services.*;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
 	protected String title;
 	protected int numOfPages;
 	protected int ID;
-	protected double rating;
+	protected String ISBN;
 	protected boolean reserved;
 
 	public int getID() {
@@ -15,24 +17,13 @@ public class Book {
 	{
 		return this.title;
 	}
-	public int getNumOfPages() {
-		return numOfPages;
-	}
 
-	public double getRating() {
-		return rating;
-	}
-
-	public boolean isReserved() {
-		return reserved;
-	}
-
-	protected Book(String paTitle, int paNumOfPages, double paRating, int paID)
+	protected Book(String paTitle, int paNumOfPages, int paID, String paISBN)
 	{
 		this.numOfPages = paNumOfPages;
 		this.title = paTitle;
-		this.rating = paRating;
 		this.ID = paID;
+		this.ISBN = paISBN;
 		this.reserved = false;
 	}
 
@@ -45,9 +36,9 @@ public class Book {
 	{
 		String s;
 		if(reserved)
-			s = String.format("%4d: %-30s - %s", this.ID, this.title, "rezervovana");
+			s = String.format("%3d: %-40s :%-18s - %s", this.ID, this.title, this.ISBN, "rezervovana");
 		else
-			s = String.format("%4d: %-30s - %s", this.ID, this.title, "volna");
+			s = String.format("%3d: %-40s :%-18s - %s", this.ID, this.title, this.ISBN, "volna");
 		return s;
 	}
 }

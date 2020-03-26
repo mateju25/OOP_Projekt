@@ -68,7 +68,7 @@ public class RequestController {
         } else
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
+            alert.setTitle("Informacia");
             alert.setHeaderText(null);
             alert.setContentText("Ziadne dalsie poziadavky");
 

@@ -22,7 +22,7 @@
                   <Image url="@../data/Logo.png" />
                </image>
             </ImageView>
-            <TextField fx:id="loginText" layoutX="426.0" layoutY="262.0" promptText="login" />
+            <TextField fx:id="loginText" layoutX="426.0" layoutY="262.0" promptText="login" text="xzMatej" />
             <TextField fx:id="passText" layoutX="426.0" layoutY="295.0" promptText="password" />
             <Button fx:id="quitButton" layoutX="522.0" layoutY="350.0" mnemonicParsing="false" onAction="#quitButton" text="Quit" />
             </children>

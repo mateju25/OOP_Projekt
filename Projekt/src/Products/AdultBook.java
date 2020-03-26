@@ -2,10 +2,12 @@ package Products;
 
 import Services.*;
 
-public class AdultBook extends Book{
-	public AdultBook(String paTitle, int paNumOfPages, double paRating, int ID)
+import java.io.Serializable;
+
+public class AdultBook extends Book  implements Serializable {
+	public AdultBook(String paTitle, int paNumOfPages, int paID, String paISBN)
 	{
-		super(paTitle, paNumOfPages, paRating, ID);
+		super(paTitle, paNumOfPages, paID, paISBN);
 	}
 
 }
