@@ -27,8 +27,6 @@ public class Book {
 		return reserved;
 	}
 
-
-
 	protected Book(String paTitle, int paNumOfPages, double paRating, int paID)
 	{
 		this.numOfPages = paNumOfPages;
@@ -38,23 +36,8 @@ public class Book {
 		this.reserved = false;
 	}
 
-
-	public boolean reserve(ChildrenAccount acc)
+	public void setReserve(boolean paRes)
 	{
-		return false;
-	};
-	public boolean reserve(StudentAccount acc)
-	{
-		return false;
-	};
-	public boolean reserve(AdultAccount acc)
-	{
-		return false;
-	};
-
-	public boolean unreserve()
-	{
-		this.reserved = false;
-		return true;
+		this.reserved = paRes;
 	};
 }

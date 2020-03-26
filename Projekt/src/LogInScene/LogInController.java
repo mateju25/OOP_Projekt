@@ -24,10 +24,9 @@ public class LogInController {
 
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
-        if(lib.findUser(".Matej", "x") == 1) {
+        if(lib.findUser(".Peter", "x") == 1) {
        // if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
             System.out.println("Uzivatel prihlaseny");
-            //(lib.getActiveUser()).reserveBook(lib.getBook());
             FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().startScene())));
             Parent root = loader.load();
             LogOutController logOutController = loader.getController();

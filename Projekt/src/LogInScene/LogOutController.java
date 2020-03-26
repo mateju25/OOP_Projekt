@@ -55,6 +55,19 @@ public class LogOutController {
         }
     }
 
+    @FXML
+    private void requestButton(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader((getClass().getResource("requestScene.fxml")));
+        Parent root = loader.load();
+        RequestController logInController = loader.getController();
+        logInController.transferData(this.lib);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(new Scene(root));
+        window.show();
+    }
+
     public void transferData(Office paLib)
     {
         this.lib = paLib;
