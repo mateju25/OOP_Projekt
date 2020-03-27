@@ -73,12 +73,12 @@ public class RegisterSceneController extends SimpleController {
 
     @FXML
     private void showStars() throws IOException {
-        String s = "";
+        /*String s = "";
         pass += passText.getText().charAt(currLet);
         currLet++;
         for (int i = 0; i < currLet; i++) {
             s += "*";
         }
-        passText.setText(s);
+        passText.setText(s);*/
     }
 }

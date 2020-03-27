@@ -24,7 +24,7 @@ public class LogInController extends SimpleController {
 
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
-        if(lib.findUser(loginText.getText(), pass) == 1) {
+        if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
             currLet = 0;
             pass = "";
             FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
@@ -45,14 +45,14 @@ public class LogInController extends SimpleController {
 
     @FXML
     private void showStars() throws IOException {
-        String s = "";
+        /*String s = "";
         pass += passText.getText().charAt(currLet);
         currLet++;
         for (int i = 0; i < currLet; i++) {
             s += "*";
         }
         passText.setText(s);
-        passText.positionCaret(currLet);
+        passText.positionCaret(currLet);*/
     }
 
     @FXML
