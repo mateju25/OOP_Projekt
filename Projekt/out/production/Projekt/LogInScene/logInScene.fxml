@@ -15,16 +15,17 @@
     <children>
         <Pane fx:id="pane1" prefHeight="724.0" prefWidth="1000.0">
             <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="165.0" layoutX="400.0" layoutY="237.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                <Button fx:id="logInButton" layoutX="438.0" layoutY="350.0" mnemonicParsing="false" onAction="#logInButtonClicked" text="Log In" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="188.0" layoutX="390.0" layoutY="226.0" stroke="BLACK" strokeType="INSIDE" width="221.0" />
+                <Button fx:id="logInButton" layoutX="426.0" layoutY="320.0" mnemonicParsing="false" onAction="#logInButtonClicked" text="Log In" />
             <ImageView fitHeight="127.0" fitWidth="159.0" layoutX="827.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../data/Logo.png" />
                </image>
             </ImageView>
-            <TextField fx:id="loginText" layoutX="426.0" layoutY="262.0" promptText="login" text="xzMatej" />
-            <TextField fx:id="passText" layoutX="426.0" layoutY="295.0" promptText="password" />
-            <Button fx:id="quitButton" layoutX="522.0" layoutY="350.0" mnemonicParsing="false" onAction="#quitButton" text="Quit" />
+            <TextField fx:id="loginText" layoutX="426.0" layoutY="247.0" promptText="login" text="x" />
+            <TextField fx:id="passText" layoutX="426.0" layoutY="278.0" onKeyReleased="#showStars" promptText="password" />
+            <Button fx:id="quitButton" layoutX="526.0" layoutY="320.0" mnemonicParsing="false" onAction="#quitButton" prefHeight="25.0" prefWidth="49.0" text="Quit" />
+            <Button fx:id="registrationButton" layoutX="463.0" layoutY="364.0" mnemonicParsing="false" onAction="#newUserButton" text="Registracia" />
             </children>
         </Pane>
     </children>

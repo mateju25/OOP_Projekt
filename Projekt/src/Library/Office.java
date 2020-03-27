@@ -1,11 +1,12 @@
 package Library;
-import People.*;
 
+import People.AdultReader;
+import People.ChildReader;
+import People.Librarian;
 import Products.AdultBook;
 import Products.Book;
 import Products.ChildBook;
 import Services.*;
-
 import java.io.*;
 import java.util.LinkedList;
 
@@ -15,14 +16,12 @@ public class Office {
     private LinkedList<Request> listReq = new LinkedList<Request>();
     private Account currUser;
     private int currReq = 0;
+    //constructor
+    public Office() {
+        listAcc.add(new Account(new ChildReader(100, "Matej Delinčák"), "x", "x"));
+        listAcc.add(new Account(new AdultReader(101, "Peter Plevko"), "y", "x"));
+        listAcc.add(new Account(new Librarian(102, "Pirky"), "z", "x"));
 
-    public Office()
-    {
-        listAcc.add(new Account(new ChildReader(1, "Matej Delinčák")));
-        listAcc.add(new Account(new AdultReader(1, "Peter Plevko")));
-        listAcc.add(new Account(new AdultReader(1, "Radovan Cyprich")));
-        listAcc.add(new Account(new Librarian(1, "Pirky")));
-        listAcc.add(new Account(new Librarian(1, "Roman Páleník")));
 
 
         Book skuska = new ChildBook("Rozprávky Hansa Christiana Andersena", 592, 1, "ISBN 80-7145-980-1");
@@ -52,7 +51,7 @@ public class Office {
             e.printStackTrace();
         }
     }
-
+    //getters and setters
     public Account getActiveUser()
     {
         return currUser;
@@ -70,6 +69,7 @@ public class Office {
         return listReq;
     }
 
+    //request metods
     public Request nextRequest() {
         if (currReq + 1 >= listReq.size())
             return null;
@@ -88,37 +88,30 @@ public class Office {
     public Request getCurrRequest() {
         return listReq.get(currReq);
     }
-    public void deleteRequest()
-    {
+    public void deleteRequest() {
         listReq.remove(currReq);
         if(currReq != 0) currReq--;
     }
-
-    public boolean existsReq(Book paBook, Account paAcc)
-    {
+    public boolean existsReq(Book paBook, Account paAcc) {
         for (Request req : listReq)
         {
             if  ((req.getWantedBook().equals(paBook)) && (req.getRequester().equals(paAcc))) return true;
         }
         return false;
     }
-
     public void createRequest(Request paNew)
     {
         listReq.add(paNew);
     }
-    public Book findBook(int paID)
-    {
+
+    public Book findBook(int paID) {
         for(Book book : listBook)
         {
             if (book.getID() == paID) return book;
         }
         return null;
     }
-
-
-    public int findUser(String paLogin, String paPass)
-    {
+    public int findUser(String paLogin, String paPass) {
         for (Account a : listAcc)
         {
             if (a.userLogin(paLogin, paPass) == 1)
@@ -129,9 +122,17 @@ public class Office {
         }
         return 0;
     }
-
-    public void serialize() throws ClassNotFoundException, IOException
+    public void addUser(Account paAcc) {
+        listAcc.add(paAcc);
+    }
+    public int countOfUsers()
     {
+        return listAcc.size();
+    }
+
+
+    //serialization and deseralization
+    public void serialize() throws ClassNotFoundException, IOException {
         ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
         outA.writeObject(listAcc);
         outA.close();
@@ -144,10 +145,7 @@ public class Office {
         outC.writeObject(listReq);
         outC.close();
     }
-
-
-    public void deserialize() throws ClassNotFoundException, IOException
-    {
+    public void deserialize() throws ClassNotFoundException, IOException {
         ObjectInputStream inA = new ObjectInputStream(new FileInputStream("accounts.out"));
         listAcc = (LinkedList<Account>)inA.readObject();
         inA.close();

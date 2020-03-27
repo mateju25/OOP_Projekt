@@ -2,7 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Information windows added for situations within login and request system">
+      <change afterPath="$PROJECT_DIR$/src/LogInScene/RegisterSceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogInScene/SimpleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogInScene/registerScene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/AlertSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.out" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/BookRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Library/BookRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/Office.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Library/Office.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/RequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/RequestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/logOutSceneClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/logOutSceneClient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/requestScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/requestScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/Reader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Services/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/BookRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/BookRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/Office.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Office.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/logInScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/logInScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/logOutSceneClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/logOutSceneClient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/requestScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/requestScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/People/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/People/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Account.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +234,8 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1585125769280" duration="51240000" />
+      <workItem from="1585125769280" duration="51306000" />
+      <workItem from="1585293896509" duration="15521000" />
     </task>
     <task id="LOCAL-00001" summary="Information windows added for situations within login and request system">
       <created>1585235807029</created>
@@ -242,10 +269,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585153986808" />
-    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1585231266054">
+    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1585303306211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585231266054" />
+    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585303306211" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585216151946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -254,42 +281,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="603" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585235803297" />
+    <state width="439" height="466" key="DebuggerActiveHint" timestamp="1585299494462">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="439" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1585299494462" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585126753952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585126753952" />
-    <state width="1877" height="173" key="GridCell.Tab.0.bottom" timestamp="1585235671823">
+    <state width="1877" height="335" key="GridCell.Tab.0.bottom" timestamp="1585310056511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585235671823" />
-    <state width="1877" height="173" key="GridCell.Tab.0.center" timestamp="1585235671822">
+    <state width="1877" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
+    <state width="1877" height="335" key="GridCell.Tab.0.center" timestamp="1585310056511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585235671822" />
-    <state width="1877" height="173" key="GridCell.Tab.0.left" timestamp="1585235671822">
+    <state width="1877" height="335" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
+    <state width="1877" height="335" key="GridCell.Tab.0.left" timestamp="1585310056510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585235671822" />
-    <state width="1877" height="173" key="GridCell.Tab.0.right" timestamp="1585235671822">
+    <state width="1877" height="335" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056510" />
+    <state width="1877" height="335" key="GridCell.Tab.0.right" timestamp="1585310056511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585235671822" />
-    <state width="1877" height="335" key="GridCell.Tab.1.bottom" timestamp="1585225338376">
+    <state width="1877" height="335" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
+    <state width="1877" height="335" key="GridCell.Tab.1.bottom" timestamp="1585310056512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585225338376" />
-    <state width="1877" height="335" key="GridCell.Tab.1.center" timestamp="1585225338376">
+    <state width="1877" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056512" />
+    <state width="1877" height="335" key="GridCell.Tab.1.center" timestamp="1585310056511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585225338376" />
-    <state width="1877" height="335" key="GridCell.Tab.1.left" timestamp="1585225338376">
+    <state width="1877" height="335" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
+    <state width="1877" height="335" key="GridCell.Tab.1.left" timestamp="1585310056511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585225338376" />
-    <state width="1877" height="335" key="GridCell.Tab.1.right" timestamp="1585225338376">
+    <state width="1877" height="335" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
+    <state width="1877" height="335" key="GridCell.Tab.1.right" timestamp="1585310056512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585225338376" />
+    <state width="1877" height="335" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056512" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1585126756322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -298,6 +329,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="436" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585235833990" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1585293912894">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585293912894" />
     <state x="666" y="149" key="refactoring.ChangeSignatureDialog" timestamp="1585148603402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -312,8 +347,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LogInScene/RequestController.java</url>
-          <line>80</line>
+          <line>82</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Library/BookRequest.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

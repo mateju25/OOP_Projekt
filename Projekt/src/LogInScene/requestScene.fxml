@@ -22,11 +22,13 @@
                      </font></TextArea>
                </children>
             </Pane>
-            <Button fx:id="showAccounts" layoutX="762.0" layoutY="14.0" mnemonicParsing="false" onAction="#prevRequestButton" text="First Request" />
+            <Button fx:id="firstReq" layoutX="769.0" layoutY="14.0" mnemonicParsing="false" onAction="#prevRequestButton" prefHeight="25.0" prefWidth="97.0" text="First Request" />
             <Button fx:id="nextReq" disable="true" layoutX="644.0" layoutY="14.0" mnemonicParsing="false" onAction="#nextRequestButton" prefHeight="25.0" prefWidth="97.0" text="Next Request" />
-            <Button layoutX="714.0" layoutY="61.0" mnemonicParsing="false" onAction="#acceptRequestButton" prefHeight="25.0" prefWidth="97.0" text="Accept" />
+            <Button fx:id="acceptButton" disable="true" layoutX="714.0" layoutY="61.0" mnemonicParsing="false" onAction="#acceptRequestButton" prefHeight="25.0" prefWidth="97.0" text="Accept" />
             <Line endX="122.0" layoutX="828.0" layoutY="50.0" startX="-123.0" />
-            <Button layoutX="828.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Decline" />
+            <Button fx:id="declineButton" disable="true" layoutX="828.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Decline" />
+            <Line endX="122.0" layoutX="828.0" layoutY="98.0" startX="-123.0" />
+            <Button fx:id="accountInfo" disable="true" layoutX="889.0" layoutY="114.0" mnemonicParsing="false" onAction="#showUserData" prefHeight="25.0" prefWidth="97.0" text="Show User" />
          </children>
       </Pane>
    </children>

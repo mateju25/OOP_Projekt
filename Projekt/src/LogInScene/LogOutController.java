@@ -2,30 +2,27 @@ package LogInScene;
 
 import Library.BookRequest;
 import Library.Office;
+import People.Reader;
 import Products.Book;
 import Services.Account;
+import Services.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
 
-public class LogOutController {
-    private Office lib;
-
+public class LogOutController extends SimpleController{
     @FXML
     private ListView plainText;
     @FXML
-    private TextField enterIDText;
+    private Label billText;
 
     @FXML
     public void initialize() {
@@ -88,34 +85,29 @@ public class LogOutController {
     private void makeNewRequest(ActionEvent event) throws IOException {
         if (plainText.getSelectionModel().getSelectedItem() == null)
         {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Pozor");
-            alert.setHeaderText(null);
-            alert.setContentText("Nevybral si ziadnu knihu");
-
-            alert.showAndWait();
+            AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si ziadnu knihu");
         }
         else {
             if (lib.existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getActiveUser()) == false)
                 lib.createRequest(new BookRequest(lib.findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getActiveUser()));
             else
             {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Pozor");
-                alert.setHeaderText(null);
-                alert.setContentText("Zadana poziadavka uz existuje");
-
-                alert.showAndWait();
+                AlertSystem alertWindow = new AlertSystem("Pozor", "Zadana poziadavka uz existuje");
             }
-
         }
     }
 
-    public void transferData(Office paLib)
-    {
-        this.lib = paLib;
+    @FXML
+    private void myBookShow(ActionEvent event) throws IOException {
+        if (((Reader)lib.getActiveUser().getOwner()).getMyBooks() == null)
+        {
+            AlertSystem errorWindow = new AlertSystem("Informacia", "Zatial nevlastnis ziadne knihy");
+        }
+        else{
+            plainText.getItems().clear();
+            plainText.getItems().addAll(((Reader)lib.getActiveUser().getOwner()).getMyBooks());
+        }
+
     }
-
-
 }
 

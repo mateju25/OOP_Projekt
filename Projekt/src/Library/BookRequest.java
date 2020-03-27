@@ -1,6 +1,7 @@
 package Library;
 
 import People.Librarian;
+import People.Reader;
 import People.Worker;
 import Products.Book;
 import Services.Account;
@@ -30,6 +31,7 @@ public class BookRequest implements Request {
     public void acceptRequest(Worker paAccepter)
     {
         paAccepter.reserveBook(wantedBook);
+        ((Reader)this.requester.getOwner()).addBook(wantedBook);
     }
 
 }

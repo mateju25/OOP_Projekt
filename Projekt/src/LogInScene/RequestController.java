@@ -1,31 +1,32 @@
 package LogInScene;
 
-import Library.Office;
 import Library.Request;
 import People.Worker;
 import Services.Account;
+import Services.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RequestController {
-    private Office lib;
-
+public class RequestController extends SimpleController{
     @FXML
     private TextArea plainText;
-
     @FXML
     private Button nextReq;
-
+    @FXML
+    private Button acceptButton;
+    @FXML
+    private Button declineButton;
+    @FXML
+    private Button accountInfo;
     @FXML
     private void goBackButton(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
@@ -49,12 +50,14 @@ public class RequestController {
         }
         else
         {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("Ziadne dalsie poziadavky");
-
-            alert.showAndWait();
+            if (lib.getReqs().size() == 0) {
+                AlertSystem alertWindow = new AlertSystem("Informacia", "Ziadne dalsie poziadavky");
+                acceptButton.setDisable(true);
+                declineButton.setDisable(true);
+                accountInfo.setDisable(true);
+            }
+            else
+                prevRequestButton(event);
         }
     }
 
@@ -65,14 +68,13 @@ public class RequestController {
         if (req != null) {
             plainText.clear();
             plainText.appendText(req.showMessage());
+            acceptButton.setDisable(false);
+            declineButton.setDisable(false);
+            accountInfo.setDisable(false);
         } else
         {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Informacia");
-            alert.setHeaderText(null);
-            alert.setContentText("Ziadne dalsie poziadavky");
-
-            alert.showAndWait();
+            nextReq.setDisable(true);
+            AlertSystem alertWindow = new AlertSystem("Informacia", "Ziadne dalsie poziadavky");
         }
     }
 
@@ -82,10 +84,21 @@ public class RequestController {
         req.acceptRequest((Worker)(lib.getActiveUser().getOwner()));
         lib.deleteRequest();
         plainText.clear();
+        if (lib.getReqs().size() == 0)
+        {
+            acceptButton.setDisable(true);
+            declineButton.setDisable(true);
+            declineButton.setDisable(true);
+            accountInfo.setDisable(true);
+            nextReq.setDisable(true);
+        }
+        else
+            nextRequestButton(event);
     }
 
-    public void transferData(Office paLib)
-    {
-        this.lib = paLib;
+    @FXML
+    private void showUserData(ActionEvent event) throws IOException {
+        Account acc = lib.getCurrRequest().getRequester();
+        AlertSystem infoWindow = new AlertSystem("Info o ziadatelovi", "Meno a priezvisko: " + acc.getOwner().getName() + "\n" + "Stav uctu: " + String.valueOf(acc.getBill()));
     }
 }

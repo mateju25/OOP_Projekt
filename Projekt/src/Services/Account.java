@@ -1,13 +1,23 @@
 package Services;
 
 import People.*;
+import Products.Book;
+
 import java.io.Serializable;
+import java.util.LinkedList;
 
 public class Account implements Serializable {
     private String login;
     private String password;
     private Human owner;
     private int loginState;
+    private double bill;
+
+
+    public double getBill() {
+        return bill;
+    }
+
 
     public Human getOwner()
     {
@@ -18,17 +28,19 @@ public class Account implements Serializable {
         return loginState;
     }
 
-    public Account(Human paNewOwner)
+    public Account(Human paNewOwner, String paLogin, String paPass)
     {
         owner = paNewOwner;
-        login = "xz" + paNewOwner.getName().substring(0, 5);
-        KeyGenerator gen = new KeyGenerator();
-        password = gen.getPassword();
+        login = paLogin;
+        password = paPass;
 
         //
         password = "x";
         //
-
+        if(paNewOwner instanceof ChildReader)
+            bill = 0;
+        else
+            bill = -2.50;
         loginState = 0;
         System.out.println(login);
         System.out.println(password);
