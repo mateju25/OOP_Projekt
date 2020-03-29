@@ -68,7 +68,7 @@ public class Account implements Serializable {
         if(owner instanceof Librarian)
             s = String.format("%4d - Pracovnik: %s",((Librarian)(this.owner)).getWorkNumber(), ((Librarian)(this.owner)).getName());
         else
-            s = String.format("%4d - Zakaznik: %s",((Reader)(this.owner)).getIdNumber(), ((Librarian)(this.owner)).getName());
+            s = String.format("%4d - Zakaznik: %s",((Reader)(this.owner)).getName(), ((Librarian)(this.owner)).getName());
         return s;
     }
 

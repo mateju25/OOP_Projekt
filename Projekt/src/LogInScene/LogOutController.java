@@ -58,13 +58,13 @@ public class LogOutController extends SimpleController{
     @FXML
     private void showAccountsButton(ActionEvent event) throws IOException {
         plainText.getItems().clear();
-        plainText.getItems().addAll(lib.getSysAcc().getListAcc());
+        plainText.getItems().addAll(lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysAcc()));
     }
 
     @FXML
     private void showBooksButton(ActionEvent event) throws IOException {
         plainText.getItems().clear();
-        plainText.getItems().addAll(lib.getSysBook().getListBook());
+        plainText.getItems().addAll(lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysBook()));
     }
 
     @FXML

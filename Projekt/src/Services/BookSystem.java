@@ -2,7 +2,11 @@ package Services;
 
 import Library.Request;
 import LogInScene.SimpleController;
+import People.AdultReader;
+import People.ChildReader;
+import People.Librarian;
 import Products.Book;
+import Products.ChildBook;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -10,7 +14,24 @@ import java.util.LinkedList;
 public class BookSystem implements SimpleSystem {
     private LinkedList<Book> listBook = new LinkedList<Book>();
 
-    public LinkedList<Book> getListBook() {
+    @Override
+    public LinkedList getList(AdultReader person) {
+
+        return listBook;
+    }
+
+    @Override
+    public LinkedList getList(ChildReader person) {
+        LinkedList<Book> childBooks = new LinkedList<Book>();
+        for (Book b : listBook) {
+            if(b instanceof ChildBook) childBooks.add(b);
+        }
+        return childBooks;
+    }
+
+    @Override
+    public LinkedList getList(Librarian person) {
+
         return listBook;
     }
 

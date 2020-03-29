@@ -1,9 +1,11 @@
 package People;
 
 import Products.Book;
+import Services.SimpleSystem;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.LinkedList;
 
 public class Librarian implements Worker, Serializable {
     private int workNumber;
@@ -13,6 +15,12 @@ public class Librarian implements Worker, Serializable {
         this.workNumber = workNumber;
         this.name = name;
     }
+
+    @Override
+    public LinkedList accept(SimpleSystem v) {
+        return v.getList(this);
+    }
+
 
     public int getWorkNumber()
     {

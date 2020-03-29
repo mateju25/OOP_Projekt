@@ -50,7 +50,7 @@ public class RequestController extends SimpleController{
         }
         else
         {
-            if (lib.getSysReq().getListReq().size() == 0) {
+            if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0) {
                 AlertSystem alertWindow = new AlertSystem("Informacia", "Ziadne dalsie poziadavky");
                 acceptButton.setDisable(true);
                 declineButton.setDisable(true);
@@ -84,7 +84,7 @@ public class RequestController extends SimpleController{
         req.acceptRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
         lib.getSysReq().deleteRequest();
         plainText.clear();
-        if (lib.getSysReq().getListReq().size() == 0)
+        if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0)
         {
             acceptButton.setDisable(true);
             declineButton.setDisable(true);

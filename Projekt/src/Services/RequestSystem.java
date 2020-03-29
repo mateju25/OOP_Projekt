@@ -2,6 +2,9 @@ package Services;
 
 import Library.Request;
 import LogInScene.SimpleController;
+import People.AdultReader;
+import People.ChildReader;
+import People.Librarian;
 import Products.Book;
 
 import java.io.*;
@@ -10,10 +13,6 @@ import java.util.LinkedList;
 public class RequestSystem implements SimpleSystem  {
     private LinkedList<Request> listReq = new LinkedList<Request>();
     private int currReq = 0;
-
-    public LinkedList<Request> getListReq() {
-        return listReq;
-    }
 
     public Request nextRequest() {
         if (currReq + 1 >= listReq.size())
@@ -49,6 +48,21 @@ public class RequestSystem implements SimpleSystem  {
         listReq.add(paReq);
     }
 
+
+    @Override
+    public LinkedList getList(AdultReader person) {
+        return null;
+    }
+
+    @Override
+    public LinkedList getList(ChildReader person) {
+        return null;
+    }
+
+    @Override
+    public LinkedList getList(Librarian person) {
+        return listReq;
+    }
 
     public void serialize() throws ClassNotFoundException, IOException {
         ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("requests.out"));

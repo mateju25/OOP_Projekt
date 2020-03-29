@@ -2,6 +2,9 @@ package Services;
 
 import Library.Request;
 import LogInScene.SimpleController;
+import People.AdultReader;
+import People.ChildReader;
+import People.Librarian;
 import Products.Book;
 
 import java.io.*;
@@ -12,9 +15,6 @@ public class AccountSystem implements SimpleSystem {
     private LinkedList<Account> listAcc = new LinkedList<Account>();
     private Account currUser;
 
-    public LinkedList<Account> getListAcc() {
-        return listAcc;
-    }
     public Account getCurrUser() {
         return currUser;
     }
@@ -38,6 +38,21 @@ public class AccountSystem implements SimpleSystem {
         return listAcc.size();
     }
 
+
+    @Override
+    public LinkedList getList(AdultReader person) {
+        return null;
+    }
+
+    @Override
+    public LinkedList getList(ChildReader person) {
+        return null;
+    }
+
+    @Override
+    public LinkedList getList(Librarian person) {
+        return listAcc;
+    }
 
     public void serialize() throws ClassNotFoundException, IOException {
         ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
