@@ -13,10 +13,10 @@
     <children>
         <Pane fx:id="pane2" prefHeight="700.0" prefWidth="1000.0">
             <children>
-                <Button fx:id="logOutButton" layoutX="889.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutButtonClicked" prefHeight="25.0" prefWidth="97.0" text="Log Out" />
-            <Button fx:id="showAccounts" layoutX="784.0" layoutY="14.0" mnemonicParsing="false" onAction="#showAccountsButton" text="Show Accounts" />
-            <Button fx:id="showBooks" layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBooksButton" prefHeight="25.0" prefWidth="97.0" text="Show Books" />
-            <Button layoutX="889.0" layoutY="61.0" mnemonicParsing="false" onAction="#requestButton" prefHeight="25.0" prefWidth="97.0" text="Requests" />
+                <Button fx:id="logOutButton" layoutX="889.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutButtonClicked" prefHeight="25.0" prefWidth="97.0" text="Odhlásiť sa" />
+            <Button fx:id="showAccounts" layoutX="767.0" layoutY="14.0" mnemonicParsing="false" onAction="#showAccountsButton" prefHeight="25.0" prefWidth="97.0" text="Zobraz účty" />
+            <Button fx:id="showBooks" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBooksButton" prefHeight="25.0" prefWidth="97.0" text="Zobraz knihy" />
+            <Button layoutX="889.0" layoutY="61.0" mnemonicParsing="false" onAction="#requestButton" prefHeight="25.0" prefWidth="97.0" text="Požiadavky" />
             <Line endX="122.0" layoutX="828.0" layoutY="50.0" startX="-123.0" />
             <ListView fx:id="plainText" layoutX="14.0" layoutY="14.0" prefHeight="542.0" prefWidth="607.0" stylesheets="@styles.css" />
             </children>

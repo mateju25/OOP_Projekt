@@ -1,7 +1,5 @@
 package Services;
 
-import Library.Request;
-import LogInScene.SimpleController;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
@@ -48,7 +46,7 @@ public class BookSystem implements SimpleSystem {
 
 
 
-    public void serialize() throws ClassNotFoundException, IOException {
+    public void serialize() throws IOException {
         ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("books.out"));
         outB.writeObject(listBook);
         outB.close();

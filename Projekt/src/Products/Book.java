@@ -1,13 +1,12 @@
 package Products;
-import Services.*;
 
 import java.io.Serializable;
 
 public class Book implements Serializable {
-	protected String title;
-	protected int numOfPages;
-	protected int ID;
-	protected String ISBN;
+	protected final String title;
+	protected final int numOfPages;
+	protected final int ID;
+	protected final String ISBN;
 	protected boolean reserved;
 
 	public int getID() {
@@ -30,7 +29,7 @@ public class Book implements Serializable {
 	public void setReserve(boolean paRes)
 	{
 		this.reserved = paRes;
-	};
+	}
 
 	public String getInfo()
 	{

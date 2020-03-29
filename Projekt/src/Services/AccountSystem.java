@@ -1,11 +1,8 @@
 package Services;
 
-import Library.Request;
-import LogInScene.SimpleController;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
-import Products.Book;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -19,7 +16,7 @@ public class AccountSystem implements SimpleSystem {
         return currUser;
     }
 
-    public int findUser(String paLogin, String paPass) {
+    public int logUser(String paLogin, String paPass) {
         for (Account a : listAcc)
         {
             if (a.userLogin(paLogin, paPass) == 1)
@@ -29,6 +26,13 @@ public class AccountSystem implements SimpleSystem {
             }
         }
         return 0;
+    }
+    public boolean findUser(String paLogin) {
+        for (Account a : listAcc)
+        {
+            if (a.getLogin().equals(paLogin)) return true;
+        }
+        return false;
     }
     public void addUser(Account paAcc) {
         listAcc.add(paAcc);
@@ -54,7 +58,7 @@ public class AccountSystem implements SimpleSystem {
         return listAcc;
     }
 
-    public void serialize() throws ClassNotFoundException, IOException {
+    public void serialize() throws IOException {
         ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
         outA.writeObject(listAcc);
         outA.close();

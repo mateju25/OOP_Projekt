@@ -3,7 +3,6 @@ package LogInScene;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
-import Products.Book;
 import Services.Account;
 import Services.AlertSystem;
 import javafx.event.ActionEvent;
@@ -13,7 +12,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -34,51 +32,54 @@ public class RegisterSceneController extends SimpleController {
 
     @FXML
     public void initialize() {
-        comboBox.getItems().addAll("Detske konto", "Konto pre dospelych", "Konto pre pracovnikov");
+        comboBox.getItems().addAll("Detské konto", "Konto pre dospelých", "Konto pre pracovníkov");
     }
     public void registerButtonClick(ActionEvent actionEvent) {
         if (nameText.getText().equals("") || loginText.getText().equals("") || passText.getText().equals("") || comboBox.getSelectionModel().isEmpty()) {
-            AlertSystem errorWindow = new AlertSystem("Pozor", "Nevyplnil si vsetky udaje");
-    }
+            AlertSystem errorWindow = new AlertSystem("Pozor", "Nevyplnil si všetky údaje");
+        }
         else {
-            Account acc = null;
-            switch ((String)comboBox.getSelectionModel().getSelectedItem())
-            {
-                case ("Detske konto") : {acc = new Account(new ChildReader(100+lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
-                case ("Konto pre dospelych") : {acc = new Account(new AdultReader(100+lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
-                case ("Konto pre pracovnikov") : {acc = new Account(new Librarian(100+lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
+            if (lib.getSysAcc().findUser(loginText.getText())) {
+                AlertSystem errorWindow = new AlertSystem("Pozor", "Už existuje používateľ s rovnakým menom");
             }
-            lib.getSysAcc().addUser(acc);
+            else {
+                Account acc = null;
+                switch ((String) comboBox.getSelectionModel().getSelectedItem()) {
+                    case ("Detské konto"): {
+                        acc = new Account(new ChildReader(lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());
+                        break;
+                    }
+                    case ("Konto pre dospelých"): {
+                        acc = new Account(new AdultReader(lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());
+                        break;
+                    }
+                    case ("Konto pre pracovníkov"): {
+                        acc = new Account(new Librarian(lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());
+                        break;
+                    }
+                }
+                lib.getSysAcc().addUser(acc);
 
-            AlertSystem errorWindow = new AlertSystem("Informacia", "Ucet vytvoreny");
+                AlertSystem errorWindow = new AlertSystem("Informácia", "Účet vytvorený");
 
-            FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
-            Parent root = null;
-            try {
-                root = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
+                FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
+                Parent root = null;
+                try {
+                    root = loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                LogInController logInController = loader.getController();
+                logInController.transferData(this.lib);
+                Scene scene = new Scene(root);
+
+                Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+                window.setScene(scene);
+                window.show();
             }
-            LogInController logInController = loader.getController();
-            logInController.transferData(this.lib);
-            Scene scene = new Scene(root);
-
-            Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-            window.setScene(scene);
-            window.show();
         }
 
     }
 
-    @FXML
-    private void showStars() throws IOException {
-        /*String s = "";
-        pass += passText.getText().charAt(currLet);
-        currLet++;
-        for (int i = 0; i < currLet; i++) {
-            s += "*";
-        }
-        passText.setText(s);*/
-    }
 }

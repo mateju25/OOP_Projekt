@@ -1,7 +1,6 @@
 package LogInScene;
 
 import Library.BookRequest;
-import Library.Office;
 import People.Reader;
 import Products.Book;
 import Services.*;
@@ -13,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.IOException;
 
@@ -56,13 +54,13 @@ public class LogOutController extends SimpleController{
         window.show();
     }
     @FXML
-    private void showAccountsButton(ActionEvent event) throws IOException {
+    private void showAccountsButton(ActionEvent event) {
         plainText.getItems().clear();
         plainText.getItems().addAll(lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysAcc()));
     }
 
     @FXML
-    private void showBooksButton(ActionEvent event) throws IOException {
+    private void showBooksButton(ActionEvent event) {
         plainText.getItems().clear();
         plainText.getItems().addAll(lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysBook()));
     }
@@ -81,26 +79,26 @@ public class LogOutController extends SimpleController{
     }
 
     @FXML
-    private void makeNewRequest(ActionEvent event) throws IOException {
+    private void makeNewRequest(ActionEvent event) {
         if (plainText.getSelectionModel().getSelectedItem() == null)
         {
-            AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si ziadnu knihu");
+            AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si žiadnu knihu");
         }
         else {
             if (lib.getSysReq().existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()) == false)
                 lib.getSysReq().addReq(new BookRequest(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser()));
             else
             {
-                AlertSystem alertWindow = new AlertSystem("Pozor", "Zadana poziadavka uz existuje");
+                AlertSystem alertWindow = new AlertSystem("Pozor", "Zadana požiadavka už existuje");
             }
         }
     }
 
     @FXML
-    private void myBookShow(ActionEvent event) throws IOException {
+    private void myBookShow(ActionEvent event) {
         if (((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyBooks() == null)
         {
-            AlertSystem errorWindow = new AlertSystem("Informacia", "Zatial nevlastnis ziadne knihy");
+            AlertSystem errorWindow = new AlertSystem("Informácia", "Zatiaľ nevlastníš žiadne knihy");
         }
         else{
             plainText.getItems().clear();

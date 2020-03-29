@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Starter extends Application {
-    private Office lib = new Office();
+    private final Office lib = new Office();
 
     @Override
     public void start(Stage primaryStage) throws Exception{

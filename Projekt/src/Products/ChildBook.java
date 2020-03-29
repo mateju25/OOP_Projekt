@@ -7,8 +7,4 @@ public class ChildBook extends Book implements Serializable {
 	{
 		super(paTitle, paNumOfPages, paID, paISBN);
 	}
-	public String getInfo()
-	{
-		return super.getInfo();
-	}
 }

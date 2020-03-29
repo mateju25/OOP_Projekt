@@ -1,17 +1,15 @@
 package Services;
 
 import People.*;
-import Products.Book;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 
 public class Account implements Serializable {
-    private String login;
-    private String password;
-    private Human owner;
+    private final String login;
+    private final String password;
+    private final Human owner;
     private int loginState;
-    private double bill;
+    private final double bill;
 
 
     public double getBill() {
@@ -23,16 +21,16 @@ public class Account implements Serializable {
     {
         return owner;
     }
-    public int getLoginState()
+    public String getLogin()
     {
-        return loginState;
+        return login;
     }
 
     public Account(Human paNewOwner, String paLogin, String paPass)
     {
         owner = paNewOwner;
         login = paLogin;
-        password = paPass;
+        //password = paPass;
 
         //
         password = "x";

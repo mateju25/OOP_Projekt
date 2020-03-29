@@ -9,8 +9,8 @@ import java.util.LinkedList;
 
 public class AdultReader implements Reader, Serializable {
     private int idNumber;
-    private String name;
-    private LinkedList<Book> myBooks = new LinkedList<Book>();
+    private final String name;
+    private final LinkedList<Book> myBooks = new LinkedList<Book>();
 
     public AdultReader(int idNumber, String name) {
         this.idNumber = idNumber;
@@ -31,19 +31,19 @@ public class AdultReader implements Reader, Serializable {
     public int getIdNumber()
     {
         return idNumber;
-    };
+    }
     public String getName()
     {
         return name;
-    };
+    }
 
     public void addBook(Book paBook){
         myBooks.add(paBook);
-    };
+    }
 
-    public String startScene() throws IOException {
+    public String startScene() {
         return "logOutSceneClient.fxml";
-    };
+    }
 
     public String getInfo()
     {

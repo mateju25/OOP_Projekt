@@ -1,14 +1,13 @@
 package Library;
 
-import People.Librarian;
 import People.Reader;
 import People.Worker;
 import Products.Book;
 import Services.Account;
 
 public class BookRequest implements Request {
-    private Book wantedBook;
-    private Account requester;
+    private final Book wantedBook;
+    private final Account requester;
 
     public Account getRequester() {
         return requester;

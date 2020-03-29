@@ -2,7 +2,6 @@ package Services;
 
 import People.AdultReader;
 import People.ChildReader;
-import People.Human;
 import People.Librarian;
 
 import java.io.IOException;
@@ -12,6 +11,6 @@ public interface SimpleSystem {
     LinkedList getList(AdultReader person);
     LinkedList getList(ChildReader person);
     LinkedList getList(Librarian person);
-    void serialize() throws ClassNotFoundException, IOException;
+    void serialize() throws IOException;
     void deserialize() throws ClassNotFoundException, IOException;
 }

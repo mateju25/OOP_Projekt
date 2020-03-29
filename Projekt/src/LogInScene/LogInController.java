@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,14 +18,9 @@ public class LogInController extends SimpleController {
     @FXML
     private TextField passText;
 
-    private String pass = "";
-    private int currLet = 0;
-
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
-        if(lib.getSysAcc().findUser(loginText.getText(), passText.getText()) == 1) {
-            currLet = 0;
-            pass = "";
+        if(lib.getSysAcc().logUser(loginText.getText(), passText.getText()) == 1) {
             FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getSysAcc().getCurrUser().getOwner().startScene())));
             Parent root = loader.load();
             LogOutController logOutController = loader.getController();
@@ -39,20 +33,8 @@ public class LogInController extends SimpleController {
             window.show();
         }
         else {
-            AlertSystem wrongloginWindow = new AlertSystem("Pozor", "Zadaj login alebo heslo");
+            AlertSystem wrongloginWindow = new AlertSystem("Pozor", "Zadaj správny login alebo heslo");
         }
-    }
-
-    @FXML
-    private void showStars() throws IOException {
-        /*String s = "";
-        pass += passText.getText().charAt(currLet);
-        currLet++;
-        for (int i = 0; i < currLet; i++) {
-            s += "*";
-        }
-        passText.setText(s);
-        passText.positionCaret(currLet);*/
     }
 
     @FXML
@@ -71,7 +53,7 @@ public class LogInController extends SimpleController {
 
 
     @FXML
-    private void quitButton(ActionEvent event) throws IOException {
+    private void quitButton(ActionEvent event) {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.close();
     }

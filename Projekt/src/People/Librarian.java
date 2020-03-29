@@ -8,8 +8,8 @@ import java.io.Serializable;
 import java.util.LinkedList;
 
 public class Librarian implements Worker, Serializable {
-    private int workNumber;
-    private String name;
+    private final int workNumber;
+    private final String name;
 
     public Librarian(int workNumber, String name) {
         this.workNumber = workNumber;
@@ -25,21 +25,21 @@ public class Librarian implements Worker, Serializable {
     public int getWorkNumber()
     {
         return workNumber;
-    };
+    }
     public String getName()
     {
         return name;
-    };
+    }
 
     public void reserveBook(Book paBook){
         paBook.setReserve(true);
-    };
+    }
     public void unreserveBook(Book paBook){
         paBook.setReserve(false);
-    };
-    public String startScene() throws IOException{
+    }
+    public String startScene() {
         return "logOutSceneLibrarian.fxml";
-    };
+    }
 
     public String getInfo()
     {

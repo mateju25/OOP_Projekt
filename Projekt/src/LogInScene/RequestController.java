@@ -62,7 +62,7 @@ public class RequestController extends SimpleController{
     }
 
     @FXML
-    private void prevRequestButton(ActionEvent event) throws IOException {
+    private void prevRequestButton(ActionEvent event) {
         Request req = lib.getSysReq().beginRequest();
         nextReq.setDisable(false);
         if (req != null) {
@@ -97,8 +97,8 @@ public class RequestController extends SimpleController{
     }
 
     @FXML
-    private void showUserData(ActionEvent event) throws IOException {
+    private void showUserData(ActionEvent event) {
         Account acc = lib.getSysReq().getCurrRequest().getRequester();
-        AlertSystem infoWindow = new AlertSystem("Info o ziadatelovi", "Meno a priezvisko: " + acc.getOwner().getName() + "\n" + "Stav uctu: " + String.valueOf(acc.getBill()));
+        AlertSystem infoWindow = new AlertSystem("Info o žiadateľovi", "Meno a priezvisko: " + acc.getOwner().getName() + "\n" + "Stav účtu: " + acc.getBill());
     }
 }

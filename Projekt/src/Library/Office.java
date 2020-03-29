@@ -3,7 +3,6 @@ package Library;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
-import Services.AccountSystem;
 import Products.AdultBook;
 import Products.Book;
 import Products.ChildBook;
@@ -11,9 +10,9 @@ import Services.*;
 import java.io.*;
 
 public class Office {
-    private AccountSystem sysAcc = new AccountSystem();
-    private BookSystem sysBook = new BookSystem();
-    private RequestSystem sysReq = new RequestSystem();
+    private final AccountSystem sysAcc = new AccountSystem();
+    private final BookSystem sysBook = new BookSystem();
+    private final RequestSystem sysReq = new RequestSystem();
 
     public AccountSystem getSysAcc() {
         return sysAcc;
@@ -47,9 +46,6 @@ public class Office {
             sysAcc.serialize();
             sysBook.serialize();
             sysReq.serialize();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

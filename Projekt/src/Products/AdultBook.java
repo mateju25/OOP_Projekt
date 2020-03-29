@@ -1,7 +1,5 @@
 package Products;
 
-import Services.*;
-
 import java.io.Serializable;
 
 public class AdultBook extends Book  implements Serializable {
