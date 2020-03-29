@@ -29,7 +29,7 @@ public class RequestController extends SimpleController{
     private Button accountInfo;
     @FXML
     private void goBackButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
+        FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getSysAcc().getCurrUser().getOwner().startScene())));
         Parent root = loader.load();
         LogOutController logOutController = loader.getController();
         logOutController.transferData(this.lib);
@@ -43,14 +43,14 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void nextRequestButton(ActionEvent event) throws IOException {
-        Request req = lib.nextRequest();
+        Request req = lib.getSysReq().nextRequest();
         if (req != null) {
             plainText.clear();
             plainText.appendText(req.showMessage());
         }
         else
         {
-            if (lib.getReqs().size() == 0) {
+            if (lib.getSysReq().getListReq().size() == 0) {
                 AlertSystem alertWindow = new AlertSystem("Informacia", "Ziadne dalsie poziadavky");
                 acceptButton.setDisable(true);
                 declineButton.setDisable(true);
@@ -63,7 +63,7 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void prevRequestButton(ActionEvent event) throws IOException {
-        Request req = lib.beginRequest();
+        Request req = lib.getSysReq().beginRequest();
         nextReq.setDisable(false);
         if (req != null) {
             plainText.clear();
@@ -80,11 +80,11 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void acceptRequestButton(ActionEvent event) throws IOException {
-        Request req = lib.getCurrRequest();
-        req.acceptRequest((Worker)(lib.getActiveUser().getOwner()));
-        lib.deleteRequest();
+        Request req = lib.getSysReq().getCurrRequest();
+        req.acceptRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
+        lib.getSysReq().deleteRequest();
         plainText.clear();
-        if (lib.getReqs().size() == 0)
+        if (lib.getSysReq().getListReq().size() == 0)
         {
             acceptButton.setDisable(true);
             declineButton.setDisable(true);
@@ -98,7 +98,7 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void showUserData(ActionEvent event) throws IOException {
-        Account acc = lib.getCurrRequest().getRequester();
+        Account acc = lib.getSysReq().getCurrRequest().getRequester();
         AlertSystem infoWindow = new AlertSystem("Info o ziadatelovi", "Meno a priezvisko: " + acc.getOwner().getName() + "\n" + "Stav uctu: " + String.valueOf(acc.getBill()));
     }
 }

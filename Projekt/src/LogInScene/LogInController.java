@@ -24,10 +24,10 @@ public class LogInController extends SimpleController {
 
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
-        if(lib.findUser(loginText.getText(), passText.getText()) == 1) {
+        if(lib.getSysAcc().findUser(loginText.getText(), passText.getText()) == 1) {
             currLet = 0;
             pass = "";
-            FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getActiveUser().getOwner().startScene())));
+            FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getSysAcc().getCurrUser().getOwner().startScene())));
             Parent root = loader.load();
             LogOutController logOutController = loader.getController();
             logOutController.transferData(this.lib);

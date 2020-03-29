@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Information windows added for situations within login and request system">
+      <change afterPath="$PROJECT_DIR$/src/Services/AccountSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/BookSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/RequestSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/SimpleSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/Office.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Library/Office.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/LogOutController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/RegisterSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/RegisterSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/LogInScene/RequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/LogInScene/RequestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Services/KeyGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests.out" beforeDir="false" afterPath="$PROJECT_DIR$/requests.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/Office.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Office.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogInScene/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/LogOutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogInScene/RegisterSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/RegisterSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInScene/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInScene/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/KeyGenerator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +74,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -96,7 +110,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/LogInScene" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -105,17 +119,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src" />
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\LogInScene" />
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Library" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Products" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Services" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="LogInScene" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\LogInScene" />
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Products" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Services" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\LogInScene" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Library" />
     </key>
   </component>
   <component name="RunManager">
@@ -216,6 +232,7 @@
       <workItem from="1585293896509" duration="15521000" />
       <workItem from="1585310461530" duration="229000" />
       <workItem from="1585310758515" duration="9000" />
+      <workItem from="1585467735855" duration="3930000" />
     </task>
     <task id="LOCAL-00001" summary="Information windows added for situations within login and request system">
       <created>1585235807029</created>
@@ -249,14 +266,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585153986808" />
-    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1585303306211">
+    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1585468658819">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585303306211" />
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585216151946">
+    <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585468658819" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585470198927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585216151946" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585470198927" />
     <state x="603" y="115" key="CommitChangelistDialog2" timestamp="1585235803297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -269,38 +286,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585126753952" />
-    <state width="1877" height="173" key="GridCell.Tab.0.bottom" timestamp="1585310692154">
+    <state width="1877" height="173" key="GridCell.Tab.0.bottom" timestamp="1585473258508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585310692154" />
-    <state width="1877" height="173" key="GridCell.Tab.0.center" timestamp="1585310692151">
+    <state width="1877" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585473258508" />
+    <state width="1877" height="173" key="GridCell.Tab.0.center" timestamp="1585473258508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585310692151" />
-    <state width="1877" height="173" key="GridCell.Tab.0.left" timestamp="1585310692151">
+    <state width="1877" height="173" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585473258508" />
+    <state width="1877" height="173" key="GridCell.Tab.0.left" timestamp="1585473258508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585310692151" />
-    <state width="1877" height="173" key="GridCell.Tab.0.right" timestamp="1585310692153">
+    <state width="1877" height="173" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585473258508" />
+    <state width="1877" height="173" key="GridCell.Tab.0.right" timestamp="1585473258508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="173" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585310692153" />
-    <state width="1877" height="335" key="GridCell.Tab.1.bottom" timestamp="1585310056512">
+    <state width="1877" height="173" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585473258508" />
+    <state width="1877" height="426" key="GridCell.Tab.1.bottom" timestamp="1585471089145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056512" />
-    <state width="1877" height="335" key="GridCell.Tab.1.center" timestamp="1585310056511">
+    <state width="1877" height="426" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585471089145" />
+    <state width="1877" height="426" key="GridCell.Tab.1.center" timestamp="1585471089145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
-    <state width="1877" height="335" key="GridCell.Tab.1.left" timestamp="1585310056511">
+    <state width="1877" height="426" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585471089145" />
+    <state width="1877" height="426" key="GridCell.Tab.1.left" timestamp="1585471089145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056511" />
-    <state width="1877" height="335" key="GridCell.Tab.1.right" timestamp="1585310056512">
+    <state width="1877" height="426" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585471089145" />
+    <state width="1877" height="426" key="GridCell.Tab.1.right" timestamp="1585471089145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="335" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585310056512" />
+    <state width="1877" height="426" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585471089145" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1585126756322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -335,13 +352,35 @@
           <line>33</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogInScene/LogOutController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogInScene/LogOutController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogInScene/LogOutController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogInScene/Starter.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Library/Office.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="lib.getActiveUser().startScene()" language="JAVA" />
-        <watch expression="lib.getActiveUser()" language="JAVA" />
-        <watch expression="Integer.parseInt(enterText.getText())" language="JAVA" />
         <watch expression="plainText.getSelectionModel().getSelectedItem()" language="JAVA" />
       </configuration>
     </watches-manager>

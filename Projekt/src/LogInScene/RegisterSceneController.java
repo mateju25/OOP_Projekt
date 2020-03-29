@@ -44,11 +44,11 @@ public class RegisterSceneController extends SimpleController {
             Account acc = null;
             switch ((String)comboBox.getSelectionModel().getSelectedItem())
             {
-                case ("Detske konto") : {acc = new Account(new ChildReader(100+lib.countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
-                case ("Konto pre dospelych") : {acc = new Account(new AdultReader(100+lib.countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
-                case ("Konto pre pracovnikov") : {acc = new Account(new Librarian(100+lib.countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
+                case ("Detske konto") : {acc = new Account(new ChildReader(100+lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
+                case ("Konto pre dospelych") : {acc = new Account(new AdultReader(100+lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
+                case ("Konto pre pracovnikov") : {acc = new Account(new Librarian(100+lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());break;}
             }
-            lib.addUser(acc);
+            lib.getSysAcc().addUser(acc);
 
             AlertSystem errorWindow = new AlertSystem("Informacia", "Ucet vytvoreny");
 

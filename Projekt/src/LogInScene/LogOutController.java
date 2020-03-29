@@ -4,8 +4,7 @@ import Library.BookRequest;
 import Library.Office;
 import People.Reader;
 import Products.Book;
-import Services.Account;
-import Services.AlertSystem;
+import Services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +44,7 @@ public class LogOutController extends SimpleController{
     @FXML
     private void logOutButtonClicked(ActionEvent event) throws IOException
     {
-        lib.getActiveUser().userLogOut();
+        lib.getSysAcc().getCurrUser().userLogOut();
         FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
         Parent root = loader.load();
         LogInController logInController = loader.getController();
@@ -59,13 +58,13 @@ public class LogOutController extends SimpleController{
     @FXML
     private void showAccountsButton(ActionEvent event) throws IOException {
         plainText.getItems().clear();
-        plainText.getItems().addAll(lib.getAccounts());
+        plainText.getItems().addAll(lib.getSysAcc().getListAcc());
     }
 
     @FXML
     private void showBooksButton(ActionEvent event) throws IOException {
         plainText.getItems().clear();
-        plainText.getItems().addAll(lib.getBooks());
+        plainText.getItems().addAll(lib.getSysBook().getListBook());
     }
 
     @FXML
@@ -88,8 +87,8 @@ public class LogOutController extends SimpleController{
             AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si ziadnu knihu");
         }
         else {
-            if (lib.existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getActiveUser()) == false)
-                lib.createRequest(new BookRequest(lib.findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getActiveUser()));
+            if (lib.getSysReq().existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()) == false)
+                lib.getSysReq().addReq(new BookRequest(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser()));
             else
             {
                 AlertSystem alertWindow = new AlertSystem("Pozor", "Zadana poziadavka uz existuje");
@@ -99,13 +98,13 @@ public class LogOutController extends SimpleController{
 
     @FXML
     private void myBookShow(ActionEvent event) throws IOException {
-        if (((Reader)lib.getActiveUser().getOwner()).getMyBooks() == null)
+        if (((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyBooks() == null)
         {
             AlertSystem errorWindow = new AlertSystem("Informacia", "Zatial nevlastnis ziadne knihy");
         }
         else{
             plainText.getItems().clear();
-            plainText.getItems().addAll(((Reader)lib.getActiveUser().getOwner()).getMyBooks());
+            plainText.getItems().addAll(((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyBooks());
         }
 
     }
