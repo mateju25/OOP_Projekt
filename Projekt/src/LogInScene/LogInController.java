@@ -44,6 +44,18 @@ public class LogInController extends SimpleController {
     }
 
     @FXML
+    private void showStars() throws IOException {
+        /*String s = "";
+        pass += passText.getText().charAt(currLet);
+        currLet++;
+        for (int i = 0; i < currLet; i++) {
+            s += "*";
+        }
+        passText.setText(s);
+        passText.positionCaret(currLet);*/
+    }
+
+    @FXML
     private void newUserButton(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader((getClass().getResource("registerScene.fxml")));
         Parent root = loader.load();
