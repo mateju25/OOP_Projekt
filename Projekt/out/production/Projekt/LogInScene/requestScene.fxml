@@ -26,7 +26,7 @@
             <Button fx:id="nextReq" disable="true" layoutX="625.0" layoutY="14.0" mnemonicParsing="false" onAction="#nextRequestButton" prefHeight="25.0" prefWidth="116.0" text="Ďalšia požiadavka" />
             <Button fx:id="acceptButton" disable="true" layoutX="714.0" layoutY="61.0" mnemonicParsing="false" onAction="#acceptRequestButton" prefHeight="25.0" prefWidth="97.0" text="Potvrdiť" />
             <Line endX="122.0" layoutX="828.0" layoutY="50.0" startX="-123.0" />
-            <Button fx:id="declineButton" disable="true" layoutX="828.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Odmietnuť" />
+            <Button fx:id="declineButton" disable="true" layoutX="828.0" layoutY="61.0" mnemonicParsing="false" onAction="#declineRequestButton" prefHeight="25.0" prefWidth="97.0" text="Odmietnuť" />
             <Line endX="122.0" layoutX="828.0" layoutY="98.0" startX="-123.0" />
             <Button fx:id="accountInfo" disable="true" layoutX="889.0" layoutY="114.0" mnemonicParsing="false" onAction="#showUserData" prefHeight="25.0" prefWidth="97.0" text="Účet žiadateľa" />
          </children>

@@ -2,7 +2,7 @@ package Products;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
+public abstract class Book implements Serializable {
 	protected final String title;
 	protected final int numOfPages;
 	protected final int ID;
@@ -31,13 +31,6 @@ public class Book implements Serializable {
 		this.reserved = paRes;
 	}
 
-	public String getInfo()
-	{
-		String s;
-		if(reserved)
-			s = String.format("%3d: %-40s :%-18s - %s", this.ID, this.title, this.ISBN, "rezervovana");
-		else
-			s = String.format("%3d: %-40s :%-18s - %s", this.ID, this.title, this.ISBN, "volna");
-		return s;
-	}
+	public abstract String getInfo();
+
 }

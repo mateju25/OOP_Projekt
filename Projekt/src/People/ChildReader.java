@@ -1,6 +1,7 @@
 package People;
 
 import Products.Book;
+import Products.Message;
 import Services.SimpleSystem;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ public class ChildReader implements Reader, Serializable {
     private int idNumber;
     private final String name;
     private final LinkedList<Book> myBooks = new LinkedList<Book>();
+    private final LinkedList<Message> myMessages = new LinkedList<Message>();
 
     public ChildReader(int idNumber, String name) {
         this.idNumber = idNumber;
@@ -24,6 +26,15 @@ public class ChildReader implements Reader, Serializable {
     public LinkedList<Book> getMyBooks() {
         return myBooks;
     }
+    public LinkedList<Message> getMyMessages() {
+        return myMessages;
+    }
+
+    @Override
+    public void addMessage(String s) {
+        myMessages.add(new Message(s));
+    }
+
 
     public void setIdNumber(int idNumber) {
         this.idNumber = idNumber;

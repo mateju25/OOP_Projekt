@@ -3,6 +3,7 @@ package LogInScene;
 import Library.BookRequest;
 import People.Reader;
 import Products.Book;
+import Products.Message;
 import Services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -93,6 +94,14 @@ public class LogOutController extends SimpleController{
             }
         }
     }
+
+    @FXML
+    private void showNewMessages(ActionEvent event) {
+        for (Message m : lib.getSysAcc().getCurrUser().getOwner().getMyMessages()) {
+            AlertSystem alertWindow = new AlertSystem("Nová správa", m.getInfo());
+        }
+    }
+
 
     @FXML
     private void myBookShow(ActionEvent event) {

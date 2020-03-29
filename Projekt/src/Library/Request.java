@@ -11,5 +11,5 @@ public interface Request extends Serializable {
     Account getRequester();
     Book getWantedBook();
     void acceptRequest(Worker paAccepter);
-    //void declineRequest();
+    void declineRequest(String s);
 }

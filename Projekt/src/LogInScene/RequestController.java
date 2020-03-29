@@ -97,6 +97,25 @@ public class RequestController extends SimpleController{
     }
 
     @FXML
+    private void declineRequestButton(ActionEvent event) throws IOException {
+        Request req = lib.getSysReq().getCurrRequest();
+        req.declineRequest("Vaša žiadost o knihu " + req.getWantedBook().getTitle() + "bola zamietnutá.");
+        lib.getSysReq().deleteRequest();
+        plainText.clear();
+        if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0)
+        {
+            acceptButton.setDisable(true);
+            declineButton.setDisable(true);
+            declineButton.setDisable(true);
+            accountInfo.setDisable(true);
+            nextReq.setDisable(true);
+        }
+        else
+            nextRequestButton(event);
+    }
+
+
+    @FXML
     private void showUserData(ActionEvent event) {
         Account acc = lib.getSysReq().getCurrRequest().getRequester();
         AlertSystem infoWindow = new AlertSystem("Info o žiadateľovi", "Meno a priezvisko: " + acc.getOwner().getName() + "\n" + "Stav účtu: " + acc.getBill());

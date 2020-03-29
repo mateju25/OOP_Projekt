@@ -1,6 +1,7 @@
 package People;
 
 import Products.Book;
+import Products.Message;
 import Services.SimpleSystem;
 
 import java.io.IOException;
@@ -44,5 +45,10 @@ public class Librarian implements Worker, Serializable {
     public String getInfo()
     {
         return String.format("%4d - Pracovnik: %s",(this).getWorkNumber(), (this).getName());
+    }
+
+    @Override
+    public LinkedList<Message> getMyMessages() {
+        return null;
     }
 }

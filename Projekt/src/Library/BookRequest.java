@@ -27,10 +27,16 @@ public class BookRequest implements Request {
         return requester.getOwner().getName() + " poziadal o knihu " + wantedBook.getTitle() + " s ID: " + wantedBook.getID() + "\n";
     }
 
+    @Override
     public void acceptRequest(Worker paAccepter)
     {
         paAccepter.reserveBook(wantedBook);
         ((Reader)this.requester.getOwner()).addBook(wantedBook);
+    }
+
+    @Override
+    public void declineRequest(String s) {
+        ((Reader)requester.getOwner()).addMessage(s);
     }
 
 }
