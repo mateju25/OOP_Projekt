@@ -10,13 +10,13 @@ import java.security.MessageDigest;
 import java.util.LinkedList;
 
 public class AdultReader implements Reader, Serializable {
-    private int idNumber;
+    private final int dataId;
     private final String name;
-    private final LinkedList<Book> myBooks = new LinkedList<Book>();
-    private final LinkedList<Message> myMessages = new LinkedList<Message>();
+    private LinkedList<Book> myBooks = new LinkedList<Book>();
+    private LinkedList<Message> myMessages = new LinkedList<Message>();
 
     public AdultReader(int idNumber, String name) {
-        this.idNumber = idNumber;
+        this.dataId = idNumber;
         this.name = name;
     }
     @Override
@@ -27,17 +27,13 @@ public class AdultReader implements Reader, Serializable {
     public LinkedList<Book> getMyBooks() {
         return myBooks;
     }
+    public void setMyBooks(LinkedList<Book> list) {
+        myBooks = list;
+    }
     public LinkedList<Message> getMyMessages() {
         return myMessages;
     }
 
-    public void setIdNumber(int idNumber) {
-        this.idNumber = idNumber;
-    }
-    public int getIdNumber()
-    {
-        return idNumber;
-    }
     public String getName()
     {
         return name;
@@ -48,8 +44,8 @@ public class AdultReader implements Reader, Serializable {
     }
 
     @Override
-    public void addMessage(String s) {
-        myMessages.add(new Message(s));
+    public void addMessage(Message m) {
+        myMessages.add(m);
     }
 
     public String startScene() {
@@ -58,8 +54,14 @@ public class AdultReader implements Reader, Serializable {
 
     public String getInfo()
     {
-        return String.format("%4d - Zakaznik(Dospely):  %s",(this).idNumber, (this).getName());
+        return String.format("%4d - Zakaznik(Dospely):  %s", this.dataId, (this).getName());
     }
+
+    @Override
+    public int getID() {
+        return 0;
+    }
+
 }
 
 

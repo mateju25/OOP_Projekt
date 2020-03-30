@@ -3,14 +3,21 @@ package Services;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
+import Products.AdultBook;
 import Products.Book;
 import Products.ChildBook;
 
 import java.io.*;
 import java.util.LinkedList;
 
-public class BookSystem implements SimpleSystem {
+public class BookSystem implements SimpleSystem, Serializable {
     private LinkedList<Book> listBook = new LinkedList<Book>();
+    private static int maxID = 0;
+
+    @Override
+    public LinkedList getListAdmin() {
+        return listBook;
+    }
 
     @Override
     public LinkedList getList(AdultReader person) {
@@ -40,9 +47,15 @@ public class BookSystem implements SimpleSystem {
         }
         return null;
     }
-    public void addBook(Book paBook) {
-        listBook.add(paBook);
+    public void addNewChildBook(String title, int pages, String ISBN) {
+        listBook.add(new ChildBook(maxID, title, pages, ISBN));
+        maxID++;
     }
+    public void addNewAdultBook(String title, int pages, String ISBN)  {
+        listBook.add(new AdultBook(maxID, title, pages, ISBN));
+        maxID++;
+    }
+
 
 
 

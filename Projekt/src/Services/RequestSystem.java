@@ -1,5 +1,6 @@
 package Services;
 
+import Library.BookRequest;
 import Library.Request;
 import People.AdultReader;
 import People.ChildReader;
@@ -9,9 +10,10 @@ import Products.Book;
 import java.io.*;
 import java.util.LinkedList;
 
-public class RequestSystem implements SimpleSystem  {
+public class RequestSystem implements SimpleSystem, Serializable  {
     private LinkedList<Request> listReq = new LinkedList<Request>();
     private int currReq = 0;
+    private static int maxId = 0;
 
     public Request nextRequest() {
         if (currReq + 1 >= listReq.size())
@@ -43,10 +45,16 @@ public class RequestSystem implements SimpleSystem  {
         }
         return false;
     }
-    public void addReq(Request paReq) {
-        listReq.add(paReq);
+    public void addNewBookReq(Book paBook, Account paRequester) {
+        listReq.add(new BookRequest(maxId, paBook, paRequester));
+        maxId++;
     }
 
+
+    @Override
+    public LinkedList getListAdmin() {
+        return listReq;
+    }
 
     @Override
     public LinkedList getList(AdultReader person) {

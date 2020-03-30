@@ -2,6 +2,7 @@ package LogInScene;
 
 import Library.Request;
 import People.Worker;
+import Products.Message;
 import Services.Account;
 import Services.AlertSystem;
 import javafx.event.ActionEvent;
@@ -63,11 +64,10 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void prevRequestButton(ActionEvent event) {
-        Request req = lib.getSysReq().beginRequest();
         nextReq.setDisable(false);
-        if (req != null) {
+        if (lib.getSysReq().beginRequest() != null) {
             plainText.clear();
-            plainText.appendText(req.showMessage());
+            plainText.appendText(lib.getSysReq().beginRequest().showMessage());
             acceptButton.setDisable(false);
             declineButton.setDisable(false);
             accountInfo.setDisable(false);
@@ -80,8 +80,8 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void acceptRequestButton(ActionEvent event) throws IOException {
-        Request req = lib.getSysReq().getCurrRequest();
-        req.acceptRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
+        Request reg = lib.getSysReq().getCurrRequest();
+        reg.acceptRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
         lib.getSysReq().deleteRequest();
         plainText.clear();
         if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0)
@@ -98,8 +98,7 @@ public class RequestController extends SimpleController{
 
     @FXML
     private void declineRequestButton(ActionEvent event) throws IOException {
-        Request req = lib.getSysReq().getCurrRequest();
-        req.declineRequest("Vaša žiadost o knihu " + req.getWantedBook().getTitle() + "bola zamietnutá.");
+        lib.getSysReq().getCurrRequest().declineRequest();
         lib.getSysReq().deleteRequest();
         plainText.clear();
         if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0)

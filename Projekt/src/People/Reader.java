@@ -6,7 +6,8 @@ import Products.Message;
 import java.util.LinkedList;
 
 public interface Reader extends Human {
-    LinkedList<Book> getMyBooks();
     void addBook(Book paBook);
-    void addMessage(String s);
+    void setMyBooks(LinkedList<Book> list);
+    LinkedList<Book> getMyBooks();
+    void addMessage(Message m);
 }

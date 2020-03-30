@@ -43,23 +43,20 @@ public class RegisterSceneController extends SimpleController {
                 AlertSystem errorWindow = new AlertSystem("Pozor", "Už existuje používateľ s rovnakým menom");
             }
             else {
-                Account acc = null;
                 switch ((String) comboBox.getSelectionModel().getSelectedItem()) {
                     case ("Detské konto"): {
-                        acc = new Account(new ChildReader(lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());
+                        lib.getSysAcc().addNewUserChildReader(nameText.getText(), loginText.getText(), passText.getText());
                         break;
                     }
                     case ("Konto pre dospelých"): {
-                        acc = new Account(new AdultReader(lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());
+                        lib.getSysAcc().addNewUserAdultReader(nameText.getText(), loginText.getText(), passText.getText());
                         break;
                     }
                     case ("Konto pre pracovníkov"): {
-                        acc = new Account(new Librarian(lib.getSysAcc().countOfUsers(), nameText.getText()), loginText.getText(), passText.getText());
+                        lib.getSysAcc().addNewUserWorker(nameText.getText(), loginText.getText(), passText.getText());
                         break;
                     }
                 }
-                lib.getSysAcc().addUser(acc);
-
                 AlertSystem errorWindow = new AlertSystem("Informácia", "Účet vytvorený");
 
                 FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));

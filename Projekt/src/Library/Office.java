@@ -8,11 +8,12 @@ import Products.Book;
 import Products.ChildBook;
 import Services.*;
 import java.io.*;
+import java.util.LinkedList;
 
 public class Office {
-    private final AccountSystem sysAcc = new AccountSystem();
-    private final BookSystem sysBook = new BookSystem();
-    private final RequestSystem sysReq = new RequestSystem();
+    private AccountSystem sysAcc = new AccountSystem();
+    private BookSystem sysBook = new BookSystem();
+    private RequestSystem sysReq = new RequestSystem();
 
     public AccountSystem getSysAcc() {
         return sysAcc;
@@ -28,20 +29,22 @@ public class Office {
 
     //constructor
     public Office() {
-        Account acc = new Account(new ChildReader(100, "Matej Delinčák"), "x", "x");
-        sysAcc.addUser(acc);
-        sysAcc.addUser(new Account(new AdultReader(101, "Peter Plevko"), "y", "x"));
-        sysAcc.addUser(new Account(new Librarian(102, "Pirky"), "z", "x"));
+        /*sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
+        sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
+        sysAcc.addNewUserWorker("Pirky", "z", "x");
 
+        sysBook.addNewChildBook("Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
+        sysBook.addNewAdultBook("Teória literatúry", 254, "ISBN 80-85684-05-5");
+        sysBook.addNewAdultBook("Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");
 
+        sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
 
-        Book skuska = new ChildBook("Rozprávky Hansa Christiana Andersena", 592, 1, "ISBN 80-7145-980-1");
-        sysBook.addBook(skuska);
-        sysBook.addBook(new AdultBook("Teória literatúry", 254, 2, "ISBN 80-85684-05-5"));
-        sysBook.addBook(new AdultBook("Psychológia a pedagogika dieťaťa", 292, 3, "ISBN 80-7178-585-7"));
+        serializeOffice();*/
+        deserializeOffice();
 
-        sysReq.addReq(new BookRequest(skuska, acc));
+    }
 
+    public void serializeOffice() {
         try {
             sysAcc.serialize();
             sysBook.serialize();
@@ -50,10 +53,33 @@ public class Office {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public void deserializeOffice() {
         try {
             sysAcc.deserialize();
             sysBook.deserialize();
+            //repair connections
+            AccountSystem temporarySys = sysAcc;
+            for (Account acc: (LinkedList<Account>) temporarySys.getListAdmin()) {
+                if (acc.getOwner() instanceof Reader)
+                {
+                    LinkedList<Book> temp = ((People.Reader) acc.getOwner()).getMyBooks();
+                    ((People.Reader) acc.getOwner()).setMyBooks(null);
+                    for (Book b: temp) {
+                        ((People.Reader) acc.getOwner()).addBook(sysBook.findBook(b.getID()));
+                    }
+                }
+            }
+            sysAcc = temporarySys;
+
             sysReq.deserialize();
+            //repair connections
+            RequestSystem temporarySys2 = sysReq;
+            sysReq = new RequestSystem();
+            for (Request req: (LinkedList<Request>) temporarySys2.getListAdmin()) {
+                sysReq.addNewBookReq(sysBook.findBook(req.getWantedBook().getID()), sysAcc.findAccount(req.getRequester().getOwner().getID()));
+            }
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

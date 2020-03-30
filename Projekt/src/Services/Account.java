@@ -7,10 +7,9 @@ import java.io.Serializable;
 public class Account implements Serializable {
     private final String login;
     private final String password;
-    private final Human owner;
+    private Human owner;
     private int loginState;
-    private final double bill;
-
+    private double bill;
 
     public double getBill() {
         return bill;
@@ -19,6 +18,7 @@ public class Account implements Serializable {
 
     public Human getOwner()
     {
+
         return owner;
     }
     public String getLogin()
@@ -64,7 +64,7 @@ public class Account implements Serializable {
     {
         String s;
         if(owner instanceof Librarian)
-            s = String.format("%4d - Pracovnik: %s",((Librarian)(this.owner)).getWorkNumber(), ((Librarian)(this.owner)).getName());
+            s = String.format("%4d - Pracovnik: %s",((Librarian)(this.owner)).getID(), ((Librarian)(this.owner)).getName());
         else
             s = String.format("%4d - Zakaznik: %s",((Reader)(this.owner)).getName(), ((Librarian)(this.owner)).getName());
         return s;

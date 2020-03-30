@@ -5,9 +5,11 @@ import People.ChildReader;
 import People.Librarian;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public interface SimpleSystem {
+public interface SimpleSystem extends Serializable {
+    LinkedList getListAdmin();
     LinkedList getList(AdultReader person);
     LinkedList getList(ChildReader person);
     LinkedList getList(Librarian person);

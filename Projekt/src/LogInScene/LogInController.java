@@ -55,6 +55,7 @@ public class LogInController extends SimpleController {
     @FXML
     private void quitButton(ActionEvent event) {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        lib.serializeOffice();
         window.close();
     }
 

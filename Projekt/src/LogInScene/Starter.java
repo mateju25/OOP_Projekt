@@ -8,14 +8,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Starter extends Application {
-    private final Office lib = new Office();
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
         Parent root = loader.load();
         LogInController logInController = loader.getController();
-        logInController.transferData(this.lib);
+        logInController.transferData(new Office());
 
         primaryStage.setTitle("LibBook");
         primaryStage.setScene(new Scene(root));

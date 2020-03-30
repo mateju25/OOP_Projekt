@@ -5,23 +5,23 @@ import java.io.Serializable;
 public abstract class Book implements Serializable {
 	protected final String title;
 	protected final int numOfPages;
-	protected final int ID;
+	protected final int dataId;
 	protected final String ISBN;
 	protected boolean reserved;
 
 	public int getID() {
-		return ID;
+		return dataId;
 	}
 	public String getTitle()
 	{
 		return this.title;
 	}
 
-	protected Book(String paTitle, int paNumOfPages, int paID, String paISBN)
+	protected Book(int paID, String paTitle, int paNumOfPages, String paISBN)
 	{
 		this.numOfPages = paNumOfPages;
 		this.title = paTitle;
-		this.ID = paID;
+		this.dataId = paID;
 		this.ISBN = paISBN;
 		this.reserved = false;
 	}

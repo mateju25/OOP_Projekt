@@ -3,11 +3,13 @@ package Library;
 import People.Reader;
 import People.Worker;
 import Products.Book;
+import Products.Message;
 import Services.Account;
 
 public class BookRequest implements Request {
-    private final Book wantedBook;
-    private final Account requester;
+    private final int dataId;
+    private Book wantedBook;
+    private Account requester;
 
     public Account getRequester() {
         return requester;
@@ -16,10 +18,11 @@ public class BookRequest implements Request {
         return wantedBook;
     }
 
-    public BookRequest(Book paBook, Account paRequester)
+    public BookRequest(int paId, Book paBook, Account paRequester)
     {
         this.wantedBook = paBook;
         this.requester = paRequester;
+        this.dataId = paId;
     }
 
     @Override
@@ -32,11 +35,12 @@ public class BookRequest implements Request {
     {
         paAccepter.reserveBook(wantedBook);
         ((Reader)this.requester.getOwner()).addBook(wantedBook);
+        ((Reader)requester.getOwner()).addMessage(new Message("Vaša žiadost o knihu " + this.wantedBook.getTitle() + " bola prijatá."));
     }
 
     @Override
-    public void declineRequest(String s) {
-        ((Reader)requester.getOwner()).addMessage(s);
+    public void declineRequest() {
+        ((Reader)requester.getOwner()).addMessage(new Message("Vaša žiadost o knihu " + this.wantedBook.getTitle() + " bola zamietnutá."));
     }
 
 }

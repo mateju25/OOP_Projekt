@@ -86,8 +86,8 @@ public class LogOutController extends SimpleController{
             AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si žiadnu knihu");
         }
         else {
-            if (lib.getSysReq().existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()) == false)
-                lib.getSysReq().addReq(new BookRequest(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser()));
+            if (!lib.getSysReq().existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()))
+                lib.getSysReq().addNewBookReq(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser());
             else
             {
                 AlertSystem alertWindow = new AlertSystem("Pozor", "Zadana požiadavka už existuje");

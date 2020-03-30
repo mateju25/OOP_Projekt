@@ -9,11 +9,11 @@ import java.io.Serializable;
 import java.util.LinkedList;
 
 public class Librarian implements Worker, Serializable {
-    private final int workNumber;
+    private final int dataId;
     private final String name;
 
-    public Librarian(int workNumber, String name) {
-        this.workNumber = workNumber;
+    public Librarian(int dataId, String name) {
+        this.dataId = dataId;
         this.name = name;
     }
 
@@ -23,10 +23,6 @@ public class Librarian implements Worker, Serializable {
     }
 
 
-    public int getWorkNumber()
-    {
-        return workNumber;
-    }
     public String getName()
     {
         return name;
@@ -44,7 +40,12 @@ public class Librarian implements Worker, Serializable {
 
     public String getInfo()
     {
-        return String.format("%4d - Pracovnik: %s",(this).getWorkNumber(), (this).getName());
+        return String.format("%4d - Pracovnik: %s",(this).dataId, (this).getName());
+    }
+
+    @Override
+    public int getID() {
+        return 0;
     }
 
     @Override
