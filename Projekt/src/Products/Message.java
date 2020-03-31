@@ -12,6 +12,7 @@ public class Message implements Serializable {
     }
 
     //getters
+    //vrati info o sprave vo forme Stringu
     public String getInfo() {
         return info;
     }

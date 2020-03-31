@@ -13,6 +13,7 @@ public interface Reader extends Human {
     void setMyBooks(LinkedList<Book> list);
     //methods
     void addBook(Book paBook);
+    void deleteBook(Book paBook);
     void addMessage(Message m);
     void readMessage();
 }

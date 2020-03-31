@@ -10,14 +10,15 @@ public class AdultBook extends Book  implements Serializable {
 	}
 
 	//getters
+	//vrati info o knihe vo forme Stringu
 	@Override
 	public String getInfo() {
 		{
 			String s;
 			if(reserved)
-				s = String.format("%3d: Kniha pre doslepých: %-40s %-18s - %s", this.dataId, this.title, this.ISBN, "rezervovaná");
+				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre doslepých", this.dataId, "rezervovaná", this.title, this.ISBN);
 			else
-				s = String.format("%3d: Kniha pre doslepých: %-40s %-18s - %s", this.dataId, this.title, this.ISBN, "voľná");
+				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre doslepých", this.dataId, "voľná", this.title, this.ISBN);
 			return s;
 		}
 	}

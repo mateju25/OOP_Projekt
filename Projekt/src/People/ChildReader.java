@@ -2,7 +2,7 @@ package People;
 
 import Products.Book;
 import Products.Message;
-import Services.SimpleSystem;
+import Systems.SimpleSystem;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -59,6 +59,10 @@ public class ChildReader implements Reader, Serializable {
     @Override
     public void addBook(Book paBook){
         this.myBooks.add(paBook);
+    }
+    @Override
+    public void deleteBook(Book paBook){
+        this.myBooks.remove(paBook);
     }
     @Override
     public void addMessage(Message m) {

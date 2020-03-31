@@ -1,7 +1,12 @@
 package Library;
 
+import Products.Account;
 import Products.Book;
-import Services.*;
+import Products.Request;
+import Systems.AccountSystem;
+import Systems.BookSystem;
+import Systems.RequestSystem;
+
 import java.io.*;
 import java.util.LinkedList;
 
@@ -13,32 +18,31 @@ public class Office {
     public AccountSystem getSysAcc() {
         return sysAcc;
     }
-
     public BookSystem getSysBook() {
         return sysBook;
     }
-
     public RequestSystem getSysReq() {
         return sysReq;
     }
 
     //constructor
     public Office() {
-        sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
+        /*sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
         sysAcc.addNewUserWorker("Pirky", "z", "x");
 
         sysBook.addNewChildBook("Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
         sysBook.addNewAdultBook("Teória literatúry", 254, "ISBN 80-85684-05-5");
-        sysBook.addNewAdultBook("Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");
+        sysBook.addNewAdultBook("Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");*/
 
-        sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
+        //sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
 
         serializeOffice();
         deserializeOffice();
 
     }
 
+    //serializuje celu kniznicu
     public void serializeOffice() {
         try {
             sysAcc.serialize();
@@ -50,6 +54,7 @@ public class Office {
         }
     }
 
+    //deserializuje celu kniznicu a opravi prepojenia medzi objektami, ktore boli stratene pri serializacii
     public void deserializeOffice() {
         try {
             sysAcc.deserialize();

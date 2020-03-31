@@ -28,9 +28,11 @@ public abstract class Book implements Serializable {
 	{
 		return this.title;
 	}
+	//vrati info o knihe vo forme Stringu
 	public abstract String getInfo();
 
 	//setters
+	//nastavi rezervaciu na rezervovane
 	public void setReserve(boolean paRes)
 	{
 		this.reserved = paRes;

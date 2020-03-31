@@ -1,7 +1,8 @@
 package People;
 
 import Products.Book;
-import Services.SimpleSystem;
+import Products.Account;
+import Systems.SimpleSystem;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -45,8 +46,9 @@ public class Librarian implements Worker, Serializable {
         paBook.setReserve(true);
     }
     @Override
-    public void unreserveBook(Book paBook){
+    public void unreserveBook(Book paBook, Account owner){
         paBook.setReserve(false);
+        ((Reader)owner.getOwner()).deleteBook(paBook);
     }
     @Override
     public String startScene() {

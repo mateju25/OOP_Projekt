@@ -1,6 +1,6 @@
 package People;
 
-import Services.SimpleSystem;
+import Systems.SimpleSystem;
 import java.util.LinkedList;
 
 public interface Human {
