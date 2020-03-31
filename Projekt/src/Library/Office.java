@@ -24,7 +24,7 @@ public class Office {
 
     //constructor
     public Office() {
-        /*sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
+        sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
         sysAcc.addNewUserWorker("Pirky", "z", "x");
 
@@ -34,7 +34,7 @@ public class Office {
 
         sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
 
-        serializeOffice();*/
+        serializeOffice();
         deserializeOffice();
 
     }

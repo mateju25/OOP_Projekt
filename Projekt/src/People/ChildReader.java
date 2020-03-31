@@ -65,6 +65,10 @@ public class ChildReader implements Reader, Serializable {
         this.myMessages.add(m);
     }
     @Override
+    public void readMessage() {
+        myMessages = new LinkedList<Message>();;
+    }
+    @Override
     public String startScene() {
         return "logOutSceneClient.fxml";
     }

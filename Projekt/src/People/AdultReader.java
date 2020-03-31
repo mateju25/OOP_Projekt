@@ -67,6 +67,10 @@ public class AdultReader implements Reader, Serializable {
     public String startScene() {
         return "logOutSceneClient.fxml";
     }
+    @Override
+    public void readMessage() {
+        myMessages = null;
+    }
 }
 
 

@@ -6,12 +6,7 @@ import Products.Message;
 import Services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -20,6 +15,19 @@ public class LogOutController extends SimpleController{
     private ListView plainText;
     @FXML
     private Label billText;
+    @FXML
+    private Label newMessagesText;
+
+    public void setMessText()
+    {
+        if (((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages() == null)
+            newMessagesText.setText("Nové správy: " + 0);
+        else
+            if (((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages().size() != 0)
+                newMessagesText.setText("Nové správy: " + ((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages().size());
+            else
+                newMessagesText.setText("Nové správy: " + 0);
+    }
 
     @FXML
     public void initialize() {
@@ -80,6 +88,7 @@ public class LogOutController extends SimpleController{
 
     @FXML
     private void showNewMessages(ActionEvent event) {
+        if (((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages() == null) return;
         for (Message m : ((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages()) {
             AlertSystem alertWindow = new AlertSystem("Nová správa", m.getInfo());
         }
@@ -96,7 +105,13 @@ public class LogOutController extends SimpleController{
             plainText.getItems().clear();
             plainText.getItems().addAll(((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyBooks());
         }
-
     }
+
+    @FXML
+    private void markAsRead(ActionEvent event) {
+        ((Reader)lib.getSysAcc().getCurrUser().getOwner()).readMessage();
+        setMessText();
+    }
+
 }
 

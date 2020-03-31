@@ -40,7 +40,9 @@ public class SimpleController {
             case ("logOutSceneClient.fxml") : {
                 LogOutController controller = loader.getController();
                 controller.transferData(this.lib);
+                controller.setMessText();
                 break;
+
             }
             case ("logOutSceneLibrarian.fxml") : {
                 LogOutController controller = loader.getController();
