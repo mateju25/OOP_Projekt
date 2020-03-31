@@ -3,6 +3,7 @@ package Services;
 import javafx.scene.control.Alert;
 
 public class AlertSystem {
+    //constructor
     public AlertSystem(String paTitle, String paMessage)
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

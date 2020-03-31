@@ -1,6 +1,5 @@
 package LogInScene;
 
-import Library.BookRequest;
 import People.Reader;
 import Products.Book;
 import Products.Message;
@@ -44,15 +43,7 @@ public class LogOutController extends SimpleController{
     private void logOutButtonClicked(ActionEvent event) throws IOException
     {
         lib.getSysAcc().getCurrUser().userLogOut();
-        FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
-        Parent root = loader.load();
-        LogInController logInController = loader.getController();
-        logInController.transferData(this.lib);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(new Scene(root));
-        window.show();
+        switchScene("logInScene.fxml", event);
     }
     @FXML
     private void showAccountsButton(ActionEvent event) {
@@ -68,15 +59,7 @@ public class LogOutController extends SimpleController{
 
     @FXML
     private void requestButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader((getClass().getResource("requestScene.fxml")));
-        Parent root = loader.load();
-        RequestController logInController = loader.getController();
-        logInController.transferData(this.lib);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(new Scene(root));
-        window.show();
+        switchScene("requestScene.fxml", event);
     }
 
     @FXML
@@ -97,7 +80,7 @@ public class LogOutController extends SimpleController{
 
     @FXML
     private void showNewMessages(ActionEvent event) {
-        for (Message m : lib.getSysAcc().getCurrUser().getOwner().getMyMessages()) {
+        for (Message m : ((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages()) {
             AlertSystem alertWindow = new AlertSystem("Nová správa", m.getInfo());
         }
     }

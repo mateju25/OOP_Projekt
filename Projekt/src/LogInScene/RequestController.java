@@ -2,7 +2,6 @@ package LogInScene;
 
 import Library.Request;
 import People.Worker;
-import Products.Message;
 import Services.Account;
 import Services.AlertSystem;
 import javafx.event.ActionEvent;
@@ -30,20 +29,11 @@ public class RequestController extends SimpleController{
     private Button accountInfo;
     @FXML
     private void goBackButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getSysAcc().getCurrUser().getOwner().startScene())));
-        Parent root = loader.load();
-        LogOutController logOutController = loader.getController();
-        logOutController.transferData(this.lib);
-        Scene scene = new Scene(root);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(scene);
-        window.show();
+        switchScene(lib.getSysAcc().getCurrUser().getOwner().startScene(), event);
     }
 
     @FXML
-    private void nextRequestButton(ActionEvent event) throws IOException {
+    private void nextRequestButton(ActionEvent event) {
         Request req = lib.getSysReq().nextRequest();
         if (req != null) {
             plainText.clear();
@@ -79,32 +69,27 @@ public class RequestController extends SimpleController{
     }
 
     @FXML
-    private void acceptRequestButton(ActionEvent event) throws IOException {
+    private void acceptRequestButton(ActionEvent event) {
         Request reg = lib.getSysReq().getCurrRequest();
         reg.acceptRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
         lib.getSysReq().deleteRequest();
         plainText.clear();
-        if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0)
-        {
-            acceptButton.setDisable(true);
-            declineButton.setDisable(true);
-            declineButton.setDisable(true);
-            accountInfo.setDisable(true);
-            nextReq.setDisable(true);
-        }
-        else
-            nextRequestButton(event);
+        setButttons(event);
     }
 
     @FXML
-    private void declineRequestButton(ActionEvent event) throws IOException {
+    private void declineRequestButton(ActionEvent event) {
         lib.getSysReq().getCurrRequest().declineRequest();
         lib.getSysReq().deleteRequest();
         plainText.clear();
+        setButttons(event);
+    }
+
+    private void setButttons(ActionEvent event)
+    {
         if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0)
         {
             acceptButton.setDisable(true);
-            declineButton.setDisable(true);
             declineButton.setDisable(true);
             accountInfo.setDisable(true);
             nextReq.setDisable(true);
@@ -112,7 +97,6 @@ public class RequestController extends SimpleController{
         else
             nextRequestButton(event);
     }
-
 
     @FXML
     private void showUserData(ActionEvent event) {

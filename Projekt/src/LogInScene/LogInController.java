@@ -21,16 +21,7 @@ public class LogInController extends SimpleController {
     @FXML
     private void logInButtonClicked(ActionEvent event) throws IOException {
         if(lib.getSysAcc().logUser(loginText.getText(), passText.getText()) == 1) {
-            FXMLLoader loader = new FXMLLoader((getClass().getResource(lib.getSysAcc().getCurrUser().getOwner().startScene())));
-            Parent root = loader.load();
-            LogOutController logOutController = loader.getController();
-            logOutController.transferData(this.lib);
-            Scene scene = new Scene(root);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            window.setScene(scene);
-            window.show();
+            switchScene(lib.getSysAcc().getCurrUser().getOwner().startScene(), event);
         }
         else {
             AlertSystem wrongloginWindow = new AlertSystem("Pozor", "Zadaj správny login alebo heslo");
@@ -39,16 +30,7 @@ public class LogInController extends SimpleController {
 
     @FXML
     private void newUserButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader((getClass().getResource("registerScene.fxml")));
-        Parent root = loader.load();
-        RegisterSceneController registerSceneController = loader.getController();
-        registerSceneController.transferData(this.lib);
-        Scene scene = new Scene(root);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(scene);
-        window.show();
+        switchScene("registerScene.fxml", event);
     }
 
 

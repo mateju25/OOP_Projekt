@@ -11,10 +11,33 @@ import java.io.*;
 import java.util.LinkedList;
 
 public class RequestSystem implements SimpleSystem, Serializable  {
+    //atributes
     private LinkedList<Request> listReq = new LinkedList<Request>();
     private int currReq = 0;
     private static int maxId = 0;
 
+    //getters
+    public Request getCurrRequest() {
+        return listReq.get(currReq);
+    }
+    @Override
+    public LinkedList getListAdmin() {
+        return listReq;
+    }
+    @Override
+    public LinkedList getList(AdultReader person) {
+        return null;
+    }
+    @Override
+    public LinkedList getList(ChildReader person) {
+        return null;
+    }
+    @Override
+    public LinkedList getList(Librarian person) {
+        return listReq;
+    }
+
+    //methods for GUI
     public Request nextRequest() {
         if (currReq + 1 >= listReq.size())
             return null;
@@ -30,9 +53,6 @@ public class RequestSystem implements SimpleSystem, Serializable  {
         }
         else
             return null;
-    }
-    public Request getCurrRequest() {
-        return listReq.get(currReq);
     }
     public void deleteRequest() {
         listReq.remove(currReq);
@@ -50,27 +70,7 @@ public class RequestSystem implements SimpleSystem, Serializable  {
         maxId++;
     }
 
-
-    @Override
-    public LinkedList getListAdmin() {
-        return listReq;
-    }
-
-    @Override
-    public LinkedList getList(AdultReader person) {
-        return null;
-    }
-
-    @Override
-    public LinkedList getList(ChildReader person) {
-        return null;
-    }
-
-    @Override
-    public LinkedList getList(Librarian person) {
-        return listReq;
-    }
-
+    //serialization
     public void serialize() throws IOException {
         ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("requests.out"));
         outB.writeObject(listReq);

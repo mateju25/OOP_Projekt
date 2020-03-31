@@ -1,9 +1,5 @@
 package LogInScene;
 
-import People.AdultReader;
-import People.ChildReader;
-import People.Librarian;
-import Services.Account;
 import Services.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,22 +54,7 @@ public class RegisterSceneController extends SimpleController {
                     }
                 }
                 AlertSystem errorWindow = new AlertSystem("Informácia", "Účet vytvorený");
-
-                FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
-                Parent root = null;
-                try {
-                    root = loader.load();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                LogInController logInController = loader.getController();
-                logInController.transferData(this.lib);
-                Scene scene = new Scene(root);
-
-                Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-
-                window.setScene(scene);
-                window.show();
+                switchScene("logInScene.fxml", actionEvent);
             }
         }
 

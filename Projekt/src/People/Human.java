@@ -1,17 +1,16 @@
 package People;
 
-import Products.Book;
-import Products.Message;
 import Services.SimpleSystem;
-
 import java.util.LinkedList;
 
 public interface Human {
+    //getters
     String getName();
-    String startScene();
     String getInfo();
     int getID();
-    LinkedList<Message> getMyMessages();
 
+    //visitor
     LinkedList accept(SimpleSystem v);
+    //GUI
+    String startScene();
 }

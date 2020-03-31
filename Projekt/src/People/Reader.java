@@ -9,5 +9,6 @@ public interface Reader extends Human {
     void addBook(Book paBook);
     void setMyBooks(LinkedList<Book> list);
     LinkedList<Book> getMyBooks();
+    LinkedList<Message> getMyMessages();
     void addMessage(Message m);
 }

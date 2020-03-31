@@ -1,11 +1,6 @@
 package Library;
 
-import People.AdultReader;
-import People.ChildReader;
-import People.Librarian;
-import Products.AdultBook;
 import Products.Book;
-import Products.ChildBook;
 import Services.*;
 import java.io.*;
 import java.util.LinkedList;

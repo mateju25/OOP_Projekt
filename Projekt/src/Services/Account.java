@@ -5,72 +5,65 @@ import People.*;
 import java.io.Serializable;
 
 public class Account implements Serializable {
+    //atributes
     private final String login;
     private final String password;
-    private Human owner;
+    private final Human owner;
     private int loginState;
     private double bill;
 
+    //getters
     public double getBill() {
-        return bill;
+        return this.bill;
     }
-
-
-    public Human getOwner()
-    {
-
-        return owner;
+    public Human getOwner() {
+        return this.owner;
     }
     public String getLogin()
     {
         return login;
     }
-
-    public Account(Human paNewOwner, String paLogin, String paPass)
-    {
-        owner = paNewOwner;
-        login = paLogin;
-        //password = paPass;
-
-        //
-        password = "x";
-        //
-        if(paNewOwner instanceof ChildReader)
-            bill = 0;
+    public String getInfo() {
+        String s;
+        if(owner instanceof Librarian)
+            s = String.format("%4d - Pracovnik: %s",((Librarian)(this.owner)).getID(), ((Librarian)(this.owner)).getName());
         else
-            bill = -2.50;
-        loginState = 0;
-        System.out.println(login);
-        System.out.println(password);
+            s = String.format("%4d - Zakaznik: %s",((Reader)(this.owner)).getID(), ((Librarian)(this.owner)).getName());
+        return s;
     }
 
-
-
-
-    public int userLogin(String paLogin, String paPass)
-    {
+    //constructors
+    public Account(ChildReader paNewOwner, String paLogin, String paPass) {
+        this.owner = paNewOwner;
+        this.login = paLogin;
+        this.password = paPass;
+        this.bill = -2.50;
+        loginState = 0;
+    }
+    public Account(AdultReader paNewOwner, String paLogin, String paPass) {
+        this.owner = paNewOwner;
+        this.login = paLogin;
+        this.password = paPass;
+        this.bill = 0;
+        this.loginState = 0;
+    }
+    public Account(Librarian paNewOwner, String paLogin, String paPass) {
+        this.owner = paNewOwner;
+        this.login = paLogin;
+        this.password = paPass;
+        this.bill = 0;
+        this.loginState = 0;
+    }
+    //methods
+    public int userLogin(String paLogin, String paPass) {
         if ((paLogin.equals(login)) && (password.equals(paPass))) {
             loginState = 1;
         }
         return loginState;
     }
-
     public void userLogOut()
     {
         loginState = 0;
     }
-
-    public String getInfo()
-    {
-        String s;
-        if(owner instanceof Librarian)
-            s = String.format("%4d - Pracovnik: %s",((Librarian)(this.owner)).getID(), ((Librarian)(this.owner)).getName());
-        else
-            s = String.format("%4d - Zakaznik: %s",((Reader)(this.owner)).getName(), ((Librarian)(this.owner)).getName());
-        return s;
-    }
-
-
-
 }
 

@@ -3,21 +3,38 @@ package Services;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
-import Products.Book;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class AccountSystem implements SimpleSystem, Serializable {
-
+    //atributes
     private LinkedList<Account> listAcc = new LinkedList<Account>();
     private Account currUser;
     private static int maxID = 0;
 
+    //getters
     public Account getCurrUser() {
         return currUser;
     }
+    @Override
+    public LinkedList getListAdmin() {
+        return listAcc;
+    }
+    @Override
+    public LinkedList getList(AdultReader person) {
+        return null;
+    }
+    @Override
+    public LinkedList getList(ChildReader person) {
+        return null;
+    }
+    @Override
+    public LinkedList getList(Librarian person) {
+        return listAcc;
+    }
 
+    //methods
     public int logUser(String paLogin, String paPass) {
         for (Account a : listAcc)
         {
@@ -55,32 +72,8 @@ public class AccountSystem implements SimpleSystem, Serializable {
         listAcc.add(new Account(new Librarian(maxID, name), login, password));
         maxID++;
     }
-    public int countOfUsers()
-    {
-        return listAcc.size();
-    }
 
-
-    @Override
-    public LinkedList getListAdmin() {
-        return listAcc;
-    }
-
-    @Override
-    public LinkedList getList(AdultReader person) {
-        return null;
-    }
-
-    @Override
-    public LinkedList getList(ChildReader person) {
-        return null;
-    }
-
-    @Override
-    public LinkedList getList(Librarian person) {
-        return listAcc;
-    }
-
+    //serializaction
     public void serialize() throws IOException {
         ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
         outA.writeObject(listAcc);

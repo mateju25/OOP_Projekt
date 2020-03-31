@@ -11,20 +11,20 @@ import java.io.*;
 import java.util.LinkedList;
 
 public class BookSystem implements SimpleSystem, Serializable {
+    //atributes
     private LinkedList<Book> listBook = new LinkedList<Book>();
     private static int maxID = 0;
 
+    //getters
     @Override
     public LinkedList getListAdmin() {
         return listBook;
     }
-
     @Override
     public LinkedList getList(AdultReader person) {
 
         return listBook;
     }
-
     @Override
     public LinkedList getList(ChildReader person) {
         LinkedList<Book> childBooks = new LinkedList<Book>();
@@ -33,13 +33,13 @@ public class BookSystem implements SimpleSystem, Serializable {
         }
         return childBooks;
     }
-
     @Override
     public LinkedList getList(Librarian person) {
 
         return listBook;
     }
 
+    //methods
     public Book findBook(int paID) {
         for(Book book : listBook)
         {
@@ -56,9 +56,7 @@ public class BookSystem implements SimpleSystem, Serializable {
         maxID++;
     }
 
-
-
-
+    //serialization
     public void serialize() throws IOException {
         ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("books.out"));
         outB.writeObject(listBook);

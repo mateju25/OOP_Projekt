@@ -8,25 +8,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogInScene.LogOutController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogInScene.LogOutController">
 
-    <children>
-        <Pane fx:id="pane2" prefHeight="700.0" prefWidth="1000.0" stylesheets="@styles.css">
-            <children>
-                <Button fx:id="logOutButton" layoutX="889.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutButtonClicked" prefHeight="25.0" prefWidth="97.0" text="Odhlásiť sa" />
-            <Button fx:id="showBooks" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBooksButton" prefHeight="25.0" prefWidth="97.0" text="Zobraz knihy" />
-            <Button layoutX="635.0" layoutY="50.0" mnemonicParsing="false" onAction="#makeNewRequest" prefHeight="25.0" prefWidth="97.0" text="Rezervuj" />
-            <ListView fx:id="plainText" layoutX="14.0" layoutY="14.0" prefHeight="542.0" prefWidth="607.0" />
-            <Button fx:id="myBooksBut" layoutX="635.0" layoutY="89.0" mnemonicParsing="false" onAction="#myBookShow" prefHeight="25.0" prefWidth="97.0" text="Moje knihy" />
-            <Label fx:id="billText" layoutX="889.0" layoutY="50.0" prefHeight="25.0" prefWidth="97.0" />
-            <Button layoutX="746.0" layoutY="89.0" mnemonicParsing="false" onAction="#showNewMessages" prefHeight="25.0" prefWidth="97.0" text="Správy" />
-            </children>
-        </Pane>
-    </children>
     <columnConstraints>
-        <ColumnConstraints />
+        <ColumnConstraints/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints />
+        <RowConstraints/>
     </rowConstraints>
+    <Pane prefHeight="700.0" prefWidth="1000.0" stylesheets="@styles.css">
+        <Button layoutX="889.0" layoutY="14.0" mnemonicParsing="false"
+                onAction="#logOutButtonClicked" prefHeight="25.0" prefWidth="97.0" text="Odhlásiť sa"/>
+        <Button layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBooksButton"
+                prefHeight="25.0" prefWidth="97.0" text="Zobraz knihy"/>
+        <Button layoutX="635.0" layoutY="50.0" mnemonicParsing="false" onAction="#makeNewRequest" prefHeight="25.0"
+                prefWidth="97.0" text="Rezervuj"/>
+        <ListView fx:id="plainText" layoutX="14.0" layoutY="14.0" prefHeight="542.0" prefWidth="607.0"/>
+        <Button layoutX="635.0" layoutY="89.0" mnemonicParsing="false" onAction="#myBookShow"
+                prefHeight="25.0" prefWidth="97.0" text="Moje knihy"/>
+        <Label fx:id="billText" layoutX="889.0" layoutY="50.0" prefHeight="25.0" prefWidth="97.0"/>
+        <Button layoutX="746.0" layoutY="89.0" mnemonicParsing="false" onAction="#showNewMessages" prefHeight="25.0"
+                prefWidth="97.0" text="Správy"/>
+    </Pane>
 </GridPane>
