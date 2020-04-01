@@ -1,6 +1,8 @@
 package gui;
 
 import Systems.AlertSystem;
+import Systems.PasswordChecker;
+import Systems.WrongPasswordException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -35,6 +37,12 @@ public class RegisterSceneController extends SimpleController {
                 AlertSystem errorWindow = new AlertSystem("Pozor", "Už existuje používateľ s rovnakým menom");
             }
             else {
+                PasswordChecker checker = new PasswordChecker();
+                try {
+                    checker.checkPass(passText.getText());
+                } catch (WrongPasswordException e) {
+                    return;
+                }
                 switch ((String) comboBox.getSelectionModel().getSelectedItem()) {
                     case ("Detské konto"): {
                         lib.getSysAcc().addNewUserChildReader(nameText.getText(), loginText.getText(), passText.getText());
