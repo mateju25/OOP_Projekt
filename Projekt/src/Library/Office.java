@@ -27,13 +27,13 @@ public class Office {
 
     //constructor
     public Office() {
-        /*sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
+        sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
         sysAcc.addNewUserWorker("Pirky", "z", "x");
 
         sysBook.addNewChildBook("Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
-        sysBook.addNewAdultBook("Teória literatúry", 254, "ISBN 80-85684-05-5");
-        sysBook.addNewAdultBook("Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");*/
+        sysBook.addNewAdultBook("Teória literatúry", 254, "ISBN 80-85684-05-5", "Táto kniha je veľmi dobrá - odporúčam");
+        sysBook.addNewAdultBook("Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");
 
         //sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
 

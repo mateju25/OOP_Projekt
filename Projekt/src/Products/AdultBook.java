@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class AdultBook extends Book  implements Serializable {
 	//constructor
+	public AdultBook(int paId, String paTitle, int paNumOfPages, String paISBN, String review)
+	{
+		super(paId, paTitle, paNumOfPages, paISBN, review);
+	}
 	public AdultBook(int paId, String paTitle, int paNumOfPages, String paISBN)
 	{
 		super(paId, paTitle, paNumOfPages, paISBN);
@@ -22,5 +26,4 @@ public class AdultBook extends Book  implements Serializable {
 			return s;
 		}
 	}
-
 }

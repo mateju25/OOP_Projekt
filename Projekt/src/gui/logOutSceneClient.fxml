@@ -27,5 +27,6 @@
       <Label fx:id="newMessagesText" layoutX="889.0" layoutY="89.0" prefHeight="25.0" prefWidth="97.0" />
       <Button layoutX="760.0" layoutY="89.0" mnemonicParsing="false" onAction="#markAsRead" prefHeight="25.0" prefWidth="97.0" text="Prečítať" />
       <Button layoutX="760.0" layoutY="50.0" mnemonicParsing="false" onAction="#giveBookBack" prefHeight="25.0" prefWidth="97.0" text="Vráť knihu" />
+      <Button layoutX="885.0" layoutY="50.0" mnemonicParsing="false" onAction="#showReviews" text="Zobraz recenziu" />
     </Pane>
 </GridPane>

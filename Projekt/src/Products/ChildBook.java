@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class ChildBook extends Book implements Serializable {
 	//constructor
+	public ChildBook(int paId, String paTitle, int paNumOfPages, String paISBN, String review)
+	{
+		super(paId, paTitle, paNumOfPages, paISBN, review);
+	}
 	public ChildBook(int paId, String paTitle, int paNumOfPages, String paISBN)
 	{
 		super(paId, paTitle, paNumOfPages, paISBN);
@@ -22,4 +26,5 @@ public class ChildBook extends Book implements Serializable {
 			return s;
 		}
 	}
+
 }

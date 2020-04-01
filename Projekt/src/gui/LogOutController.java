@@ -126,6 +126,22 @@ public class LogOutController extends SimpleController{
         }
     }
 
+    //zobraz recenziiu oznacenej knihy
+    @FXML
+    private void showReviews(ActionEvent event) {
+        if (plainText.getSelectionModel().getSelectedItem() == null)
+        {
+            AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si žiadnu knihu");
+        }
+        else {
+            AlertSystem alertWindow;
+            if (((Book) plainText.getSelectionModel().getSelectedItem()).getReview() == null)
+                alertWindow = new AlertSystem("Informácia", "Táto kniha nemá recenziu.");
+            else
+                alertWindow = new AlertSystem("Informácia", ((Book) plainText.getSelectionModel().getSelectedItem()).getReview());
+        }
+    }
+
     //oznaci spravy ako precitane
     @FXML
     private void markAsRead(ActionEvent event) {

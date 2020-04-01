@@ -48,8 +48,16 @@ public class BookSystem implements SimpleSystem, Serializable {
         }
         return null;
     }
+    public void addNewChildBook(String title, int pages, String ISBN, String review) {
+        listBook.add(new ChildBook(maxID, title, pages, ISBN, review));
+        maxID++;
+    }
     public void addNewChildBook(String title, int pages, String ISBN) {
         listBook.add(new ChildBook(maxID, title, pages, ISBN));
+        maxID++;
+    }
+    public void addNewAdultBook(String title, int pages, String ISBN, String review)  {
+        listBook.add(new AdultBook(maxID, title, pages, ISBN, review));
         maxID++;
     }
     public void addNewAdultBook(String title, int pages, String ISBN)  {
