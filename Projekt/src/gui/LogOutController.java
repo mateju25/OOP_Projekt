@@ -17,6 +17,8 @@ public class LogOutController extends SimpleController{
     private ListView plainText;
     @FXML
     private Label newMessagesText;
+    @FXML
+    private Button markButton;
 
     //nastavi oznam o novych sprav
     public void setMessText()
@@ -111,6 +113,7 @@ public class LogOutController extends SimpleController{
         for (Message m : ((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages()) {
             AlertSystem alertWindow = new AlertSystem("Nová správa", m.getInfo());
         }
+        markButton.setDisable(false);
     }
 
     //zobraz moje knihy
@@ -147,6 +150,7 @@ public class LogOutController extends SimpleController{
     private void markAsRead(ActionEvent event) {
         ((Reader)lib.getSysAcc().getCurrUser().getOwner()).readMessage();
         setMessText();
+        markButton.setDisable(true);
         lib.serializeOffice();
     }
 

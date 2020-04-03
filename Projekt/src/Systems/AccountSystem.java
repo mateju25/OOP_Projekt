@@ -9,9 +9,8 @@ import Products.Account;
 import java.io.*;
 import java.util.LinkedList;
 
-public class AccountSystem implements SimpleSystem, Serializable {
+public class AccountSystem extends SimpleSystem implements Serializable {
     //atributes
-    private LinkedList<Account> listAcc = new LinkedList<Account>();
     private Account currUser;
     private static int maxID = 0;
 
@@ -22,33 +21,21 @@ public class AccountSystem implements SimpleSystem, Serializable {
     }
     //vrati prveho zamestnanca, ktory existuje v zozname
     public Account getFirstWorker() {
-        for (Account a: listAcc) {
-            if (a.getOwner() instanceof Worker) return a;
+        for (Account a: (LinkedList<Account>)list) {
+            if (((Account)a).getOwner() instanceof Worker) return a;
         }
         return null;
     }
     //vrati zoznam uctov na zaklade ziadatela
     @Override
-    public LinkedList getListAdmin() {
-        return listAcc;
-    }
-    @Override
-    public LinkedList getList(AdultReader person) {
-        return null;
-    }
-    @Override
-    public LinkedList getList(ChildReader person) {
-        return null;
-    }
-    @Override
     public LinkedList getList(Librarian person) {
-        return listAcc;
+        return (LinkedList<Account>)list;
     }
 
     //methods
     //prihlasi uzivatela
     public int logUser(String paLogin, String paPass) {
-        for (Account a : listAcc)
+        for (Account a : (LinkedList<Account>)list)
         {
             if (a.userLogin(paLogin, paPass) == 1)
             {
@@ -60,7 +47,7 @@ public class AccountSystem implements SimpleSystem, Serializable {
     }
     //najde uzivatela na zaklade loginu
     public boolean findUser(String paLogin) {
-        for (Account a : listAcc)
+        for (Account a : (LinkedList<Account>)list)
         {
             if (a.getLogin().equals(paLogin)) return true;
         }
@@ -68,7 +55,7 @@ public class AccountSystem implements SimpleSystem, Serializable {
     }
     //najde ucet na zaklade ID
     public Account findAccount(int paID) {
-        for(Account acc : listAcc)
+        for(Account acc : (LinkedList<Account>)list)
         {
             if (acc.getOwner().getID() == paID) return acc;
         }
@@ -77,27 +64,27 @@ public class AccountSystem implements SimpleSystem, Serializable {
 
     //vytvori ucet s konkretnym vlastnikom
     public void addNewUserChildReader(String name, String login, String password) {
-        listAcc.add(new Account(new ChildReader(maxID, name), login, password));
+        list.add(new Account(new ChildReader(maxID, name), login, password));
         maxID++;
     }
     public void addNewUserAdultReader(String name, String login, String password) {
-        listAcc.add(new Account(new AdultReader(maxID, name), login, password));
+        list.add(new Account(new AdultReader(maxID, name), login, password));
         maxID++;
     }
     public void addNewUserWorker(String name, String login, String password) {
-        listAcc.add(new Account(new Librarian(maxID, name), login, password));
+        list.add(new Account(new Librarian(maxID, name), login, password));
         maxID++;
     }
 
-    //serializaction
+    //serialization
     public void serialize() throws IOException {
         ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
-        outA.writeObject(listAcc);
+        outA.writeObject(list);
         outA.close();
     }
     public void deserialize() throws ClassNotFoundException, IOException {
         ObjectInputStream inA = new ObjectInputStream(new FileInputStream("accounts.out"));
-        listAcc = (LinkedList<Account>)inA.readObject();
+        list = (LinkedList<Account>)inA.readObject();
         inA.close();
     }
 }

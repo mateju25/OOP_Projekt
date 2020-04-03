@@ -10,7 +10,7 @@ import Systems.RequestSystem;
 import java.io.*;
 import java.util.LinkedList;
 
-public class Office {
+public class LibraryEvidenceSystem {
     private AccountSystem sysAcc = new AccountSystem();
     private BookSystem sysBook = new BookSystem();
     private RequestSystem sysReq = new RequestSystem();
@@ -26,7 +26,7 @@ public class Office {
     }
 
     //constructor
-    public Office() {
+    public LibraryEvidenceSystem() {
         sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
         sysAcc.addNewUserWorker("Pirky", "z", "x");

@@ -1,6 +1,6 @@
 package gui;
 
-import Library.Office;
+import Library.LibraryEvidenceSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,10 +12,10 @@ import java.io.IOException;
 
 public class SimpleController {
     //atributes
-    protected Office lib;
+    protected LibraryEvidenceSystem lib;
 
     //methods
-    public void transferData(Office paLib)
+    public void transferData(LibraryEvidenceSystem paLib)
     {
         this.lib = paLib;
     }

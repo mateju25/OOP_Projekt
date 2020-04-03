@@ -5,15 +5,15 @@ import Products.Message;
 
 import java.util.LinkedList;
 
-public interface Reader extends Human {
+public abstract class Reader implements Human {
     //getters
-    LinkedList<Book> getMyBooks();
-    LinkedList<Message> getMyMessages();
+    public abstract LinkedList<Book> getMyBooks();
+    public abstract LinkedList<Message> getMyMessages();
     //setters
-    void setMyBooks(LinkedList<Book> list);
+    public abstract void setMyBooks(LinkedList<Book> list);
     //methods
-    void addBook(Book paBook);
-    void deleteBook(Book paBook);
-    void addMessage(Message m);
-    void readMessage();
+    public abstract void addBook(Book paBook);
+    public abstract void deleteBook(Book paBook);
+    public abstract void addMessage(Message m);
+    public abstract void readMessage();
 }

@@ -1,6 +1,6 @@
 package gui;
 
-import Library.Office;
+import Library.LibraryEvidenceSystem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,13 +13,12 @@ public class Starter extends Application {
         FXMLLoader loader = new FXMLLoader((getClass().getResource("logInScene.fxml")));
         Parent root = loader.load();
         LogInController logInController = loader.getController();
-        logInController.transferData(new Office());
+        logInController.transferData(new LibraryEvidenceSystem());
 
         primaryStage.setTitle("LibBook");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

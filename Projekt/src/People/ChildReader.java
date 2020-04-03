@@ -7,7 +7,7 @@ import Systems.SimpleSystem;
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public class ChildReader implements Reader, Serializable {
+public class ChildReader extends Reader implements Serializable {
     //atributes
     private final int dataId;
     private final String name;

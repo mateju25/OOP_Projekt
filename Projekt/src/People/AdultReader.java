@@ -5,7 +5,7 @@ import Systems.SimpleSystem;
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public class AdultReader implements Reader, Serializable {
+public class AdultReader extends Reader implements Serializable {
     //atributes
     private final int dataId;
     private final String name;

@@ -7,7 +7,7 @@ import Systems.SimpleSystem;
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public class Librarian implements Worker, Serializable {
+public class Librarian extends Worker implements Serializable {
     //atributes
     private final int dataId;
     private final String name;

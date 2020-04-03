@@ -3,8 +3,8 @@ package People;
 import Products.Book;
 import Products.Account;
 
-public interface Worker extends Human{
-    void reserveBook(Book paBook);
-    void unreserveBook(Book paBook, Account owner);
+public abstract class Worker implements Human{
+    public abstract void reserveBook(Book paBook);
+    public abstract void unreserveBook(Book paBook, Account owner);
 
 }

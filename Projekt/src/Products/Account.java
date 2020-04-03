@@ -41,14 +41,14 @@ public class Account implements Serializable {
         this.owner = paNewOwner;
         this.login = paLogin;
         this.password = paPass;
-        this.bill = -2.50;
+        this.bill = 0;
         loginState = 0;
     }
     public Account(AdultReader paNewOwner, String paLogin, String paPass) {
         this.owner = paNewOwner;
         this.login = paLogin;
         this.password = paPass;
-        this.bill = 0;
+        this.bill = -2.5;
         this.loginState = 0;
     }
     public Account(Librarian paNewOwner, String paLogin, String paPass) {
