@@ -24,7 +24,7 @@ Softvér je zatiaľ len v stave pracovnom, ale už fungujú principiálne veci a
   - potvrdiť rezervovanie knihy užívateľom (zobraziť účet žiadateľa),
   - alebo požiadavku zamietnuť
   
-Do prostredia si môžete vytvoriť aj vlastný účet, ale s určitými podmienkami.
+Do prostredia si môžete vytvoriť aj vlastný účet, ale s určitými podmienkami. Ale zatiaľ mám dočasne zakázané ukladanie nových užívateľov po vypnutí aplikácie z dôvodu rychlejšieho testovania.
 
 V tejto aplikácií som zatiaľ využil:
 
@@ -70,4 +70,8 @@ RTTI je využité napríklad aj v tom, že sa pracuje s knihou, ktorú si až u�
 Vhniezdenú triedu som využil v classe Book. Definoval som v nej triedu Review, s ktorou bude pracovat jedine kniha.
 
 ![Vhniezdená trieda](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/EnclosedClass.png)
+
+**Serializáciu a deserializáciu**
+
+Tento aspekt programu mam plne funkčný, ale momentálne je odstavený. Čiže program bude fungovať vždy rovnako po jeho spustení.
 
