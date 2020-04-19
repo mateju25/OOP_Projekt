@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Information windows added for situations within login and request system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.out" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books.out" beforeDir="false" afterPath="$PROJECT_DIR$/books.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/LibraryEvidenceSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Library/LibraryEvidenceSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/AccountSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/AccountSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/BookSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/BookSystem.class" afterDir="false" />
@@ -267,7 +269,7 @@
       <workItem from="1585909915380" duration="692000" />
       <workItem from="1587115908818" duration="409000" />
       <workItem from="1587284769783" duration="2266000" />
-      <workItem from="1587287221728" duration="61000" />
+      <workItem from="1587287221728" duration="623000" />
     </task>
     <task id="LOCAL-00001" summary="Information windows added for situations within login and request system">
       <created>1585235807029</created>
