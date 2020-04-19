@@ -27,7 +27,7 @@ public class LibraryEvidenceSystem {
 
     //constructor
     public LibraryEvidenceSystem() {
-        sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
+        /*sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
         sysAcc.addNewUserWorker("Pirky", "z", "x");
 
@@ -37,28 +37,35 @@ public class LibraryEvidenceSystem {
 
         //sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
 
-        serializeOffice();
+        try {
+            serializeOffice();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         deserializeOffice();
 
     }
 
     //serializuje celu kniznicu
-    public void serializeOffice() {
-        try {
-            sysAcc.serialize();
-            sysBook.serialize();
-            sysReq.serialize();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    public void serializeOffice() throws InterruptedException {
+        Thread t1 = new Thread (sysAcc, "Account system");
+        t1.start();
+        Thread t2 = new Thread (sysBook, "Account system");
+        t2.start();
+        Thread t3 = new Thread (sysReq, "Account system");
+        t3.start();
+        t1.join();
+        t2.join();
+        t3.join();
     }
 
     //deserializuje celu kniznicu a opravi prepojenia medzi objektami, ktore boli stratene pri serializacii
     public void deserializeOffice() {
         try {
-            sysAcc.deserialize();
-            sysBook.deserialize();
+            sysAcc.deserialize("accounts.out");
+            sysBook.deserialize("books.out");
+
+
             //repair connections
             AccountSystem temporarySys = sysAcc;
             for (Account acc: (LinkedList<Account>) temporarySys.getListAdmin()) {
@@ -73,7 +80,7 @@ public class LibraryEvidenceSystem {
             }
             sysAcc = temporarySys;
 
-            sysReq.deserialize();
+            sysReq.deserialize("requests.out");
             //repair connections
             RequestSystem temporarySys2 = sysReq;
             sysReq = new RequestSystem();

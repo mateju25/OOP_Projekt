@@ -64,14 +64,13 @@ public class RequestSystem extends SimpleSystem implements Serializable  {
     }
 
     //serialization
-    public void serialize() throws IOException {
-        ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("requests.out"));
-        outB.writeObject(((LinkedList<Request>)list));
-        outB.close();
-    }
-    public void deserialize() throws ClassNotFoundException, IOException {
-        ObjectInputStream inC = new ObjectInputStream(new FileInputStream("requests.out"));
-        list = (LinkedList<Request>)inC.readObject();
-        inC.close();
+    public void run() {
+        //System.out.println("Req start");
+        try {
+            serialize("requests.out");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //System.out.println("Req end");
     }
 }

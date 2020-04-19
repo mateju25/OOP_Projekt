@@ -66,7 +66,7 @@ public class RequestController extends SimpleController{
     }
     //akceptuj poziadavku od uzivatela
     @FXML
-    private void acceptRequestButton(ActionEvent event) {
+    private void acceptRequestButton(ActionEvent event) throws InterruptedException {
         Request reg = lib.getSysReq().getCurrRequest();
         reg.acceptRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
         lib.getSysReq().deleteRequest();
@@ -76,7 +76,7 @@ public class RequestController extends SimpleController{
     }
     //zavrhni poziadavku od uzivatela
     @FXML
-    private void declineRequestButton(ActionEvent event) {
+    private void declineRequestButton(ActionEvent event) throws InterruptedException {
         lib.getSysReq().getCurrRequest().declineRequest();
         lib.getSysReq().deleteRequest();
         plainText.clear();

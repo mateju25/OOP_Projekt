@@ -53,8 +53,7 @@ public class LogOutController extends SimpleController{
 
     //stlacenie odhlasovacieho tlacidla
     @FXML
-    private void logOutButtonClicked(ActionEvent event) throws IOException
-    {
+    private void logOutButtonClicked(ActionEvent event) throws IOException, InterruptedException {
         lib.serializeOffice();
         lib.getSysAcc().getCurrUser().userLogOut();
         switchScene("logInScene.fxml", event);
@@ -147,7 +146,7 @@ public class LogOutController extends SimpleController{
 
     //oznaci spravy ako precitane
     @FXML
-    private void markAsRead(ActionEvent event) {
+    private void markAsRead(ActionEvent event) throws InterruptedException {
         ((Reader)lib.getSysAcc().getCurrUser().getOwner()).readMessage();
         setMessText();
         markButton.setDisable(true);

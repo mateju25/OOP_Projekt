@@ -62,14 +62,13 @@ public class BookSystem extends SimpleSystem implements Serializable {
     }
 
     //serialization
-    public void serialize() throws IOException {
-        ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream("books.out"));
-        outB.writeObject(((LinkedList<Book>)list));
-        outB.close();
-    }
-    public void deserialize() throws ClassNotFoundException, IOException {
-        ObjectInputStream inB = new ObjectInputStream(new FileInputStream("books.out"));
-        list = (LinkedList<Book>)inB.readObject();
-        inB.close();
+    public void run() {
+        //System.out.println("Book start");
+        try {
+            serialize("books.out");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //System.out.println("Book end");
     }
 }

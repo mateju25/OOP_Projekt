@@ -35,7 +35,7 @@ public class LogInController extends SimpleController {
 
     //stlacenie ukoncovacieho tlacidla
     @FXML
-    private void quitButton(ActionEvent event) {
+    private void quitButton(ActionEvent event) throws InterruptedException {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         lib.serializeOffice();
         window.close();

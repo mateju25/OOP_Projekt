@@ -3,11 +3,12 @@ package Systems;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
-import java.io.IOException;
-import java.io.Serializable;
+import Products.Book;
+
+import java.io.*;
 import java.util.LinkedList;
 
-public abstract class SimpleSystem<T> implements Serializable {
+public abstract class SimpleSystem<T> implements Serializable, Runnable {
     //atributes
     protected LinkedList<T> list = new LinkedList<T>();
 
@@ -25,6 +26,14 @@ public abstract class SimpleSystem<T> implements Serializable {
         return null;
     }
     //serialization
-    public abstract void serialize() throws IOException;
-    public abstract void deserialize() throws ClassNotFoundException, IOException;
+    public void serialize(String paFileName) throws IOException {
+        ObjectOutputStream outB = new ObjectOutputStream(new FileOutputStream(paFileName));
+        outB.writeObject(((LinkedList<T>)list));
+        outB.close();
+    };
+    public void deserialize(String paFileName) throws ClassNotFoundException, IOException {
+        ObjectInputStream inB = new ObjectInputStream(new FileInputStream(paFileName));
+        list = (LinkedList<T>)inB.readObject();
+        inB.close();
+    }
 }

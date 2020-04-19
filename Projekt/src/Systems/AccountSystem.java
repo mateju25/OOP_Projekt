@@ -77,14 +77,13 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
 
     //serialization
-    public void serialize() throws IOException {
-        ObjectOutputStream outA = new ObjectOutputStream(new FileOutputStream("accounts.out"));
-        outA.writeObject(list);
-        outA.close();
-    }
-    public void deserialize() throws ClassNotFoundException, IOException {
-        ObjectInputStream inA = new ObjectInputStream(new FileInputStream("accounts.out"));
-        list = (LinkedList<Account>)inA.readObject();
-        inA.close();
+    public void run() {
+        ///System.out.println("Account start");
+        try {
+            serialize("accounts.out");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //System.out.println("Account end");
     }
 }

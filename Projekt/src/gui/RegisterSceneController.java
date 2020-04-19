@@ -28,7 +28,7 @@ public class RegisterSceneController extends SimpleController {
     }
 
     //registrovanie noveho uzivatela
-    public void registerButtonClick(ActionEvent actionEvent) {
+    public void registerButtonClick(ActionEvent actionEvent) throws InterruptedException {
         if (nameText.getText().equals("") || loginText.getText().equals("") || passText.getText().equals("") || comboBox.getSelectionModel().isEmpty()) {
             AlertSystem errorWindow = new AlertSystem("Pozor", "Nevyplnil si všetky údaje");
         }
