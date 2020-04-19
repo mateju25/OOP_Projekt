@@ -1,5 +1,6 @@
 package gui;
 
+import People.Reader;
 import Systems.AlertSystem;
 import Systems.PasswordChecker;
 import Systems.WrongPasswordException;
@@ -24,7 +25,7 @@ public class RegisterSceneController extends SimpleController {
 
     @FXML
     public void initialize() {
-        comboBox.getItems().addAll("Detské konto", "Konto pre dospelých", "Konto pre pracovníkov");
+        comboBox.getItems().addAll("Detské konto", "Konto pre dospelých");
     }
 
     //registrovanie noveho uzivatela
@@ -45,24 +46,28 @@ public class RegisterSceneController extends SimpleController {
                 }
                 switch ((String) comboBox.getSelectionModel().getSelectedItem()) {
                     case ("Detské konto"): {
-                        lib.getSysAcc().addNewUserChildReader(nameText.getText(), loginText.getText(), passText.getText());
+                        lib.getSysAcc().addNewUserChildReader(nameText.getText(), loginText.getText(), passText.getText(), false);
                         break;
                     }
                     case ("Konto pre dospelých"): {
-                        lib.getSysAcc().addNewUserAdultReader(nameText.getText(), loginText.getText(), passText.getText());
-                        break;
-                    }
-                    case ("Konto pre pracovníkov"): {
-                        lib.getSysAcc().addNewUserWorker(nameText.getText(), loginText.getText(), passText.getText());
+                        lib.getSysAcc().addNewUserAdultReader(nameText.getText(), loginText.getText(), passText.getText(), false);
                         break;
                     }
                 }
                 AlertSystem errorWindow = new AlertSystem("Informácia", "Účet vytvorený");
+                lib.getSysReq().addNewAccountReq(lib.getSysAcc().findAccountName(nameText.getText()));
                 lib.serializeOffice();
                 switchScene("logInScene.fxml", actionEvent);
             }
         }
 
+    }
+
+
+
+    //registrovanie noveho uzivatela
+    public void goBackButton(ActionEvent actionEvent) {
+        switchScene("logInScene.fxml", actionEvent);
     }
 
 }

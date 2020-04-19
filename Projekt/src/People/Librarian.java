@@ -50,6 +50,17 @@ public class Librarian extends Worker implements Serializable {
         paBook.setReserve(false);
         ((Reader)owner.getOwner()).deleteBook(paBook);
     }
+
+    @Override
+    public void acceptNewAccount(Account owner) {
+        owner.setVerified(true);
+    }
+
+    @Override
+    public void declineNewAccount(Account owner) {
+        owner.setVerified(false);
+    }
+
     @Override
     public String startScene() {
         return "logOutSceneLibrarian.fxml";

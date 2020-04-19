@@ -2,22 +2,36 @@ package gui;
 
 import Library.LibraryEvidenceSystem;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sun.rmi.runtime.Log;
 
 import java.io.IOException;
 
 public class SimpleController {
     //atributes
     protected LibraryEvidenceSystem lib;
+    protected Stage mainWindow;
 
     //methods
-    public void transferData(LibraryEvidenceSystem paLib)
+    public void transferData(LibraryEvidenceSystem paLib, Stage window)
     {
         this.lib = paLib;
+        this.mainWindow = window;
+    }
+
+    @FXML
+    public void saveLibrary() {
+        System.out.println("saved");
+        try {
+            lib.serializeOffice();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public void switchScene(String s, ActionEvent event)
     {
@@ -29,43 +43,34 @@ public class SimpleController {
             e.printStackTrace();
         }
         //toto este prekopat do finalnej verzie
+        SimpleController controller = loader.getController();
+        controller.transferData(this.lib, this.mainWindow);
         switch (s)
         {
             case ("logInScene.fxml") : {
-                LogInController controller = loader.getController();
-                controller.transferData(this.lib);
                 break;
             }
             case ("logOutSceneClient.fxml") : {
-                LogOutController controller = loader.getController();
-                controller.transferData(this.lib);
-                controller.setMessText();
+                ((LogOutController)controller).setMessText();
                 break;
 
             }
             case ("logOutSceneLibrarian.fxml") : {
-                LogOutController controller = loader.getController();
-                controller.transferData(this.lib);
+                ((LogOutController)controller).setStatusBar();
                 break;
             }
             case ("registerScene.fxml") : {
-                RegisterSceneController controller = loader.getController();
-                controller.transferData(this.lib);
                 break;
             }
             case ("requestScene.fxml") : {
-                RequestController controller = loader.getController();
-                controller.transferData(this.lib);
+                ((RequestController)controller).setStatusBar();
                 break;
             }
             default: break;
         }
 
         Scene scene = new Scene(root);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(scene);
-        window.show();
+        mainWindow.setScene(scene);
+        mainWindow.show();
     }
 }

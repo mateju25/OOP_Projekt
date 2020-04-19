@@ -1,12 +1,9 @@
 package Systems;
 
-import Products.BookRequest;
-import Products.Request;
+import Products.*;
 import People.AdultReader;
 import People.ChildReader;
 import People.Librarian;
-import Products.Account;
-import Products.Book;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -50,16 +47,21 @@ public class RequestSystem extends SimpleSystem implements Serializable  {
         if(currReq != 0) currReq--;
     }
     //vrati boolean ci existuje kniha
-    public boolean existsReq(Book paBook, Account paAcc) {
+    public boolean existsBookReq(Book paBook, Account paAcc) {
         for (Request req : ((LinkedList<Request>)list))
         {
-            if  ((req.getWantedBook().equals(paBook)) && (req.getRequester().equals(paAcc))) return true;
+            if  ((((BookRequest)req).getWantedBook().equals(paBook)) && (req.getRequester().equals(paAcc))) return true;
         }
         return false;
     }
     //prida novu poziadavku
     public void addNewBookReq(Book paBook, Account paRequester) {
         ((LinkedList<Request>)list).add(new BookRequest(maxId, paBook, paRequester));
+        maxId++;
+    }
+    //prida novu poziadavku
+    public void addNewAccountReq(Account paRequester) {
+        ((LinkedList<Request>)list).add(new AccountRequest(paRequester));
         maxId++;
     }
 

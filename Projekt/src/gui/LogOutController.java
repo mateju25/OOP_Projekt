@@ -18,6 +18,8 @@ public class LogOutController extends SimpleController{
     @FXML
     private Label newMessagesText;
     @FXML
+    private Label statusBar;
+    @FXML
     private Button markButton;
 
     //nastavi oznam o novych sprav
@@ -30,6 +32,13 @@ public class LogOutController extends SimpleController{
                 newMessagesText.setText("Nové správy: " + ((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages().size());
             else
                 newMessagesText.setText("Nové správy: " + 0);
+
+        setStatusBar();
+    }
+
+    public void setStatusBar()
+    {
+        statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());
     }
 
     //inicializacia tabulkoveho vypisu
@@ -53,7 +62,7 @@ public class LogOutController extends SimpleController{
 
     //stlacenie odhlasovacieho tlacidla
     @FXML
-    private void logOutButtonClicked(ActionEvent event) throws IOException, InterruptedException {
+    private void logOutButtonClicked(ActionEvent event) throws InterruptedException {
         lib.serializeOffice();
         lib.getSysAcc().getCurrUser().userLogOut();
         switchScene("logInScene.fxml", event);
@@ -83,7 +92,7 @@ public class LogOutController extends SimpleController{
             AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si žiadnu knihu");
         }
         else {
-            if (!lib.getSysReq().existsReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()))
+            if (!lib.getSysReq().existsBookReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()))
                 lib.getSysReq().addNewBookReq(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser());
             else
             {

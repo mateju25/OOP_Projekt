@@ -7,7 +7,6 @@ import java.io.Serializable;
 public interface Request extends Serializable {
     //getters
     Account getRequester();
-    Book getWantedBook();
     //methods
     String showMessage();
     void acceptRequest(Worker paAccepter);

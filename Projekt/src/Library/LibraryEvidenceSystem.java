@@ -2,6 +2,7 @@ package Library;
 
 import Products.Account;
 import Products.Book;
+import Products.BookRequest;
 import Products.Request;
 import Systems.AccountSystem;
 import Systems.BookSystem;
@@ -27,9 +28,9 @@ public class LibraryEvidenceSystem {
 
     //constructor
     public LibraryEvidenceSystem() {
-        /*sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x");
-        sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x");
-        sysAcc.addNewUserWorker("Pirky", "z", "x");
+        sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x", true);
+        sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x", true);
+        sysAcc.addNewUserWorker("Pirky", "z", "x", true);
 
         sysBook.addNewChildBook("Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
         sysBook.addNewAdultBook("Teória literatúry", 254, "ISBN 80-85684-05-5", "Táto kniha je veľmi dobrá - odporúčam");
@@ -41,7 +42,7 @@ public class LibraryEvidenceSystem {
             serializeOffice();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
         deserializeOffice();
 
     }
@@ -85,7 +86,8 @@ public class LibraryEvidenceSystem {
             RequestSystem temporarySys2 = sysReq;
             sysReq = new RequestSystem();
             for (Request req: (LinkedList<Request>) temporarySys2.getListAdmin()) {
-                sysReq.addNewBookReq(sysBook.findBook(req.getWantedBook().getID()), sysAcc.findAccount(req.getRequester().getOwner().getID()));
+                if (req instanceof BookRequest)
+                    sysReq.addNewBookReq(sysBook.findBook(((BookRequest)req).getWantedBook().getID()), sysAcc.findAccountID(req.getRequester().getOwner().getID()));
             }
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block

@@ -32,7 +32,7 @@ public class BookRequest implements Request {
     //methods
     @Override
     public String showMessage() {
-        return requester.getOwner().getName() + " poziadal o knihu " + wantedBook.getTitle() + " s ID: " + wantedBook.getID() + "\n";
+        return requester.getOwner().getName() + " požiadal o knihu " + wantedBook.getTitle() + " s ID: " + wantedBook.getID() + "\n";
     }
     @Override
     public void acceptRequest(Worker paAccepter) {

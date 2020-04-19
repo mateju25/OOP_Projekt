@@ -1,5 +1,6 @@
 package gui;
 
+import Products.AccountRequest;
 import Products.Request;
 import People.Worker;
 import Products.Account;
@@ -7,6 +8,7 @@ import Systems.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import java.io.IOException;
@@ -22,12 +24,28 @@ public class RequestController extends SimpleController{
     private Button declineButton;
     @FXML
     private Button accountInfo;
+    @FXML
+    private Label statusBar;
 
     //vrati sa spat na predchadzajucu scenu
     @FXML
     private void goBackButton(ActionEvent event) throws IOException {
         switchScene(lib.getSysAcc().getCurrUser().getOwner().startScene(), event);
     }
+
+    //nastavi oznam o novych sprav
+    public void setStatusBar()
+    {
+        statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());
+    }
+
+    @FXML
+    private void logOutButtonClicked(ActionEvent event) throws IOException, InterruptedException {
+        lib.serializeOffice();
+        lib.getSysAcc().getCurrUser().userLogOut();
+        switchScene("logInScene.fxml", event);
+    }
+
     //zobraz dalsiu poziadavku
     @FXML
     private void nextRequestButton(ActionEvent event) {
@@ -78,6 +96,7 @@ public class RequestController extends SimpleController{
     @FXML
     private void declineRequestButton(ActionEvent event) throws InterruptedException {
         lib.getSysReq().getCurrRequest().declineRequest();
+        if (lib.getSysReq().getCurrRequest() instanceof AccountRequest) lib.getSysAcc().deleteAccount(lib.getSysReq().getCurrRequest().getRequester().getOwner().getID());
         lib.getSysReq().deleteRequest();
         plainText.clear();
         setButttons(event);

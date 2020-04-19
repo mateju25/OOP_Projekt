@@ -54,25 +54,43 @@ public class AccountSystem extends SimpleSystem implements Serializable {
         return false;
     }
     //najde ucet na zaklade ID
-    public Account findAccount(int paID) {
+    public Account findAccountID(int paID) {
         for(Account acc : (LinkedList<Account>)list)
         {
             if (acc.getOwner().getID() == paID) return acc;
         }
         return null;
     }
+    //najde ucet na zaklade loginu
+    public Account findAccountName(String paName) {
+        for(Account acc : (LinkedList<Account>)list)
+        {
+            if (acc.getOwner().getName().equals(paName)) return acc;
+        }
+        return null;
+    }
+    //vymaze ucet na zaklade ID
+    public Account deleteAccount(int paID) {
+        int i = 0;
+        for(Account acc : (LinkedList<Account>)list)
+        {
+            if (acc.getOwner().getID() == paID) list.remove(i);
+            i++;
+        }
+        return null;
+    }
 
     //vytvori ucet s konkretnym vlastnikom
-    public void addNewUserChildReader(String name, String login, String password) {
-        list.add(new Account(new ChildReader(maxID, name), login, password));
+    public void addNewUserChildReader(String name, String login, String password, boolean verified) {
+        list.add(new Account(new ChildReader(maxID, name), login, password, verified));
         maxID++;
     }
-    public void addNewUserAdultReader(String name, String login, String password) {
-        list.add(new Account(new AdultReader(maxID, name), login, password));
+    public void addNewUserAdultReader(String name, String login, String password, boolean verified) {
+        list.add(new Account(new AdultReader(maxID, name), login, password, verified));
         maxID++;
     }
-    public void addNewUserWorker(String name, String login, String password) {
-        list.add(new Account(new Librarian(maxID, name), login, password));
+    public void addNewUserWorker(String name, String login, String password, boolean verified) {
+        list.add(new Account(new Librarian(maxID, name), login, password, verified));
         maxID++;
     }
 
