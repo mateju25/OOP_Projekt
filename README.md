@@ -38,6 +38,7 @@ Vytvoril som rôzne hierarchie objektov (ešte ich budem rozšírovať). Hierarc
 **Polymorfizmus**
 
 Polymorfizmus som uplatnil na triedach AdultBook a ChildBook v metóde *getInfo*. Pristupujem ku ním rovnako, ale každá vráti niečo iné.
+Tak isto aj v inom strome objektov a to napríklad AdultReader a Librarian v metóde *getInfo*.
 
 **Agregácia**
 
@@ -47,7 +48,7 @@ Agregácia je uplatnená aj napríklad v objekte LibraryEvidenceSystem, viď. ob
 
 **Oddelenie aplikačnej logiky od GUI**
 
-Samotné GUI som umiestnil do vlastného package-u pod menom *gui*. V tejto zložke sa nachádzajú Controllery pre rôzne scény aplikácie. Pri stlačení nejakého tlačidla, sa vykoná prislušná funkcia, ktorej logika je umiestnená len v classe LibraryEvidenceSystem.
+Samotné GUI som umiestnil do vlastného package-u pod menom *gui*. V tejto zložke sa nachádzajú Controllery pre rôzne scény aplikácie. Pri stlačení nejakého tlačidla, sa vykoná prislušná funkcia, ktorej logika je umiestnená len v classe LibraryEvidenceSystem. V objektoch Controller sa nachádzajú aj spracovatele udalostí.
 
 **Použitie návrhového vzoru Visitor**
 
@@ -55,9 +56,13 @@ Využil som ho na upresnenie právomocí uživateľov. Napríklad čitateľ nem�
 
 ![Visitor](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Visitor.png)
 
+**Použitie návrhového vzoru Model-view-controller**
+
+Tento návrhový vzor som použil pri implmentácií používateľského interface-u. Kde Model je moja aplikačná logika. View sú súbory zodpovedné za vizualizáciu (.fxml) a controller, sú všetky objekty s menom controller, ktoré updatujú aplikačnú logiku. 
+
 **Vytvorenie vlastnej výnimky**
 
-Vytvoril som vlastnú výminku, ktorá zobrazí okno pri nesprávnom vytvorení hesla (nie sú splenené určité požiadavky).
+Vytvoril som vlastnú výminku, ktorá zobrazí okno pri nesprávnom vytvorení hesla (nie sú splenené určité požiadavky). Táto podmienka je aj vyhadzovaná ako aj ošetrovaná.
 
 ![Exception](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Exception.png)
 
@@ -74,4 +79,16 @@ Vhniezdenú triedu som využil v classe Book. Definoval som v nej triedu Review,
 **Serializáciu a deserializáciu**
 
 Tento aspekt programu mam plne funkčný, ale momentálne je odstavený. Čiže program bude fungovať vždy rovnako po jeho spustení.
+
+**Použitie viacniťovosti - multithreading**
+
+Viacniťovosť som použil v triede LibraryEvidenceSystem vo funkcií serializeOffice. V tomto systéme mám tri rozlišné systémy pre účty, knihy a požiadavky. Tieto serializujem paralelne, pretože každý sa ukladá do vlastného súboru.
+
+![Viacnitovosť](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Viacnitovost.png)
+
+**Využitie vlastnej generickej triedy**
+
+Generická trieda SimpleSystem je rodič troch systémov. Tento objekt pracuje so všeobecným objektom. Z neho su odvodené tri základné spracovské systémy mojej aplikácie.
+
+![Generická trieda](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/GenerickáTrieda.png)
 
