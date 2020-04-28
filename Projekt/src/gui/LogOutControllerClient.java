@@ -10,9 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.io.IOException;
 
-public class LogOutController extends SimpleController{
+public class LogOutControllerClient extends SimpleController{
     @FXML
     private ListView plainText;
     @FXML
@@ -67,22 +66,11 @@ public class LogOutController extends SimpleController{
         lib.getSysAcc().getCurrUser().userLogOut();
         switchScene("logInScene.fxml", event);
     }
-    //zobraz ucty
-    @FXML
-    private void showAccountsButton(ActionEvent event) {
-        plainText.getItems().clear();
-        plainText.getItems().addAll(lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysAcc()));
-    }
     //zobraz knihy
     @FXML
     private void showBooksButton(ActionEvent event) {
         plainText.getItems().clear();
         plainText.getItems().addAll(lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysBook()));
-    }
-    //prepnutie sceny
-    @FXML
-    private void requestButton(ActionEvent event) throws IOException {
-        switchScene("requestScene.fxml", event);
     }
     //vytvorenie novej poziadavky
     @FXML
@@ -161,6 +149,5 @@ public class LogOutController extends SimpleController{
         markButton.setDisable(true);
         lib.serializeOffice();
     }
-
 }
 

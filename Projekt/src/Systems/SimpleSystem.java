@@ -1,6 +1,7 @@
 package Systems;
 
 import People.AdultReader;
+import People.BookStocker;
 import People.ChildReader;
 import People.Librarian;
 import Products.Book;
@@ -23,6 +24,9 @@ public abstract class SimpleSystem<T> implements Serializable, Runnable {
         return null;
     }
     public LinkedList<T> getList(Librarian person) {
+        return null;
+    }
+    public LinkedList<T> getList(BookStocker person) {
         return null;
     }
     //serialization

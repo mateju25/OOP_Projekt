@@ -1,12 +1,10 @@
-package Library;
+package Systems;
 
+import People.BookStocker;
 import Products.Account;
 import Products.Book;
 import Products.BookRequest;
 import Products.Request;
-import Systems.AccountSystem;
-import Systems.BookSystem;
-import Systems.RequestSystem;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -31,10 +29,11 @@ public class LibraryEvidenceSystem {
         sysAcc.addNewUserChildReader("Matej Delinčák", "x", "x", true);
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x", true);
         sysAcc.addNewUserWorker("Pirky", "z", "x", true);
-
-        sysBook.addNewChildBook("Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
-        sysBook.addNewAdultBook("Teória literatúry", 254, "ISBN 80-85684-05-5", "Táto kniha je veľmi dobrá - odporúčam");
-        sysBook.addNewAdultBook("Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");
+        sysAcc.addNewUserStocker("Booker", "c", "x", true);
+        BookStocker person = (BookStocker)sysAcc.findAccountName("Booker").getOwner();
+        sysBook.addNewChildBook(person, "Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
+        sysBook.addNewAdultBook(person,"Teória literatúry", 254, "ISBN 80-85684-05-5", "Táto kniha je veľmi dobrá - odporúčam");
+        sysBook.addNewAdultBook(person,"Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");
 
         //sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
 

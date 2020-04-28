@@ -9,8 +9,8 @@ import java.util.LinkedList;
 
 public class Librarian extends Worker implements Serializable {
     //atributes
-    private final int dataId;
-    private final String name;
+    protected final int dataId;
+    protected final String name;
 
     //constructor
     public Librarian(int dataId, String name) {
@@ -21,7 +21,7 @@ public class Librarian extends Worker implements Serializable {
     //getters
     @Override
     public int getID() {
-        return 0;
+        return this.dataId;
     }
     @Override
     public String getInfo()

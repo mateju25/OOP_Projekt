@@ -1,14 +1,12 @@
 package gui;
 
-import Library.LibraryEvidenceSystem;
+import Systems.LibraryEvidenceSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sun.rmi.runtime.Log;
 
 import java.io.IOException;
 
@@ -42,21 +40,20 @@ public class SimpleController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //toto este prekopat do finalnej verzie
         SimpleController controller = loader.getController();
         controller.transferData(this.lib, this.mainWindow);
         switch (s)
         {
-            case ("logInScene.fxml") : {
-                break;
-            }
             case ("logOutSceneClient.fxml") : {
-                ((LogOutController)controller).setMessText();
+                ((LogOutControllerClient)controller).setMessText();
                 break;
-
             }
             case ("logOutSceneLibrarian.fxml") : {
-                ((LogOutController)controller).setStatusBar();
+                ((LogOutControllerLibrarian)controller).setStatusBar();
+                break;
+            }
+            case ("logOutSceneLBookStocker.fxml") : {
+                ((LogOutControllerBookStocker)controller).setStatusBar();
                 break;
             }
             case ("registerScene.fxml") : {

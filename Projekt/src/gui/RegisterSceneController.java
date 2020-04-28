@@ -1,6 +1,5 @@
 package gui;
 
-import People.Reader;
 import Systems.AlertSystem;
 import Systems.PasswordChecker;
 import Systems.WrongPasswordException;
@@ -62,7 +61,6 @@ public class RegisterSceneController extends SimpleController {
         }
 
     }
-
 
 
     //registrovanie noveho uzivatela

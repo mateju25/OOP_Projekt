@@ -1,6 +1,7 @@
 package Systems;
 
 import People.AdultReader;
+import People.BookStocker;
 import People.ChildReader;
 import People.Librarian;
 import Products.AdultBook;
@@ -36,6 +37,12 @@ public class BookSystem extends SimpleSystem implements Serializable {
         return ((LinkedList<Book>)list);
     }
 
+    @Override
+    public LinkedList getList(BookStocker person) {
+
+        return ((LinkedList<Book>)list);
+    }
+
     //methods
     public Book findBook(int paID) {
         for(Book book : ((LinkedList<Book>)list))
@@ -44,20 +51,20 @@ public class BookSystem extends SimpleSystem implements Serializable {
         }
         return null;
     }
-    public void addNewChildBook(String title, int pages, String ISBN, String review) {
-        ((LinkedList<Book>)list).add(new ChildBook(maxID, title, pages, ISBN, review));
+    public void addNewChildBook(BookStocker creator, String title, int pages, String ISBN, String review) {
+        creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, pages, ISBN, review));
         maxID++;
     }
-    public void addNewChildBook(String title, int pages, String ISBN) {
-        ((LinkedList<Book>)list).add(new ChildBook(maxID, title, pages, ISBN));
+    public void addNewChildBook(BookStocker creator,String title, int pages, String ISBN) {
+        creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, pages, ISBN));
         maxID++;
     }
-    public void addNewAdultBook(String title, int pages, String ISBN, String review)  {
-        ((LinkedList<Book>)list).add(new AdultBook(maxID, title, pages, ISBN, review));
+    public void addNewAdultBook(BookStocker creator,String title, int pages, String ISBN, String review)  {
+        creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, pages, ISBN, review));
         maxID++;
     }
-    public void addNewAdultBook(String title, int pages, String ISBN)  {
-        ((LinkedList<Book>)list).add(new AdultBook(maxID, title, pages, ISBN));
+    public void addNewAdultBook(BookStocker creator,String title, int pages, String ISBN)  {
+        creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, pages, ISBN));
         maxID++;
     }
 

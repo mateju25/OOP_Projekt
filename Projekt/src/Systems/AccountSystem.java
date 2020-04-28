@@ -1,9 +1,6 @@
 package Systems;
 
-import People.AdultReader;
-import People.ChildReader;
-import People.Librarian;
-import People.Worker;
+import People.*;
 import Products.Account;
 
 import java.io.*;
@@ -91,6 +88,10 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
     public void addNewUserWorker(String name, String login, String password, boolean verified) {
         list.add(new Account(new Librarian(maxID, name), login, password, verified));
+        maxID++;
+    }
+    public void addNewUserStocker(String name, String login, String password, boolean verified) {
+        list.add(new Account(new BookStocker(maxID, name), login, password, verified));
         maxID++;
     }
 
