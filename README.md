@@ -7,6 +7,7 @@ Pre otestovanie programu mam troch pracovných uživateľov:
 - Dieťa: login: x heslo: x
 - Dospelý: login: y heslo: x
 - Pracovník: login: z heslo: x
+- Knihovník: login: c heslo: x
 
 Softvér je zatiaľ len v stave pracovnom, ale už fungujú principiálne veci a to:
 
