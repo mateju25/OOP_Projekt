@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.RequestController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <Pane prefHeight="700.0" prefWidth="1000.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#88e81cbf" height="53.0" layoutX="628.0" layoutY="36.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" width="350.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#88e81cbf" height="53.0" layoutX="628.0" layoutY="104.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" width="350.0" />
+      <Button layoutX="884.0" layoutY="633.0" mnemonicParsing="false" onAction="#goBackButton" prefHeight="25.0" prefWidth="97.0" text="Vrátiť sa" />
+      <Pane layoutX="14.0" layoutY="34.0" prefHeight="624.0" prefWidth="601.0">
+         <TextArea fx:id="plainText" editable="false" prefHeight="624.0" prefWidth="601.0">
+            <font>
+               <Font name="Courier New" size="12.0" />
+            </font>
+         </TextArea>
+      </Pane>
+      <Button layoutX="677.0" layoutY="50.0" mnemonicParsing="false" onAction="#prevRequestButton" prefHeight="25.0" prefWidth="116.0" text="Prvá požiadavka" />
+      <Button fx:id="nextReq" disable="true" layoutX="811.0" layoutY="50.0" mnemonicParsing="false" onAction="#nextRequestButton" prefHeight="25.0" prefWidth="116.0" text="Ďalšia požiadavka" />
+      <Button fx:id="acceptButton" disable="true" layoutX="638.0" layoutY="118.0" mnemonicParsing="false" onAction="#acceptRequestButton" prefHeight="25.0" prefWidth="97.0" text="Potvrdiť" />
+      <Button fx:id="declineButton" disable="true" layoutX="755.0" layoutY="118.0" mnemonicParsing="false" onAction="#declineRequestButton" prefHeight="25.0" prefWidth="97.0" text="Odmietnuť" />
+      <Button fx:id="accountInfo" disable="true" layoutX="869.0" layoutY="118.0" mnemonicParsing="false" onAction="#showUserData" prefHeight="25.0" prefWidth="97.0" text="Účet žiadateľa" />
+      <MenuBar layoutY="-2.0" prefHeight="25.0" prefWidth="1000.0">
+         <Menu mnemonicParsing="false" text="Systém">
+            <MenuItem mnemonicParsing="false" onAction="#saveLibrary" text="Uložiť"/>
+            <MenuItem mnemonicParsing="false" onAction="#logOutButtonClicked" text="Odhlásiť sa"/>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Pomoc">
+            <MenuItem mnemonicParsing="false" text="Dokumentácia"/>
+         </Menu>
+      </MenuBar>
+      <Label fx:id="statusBar" layoutY="674.0" prefHeight="25.0" prefWidth="1000.0" />
+      <Separator layoutY="673.0" prefHeight="3.0" prefWidth="1000.0" />
+   </Pane>
+</GridPane>

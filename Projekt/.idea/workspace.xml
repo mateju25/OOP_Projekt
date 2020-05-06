@@ -1,35 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Information windows added for situations within login and request system">
-      <change afterPath="$PROJECT_DIR$/src/People/BookStocker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/LogOutControllerBookStocker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/LogOutControllerLibrarian.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/logOutSceneBookStocker.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/products/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts.out" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/LibraryEvidenceSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Library/LibraryEvidenceSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books.out" beforeDir="false" afterPath="$PROJECT_DIR$/books.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Library/LibraryEvidenceSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/AdultReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/AdultReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/BookStocker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/BookStocker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/ChildReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/ChildReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/Human.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/Librarian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/Reader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/People/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/People/Worker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/AccountRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/AccountRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/AdultBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/AdultBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Book$Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Book$Review.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/BookRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/ChildBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/ChildBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Request.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/AccountSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/AccountSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/AlertSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/AlertSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/BookSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/BookSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/PasswordChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/PasswordChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/RequestSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/RequestSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/SimpleSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/SimpleSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/RegisterSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/RegisterSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/SimpleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/SimpleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneLibrarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneLibrarian.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/LibraryEvidenceSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Systems/LibraryEvidenceSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/People/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/People/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Systems/AccountSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Systems/AccountSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Systems/BookSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Systems/BookSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Systems/SimpleSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Systems/SimpleSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/LogOutControllerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/RegisterSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/RegisterSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SimpleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SimpleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/logOutSceneClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logOutSceneClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/logOutSceneLibrarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/logOutSceneLibrarian.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/WrongPasswordException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/WrongPasswordException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogInController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutControllerBookStocker$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutControllerBookStocker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutControllerClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutControllerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutControllerLibrarian$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/LogOutControllerLibrarian.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/RegisterSceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/RequestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/SimpleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/Starter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/logInScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneBookStocker.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneClient.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/logOutSceneLibrarian.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/registerScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/requestScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/AdultReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/AdultReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/BookStocker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/BookStocker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/ChildReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/ChildReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/AccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/AccountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/AdultBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/AdultBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/BookRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/BookRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/ChildBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/ChildBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/AccountSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/AccountSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/AlertSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/AlertSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/BookSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/BookSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/LibraryEvidenceSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/LibraryEvidenceSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/PasswordChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/PasswordChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/RequestSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/RequestSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/SimpleSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/SimpleSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Systems/WrongPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/WrongPasswordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/LogOutControllerBookStocker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controllers/LogOutControllerBookStocker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/LogOutControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/LogOutControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/LogOutControllerLibrarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/LogOutControllerLibrarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/RegisterSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/RegisterSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/SimpleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/SimpleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/logInScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logInScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/logOutSceneBookStocker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logOutSceneBookStocker.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/logOutSceneClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logOutSceneClient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/logOutSceneLibrarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logOutSceneLibrarian.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/registerScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/registerScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/requestScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/requestScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +137,12 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -97,6 +154,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1Zc5urrTyCeUW7N7N5OTXgiL88Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -105,7 +169,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -121,32 +184,32 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/gui" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\gui\View" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\data" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\gui" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Services" />
+      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\LogInScene" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="gui" />
+      <recent name="LogInScene" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\gui" />
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src" />
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\LogInScene" />
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Products" />
       <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Services" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="gui" />
-      <recent name="LogInScene" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\data" />
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\gui" />
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Services" />
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\LogInScene" />
-      <recent name="D:\Skola\2_semester\OOP-projekt\Projekt\src\Library" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,7 +239,7 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.Starter" />
+      <option name="MAIN_CLASS_NAME" value="gui.controllers.Starter" />
       <module name="Projekt" />
       <extension name="coverage">
         <pattern>
@@ -284,7 +347,10 @@
       <workItem from="1587536024380" duration="554000" />
       <workItem from="1587576091835" duration="21000" />
       <workItem from="1587576777052" duration="476000" />
-      <workItem from="1588072734280" duration="1499000" />
+      <workItem from="1588072734280" duration="1671000" />
+      <workItem from="1588150060364" duration="3739000" />
+      <workItem from="1588691210843" duration="896000" />
+      <workItem from="1588694314441" duration="8455000" />
     </task>
     <task id="LOCAL-00001" summary="Information windows added for situations within login and request system">
       <created>1585235807029</created>
@@ -297,7 +363,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -322,66 +388,74 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1015" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587310025700" />
-    <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585566528193">
+    <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1588694050945">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585566528193" />
+    <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588694050945" />
+    <state x="664" y="257" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1588700894034">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="664" y="257" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588700894034" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585477024073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585477024073" />
-    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585643382489">
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1588767473521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1585643382489" />
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588767473521" />
+    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588702148277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1588702148277" />
     <state x="603" y="115" key="CommitChangelistDialog2" timestamp="1585235803297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="603" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585235803297" />
-    <state width="439" height="466" key="DebuggerActiveHint" timestamp="1585299494462">
+    <state width="439" height="466" key="DebuggerActiveHint" timestamp="1588695565266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="439" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1585299494462" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585126753952">
+    <state width="439" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1588695565266" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588700985623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585126753952" />
-    <state width="1877" height="226" key="GridCell.Tab.0.bottom" timestamp="1587577253034">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588700985623" />
+    <state width="1877" height="161" key="GridCell.Tab.0.bottom" timestamp="1588767294885">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587577253034" />
-    <state width="1877" height="226" key="GridCell.Tab.0.center" timestamp="1587577253033">
+    <state width="1877" height="161" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588767294885" />
+    <state width="1877" height="161" key="GridCell.Tab.0.center" timestamp="1588767294885">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="226" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587577253033" />
-    <state width="1877" height="226" key="GridCell.Tab.0.left" timestamp="1587577253033">
+    <state width="1877" height="161" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588767294885" />
+    <state width="1877" height="161" key="GridCell.Tab.0.left" timestamp="1588767294885">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="226" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587577253033" />
-    <state width="1877" height="226" key="GridCell.Tab.0.right" timestamp="1587577253033">
+    <state width="1877" height="161" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588767294885" />
+    <state width="1877" height="161" key="GridCell.Tab.0.right" timestamp="1588767294885">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="226" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587577253033" />
-    <state width="1877" height="386" key="GridCell.Tab.1.bottom" timestamp="1587477516070">
+    <state width="1877" height="161" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588767294885" />
+    <state width="1877" height="386" key="GridCell.Tab.1.bottom" timestamp="1588695627487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587477516070" />
-    <state width="1877" height="386" key="GridCell.Tab.1.center" timestamp="1587477516070">
+    <state width="1877" height="386" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588695627487" />
+    <state width="1877" height="386" key="GridCell.Tab.1.center" timestamp="1588695627487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587477516070" />
-    <state width="1877" height="386" key="GridCell.Tab.1.left" timestamp="1587477516069">
+    <state width="1877" height="386" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588695627487" />
+    <state width="1877" height="386" key="GridCell.Tab.1.left" timestamp="1588695627487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587477516069" />
-    <state width="1877" height="386" key="GridCell.Tab.1.right" timestamp="1587477516070">
+    <state width="1877" height="386" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588695627487" />
+    <state width="1877" height="386" key="GridCell.Tab.1.right" timestamp="1588695627487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587477516070" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1587536562364">
+    <state width="1877" height="386" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588695627487" />
+    <state x="514" y="118" width="1040" height="875" key="SettingsEditor" timestamp="1588702078072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587536562364" />
+    <state x="514" y="118" width="1040" height="875" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588702078072" />
     <state x="702" y="436" key="VCS.ChangelistChooser" timestamp="1585235833990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -390,6 +464,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585742681399" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1588702455212">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588702455212" />
     <state x="666" y="149" key="refactoring.ChangeSignatureDialog" timestamp="1585148603402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -398,19 +476,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585210747188" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588702543413">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588702543413" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Systems/RequestSystem.java</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/src/systems/RequestSystem.java</url>
+          <line>26</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/Starter.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/src/gui/controllers/SimpleController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
