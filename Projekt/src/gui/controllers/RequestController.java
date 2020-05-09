@@ -11,8 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-import java.io.IOException;
-
+/**
+ * This controller provides handlers for handling requests scene for {@link people.Librarian}
+ */
 public class RequestController extends SimpleController{
     @FXML
     private TextArea plainText;
@@ -33,7 +34,9 @@ public class RequestController extends SimpleController{
         switchScene(lib.getSysAcc().getCurrUser().getOwner().startScene(), event);
     }
 
-    //nastavi oznam o novych sprav
+    /**
+     * Sets test for status bar in the scene
+     */
     public void setStatusBar()
     {
         statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());
@@ -95,7 +98,7 @@ public class RequestController extends SimpleController{
     //zavrhni poziadavku od uzivatela
     @FXML
     private void declineRequestButton(ActionEvent event) throws InterruptedException {
-        lib.getSysReq().getCurrRequest().declineRequest();
+        lib.getSysReq().getCurrRequest().declineRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
         if (lib.getSysReq().getCurrRequest() instanceof AccountRequest) lib.getSysAcc().deleteAccount(lib.getSysReq().getCurrRequest().getRequester().getOwner().getID());
         lib.getSysReq().deleteRequest();
         plainText.clear();

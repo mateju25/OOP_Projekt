@@ -1,13 +1,15 @@
 package gui.controllers;
 
 import people.BookStocker;
+import products.Product;
 import systems.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.io.IOException;
-
+/**
+ * This controller provides handlers for basic scene for {@link BookStocker}
+ */
 public class LogOutControllerBookStocker extends SimpleController{
     @FXML
     private ListView plainText;
@@ -23,6 +25,25 @@ public class LogOutControllerBookStocker extends SimpleController{
     private TextField numOfPages;
 
 
+    //inicializacia tabulkoveho vypisu
+    @FXML
+    public void initialize() {
+        plainText.setCellFactory(param -> new ListCell<Object>() {
+            @Override
+            protected void updateItem(Object item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null) {
+                    setText(null);
+                } else {
+                    setText(((Product) item).getInfo());
+                }
+            }
+        });
+    }
+
+    /**
+     * Sets test for status bar in the scene
+     */
     public void setStatusBar()
     {
         statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());

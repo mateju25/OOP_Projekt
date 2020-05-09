@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
+/**
+ * System that holds and manages accounts in library
+ * @author Matej Delincak
+ */
 public class AccountSystem extends SimpleSystem implements Serializable {
     //atributes
     private Account currUser;
@@ -33,8 +37,8 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
 
     /**
-     * funcion that returns list of accounts - possible only for Librarian class
-     * @param person
+     * funcion that returns list of accounts - possible only for {@link Librarian}
+     * @param person {@link Librarian}
      * @return list of accounts in system
      */
     @Override
@@ -44,14 +48,14 @@ public class AccountSystem extends SimpleSystem implements Serializable {
 
     /**
      * functions that logs user based on login and password
-     * @param paLogin
-     * @param paPass
+     * @param paLogin login of account
+     * @param paPass password of account
      * @return true if login succes, false if login was not successful
      */
     public boolean logUser(String paLogin, String paPass) {
         for (Account a : (LinkedList<Account>)list)
         {
-            if (a.userLogin(paLogin, paPass) == 1)
+            if (a.userLogin(paLogin, paPass))
             {
                 currUser = a;
                 return true;
@@ -62,7 +66,7 @@ public class AccountSystem extends SimpleSystem implements Serializable {
 
     /**
      * function that finds an account based on login
-     * @param paLogin
+     * @param paLogin login of person
      * @return true if account exists, no if not
      */
     public boolean existUser(String paLogin) {
@@ -75,7 +79,7 @@ public class AccountSystem extends SimpleSystem implements Serializable {
 
     /**
      * function that finds account based on unique ID
-     * @param paID
+     * @param paID id of account
      * @return specific account with paID
      */
     public Account findAccountID(int paID) {
@@ -88,7 +92,7 @@ public class AccountSystem extends SimpleSystem implements Serializable {
 
     /**
      * function that finds account based on owner's name
-     * @param paName
+     * @param paName name of account
      * @return specific account with specific name
      */
     public Account findAccountName(String paName) {
@@ -101,7 +105,7 @@ public class AccountSystem extends SimpleSystem implements Serializable {
 
     /**
      * deletes specific account based on ID
-     * @param paID
+     * @param paID id of account
      */
     public void deleteAccount(int paID) {
         int i = 0;
@@ -113,11 +117,11 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
 
     /**
-     * creates a new child reader together with account
-     * @param name
-     * @param login
-     * @param password
-     * @param verified
+     * creates a new child reader together with account {@link ChildReader}
+     * @param name name of the user
+     * @param login login of the user
+     * @param password password of the user
+     * @param verified if the account is verified or not
      */
     public void addNewUserChildReader(String name, String login, String password, boolean verified) {
         list.add(new Account(new ChildReader(maxID, name), login, password, verified));
@@ -125,11 +129,11 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
 
     /**
-     * creates a new adult reader together with account
-     * @param name
-     * @param login
-     * @param password
-     * @param verified
+     * creates a new adult reader together with account {@link AdultReader}
+     * @param name name of the user
+     * @param login login of the user
+     * @param password password of the user
+     * @param verified if the account is verified or not
      */
     public void addNewUserAdultReader(String name, String login, String password, boolean verified) {
         list.add(new Account(new AdultReader(maxID, name), login, password, verified));
@@ -137,11 +141,11 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
 
     /**
-     * creates a new worker together with account
-     * @param name
-     * @param login
-     * @param password
-     * @param verified
+     * creates a new worker together with account {@link Worker}
+     * @param name name of the user
+     * @param login login of the user
+     * @param password password of the user
+     * @param verified if the account is verified or not
      */
     public void addNewUserWorker(String name, String login, String password, boolean verified) {
         list.add(new Account(new Librarian(maxID, name), login, password, verified));
@@ -149,11 +153,11 @@ public class AccountSystem extends SimpleSystem implements Serializable {
     }
 
     /**
-     * creates a new book keeper together with account
-     * @param name
-     * @param login
-     * @param password
-     * @param verified
+     * creates a new book keeper together with account {@link BookStocker}
+     * @param name name of the user
+     * @param login login of the user
+     * @param password password of the user
+     * @param verified if the account is verified or not
      */
     public void addNewUserStocker(String name, String login, String password, boolean verified) {
         list.add(new Account(new BookStocker(maxID, name), login, password, verified));

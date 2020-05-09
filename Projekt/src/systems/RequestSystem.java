@@ -6,23 +6,36 @@ import people.Librarian;
 import java.io.*;
 import java.util.LinkedList;
 
+/**
+ * System that holds and manages requests in library
+ * @author Matej Delincak
+ */
 public class RequestSystem extends SimpleSystem implements Serializable  {
     //atributes
     private int currReq = 0;
     private static int maxId = 0;
 
-    //getters
+    /**
+     * @return current request that needs to be processed
+     */
     public Request getCurrRequest() {
         return ((LinkedList<Request>)list).get(currReq);
     }
-    //vrati zoznam poziadaviek na zaklade ziadatela
+
+    /**
+     * funcion that returns list of accounts - possible only for {@link Librarian}
+     * @param person {@link Librarian}
+     * @return list of accounts in system
+     */
     @Override
     public LinkedList getList(Librarian person) {
         return ((LinkedList<Request>)list);
     }
 
-    //methods for GUI
-    //dalsia poziadavka v poradi
+    /**
+     * function cycles through all requests
+     * @return next request based on index
+     */
     public Request nextRequest() {
         if (currReq + 1 >= ((LinkedList<Request>)list).size())
             return null;
@@ -31,7 +44,11 @@ public class RequestSystem extends SimpleSystem implements Serializable  {
             return ((LinkedList<Request>)list).get(currReq);
         }
     }
-    //prva poziadavka v poradi
+
+    /**
+     * function set current request at the begin of request list
+     * @return first request
+     */
     public Request beginRequest() {
         currReq = 0;
         if (((LinkedList<Request>)list).size() > 0){
@@ -40,11 +57,21 @@ public class RequestSystem extends SimpleSystem implements Serializable  {
         else
             return null;
     }
+
+    /**
+     * function deletes current requesr that is worked with
+     */
     public void deleteRequest() {
         ((LinkedList<Request>)list).remove(currReq);
         if(currReq != 0) currReq--;
     }
-    //vrati boolean ci existuje kniha
+
+    /**
+     * function controllers whether specific book request exists
+     * @param paBook {@link Book}
+     * @param paAcc {@link Account}
+     * @return true if book request exists or false if not
+     */
     public boolean existsBookReq(Book paBook, Account paAcc) {
         for (Request req : ((LinkedList<Request>)list))
         {
@@ -52,25 +79,34 @@ public class RequestSystem extends SimpleSystem implements Serializable  {
         }
         return false;
     }
-    //prida novu poziadavku
+
+    /**
+     * adds new book request into the system
+     * @param paBook {@link Book}
+     * @param paRequester {@link Account}
+     */
     public void addNewBookReq(Book paBook, Account paRequester) {
         ((LinkedList<Request>)list).add(new BookRequest(maxId, paBook, paRequester));
         maxId++;
     }
-    //prida novu poziadavku
+
+    /**
+     * adss new account request into the system
+     * @param paRequester {@link Account}
+     */
     public void addNewAccountReq(Account paRequester) {
         ((LinkedList<Request>)list).add(new AccountRequest(paRequester));
         maxId++;
     }
 
-    //serialization
+    /**
+     * serializes request system into file "requests.out"
+     */
     public void run() {
-        //System.out.println("Req start");
         try {
             serialize("requests.out");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println("Req end");
     }
 }

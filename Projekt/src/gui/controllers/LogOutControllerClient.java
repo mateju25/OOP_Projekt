@@ -1,16 +1,19 @@
 package gui.controllers;
 
+import people.BookStocker;
 import people.Reader;
 import people.Worker;
-import products.Account;
 import products.Book;
 import products.Message;
+import products.Product;
 import systems.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-
+/**
+ * This controller provides handlers for basic scene for {@link Reader}
+ */
 public class LogOutControllerClient extends SimpleController{
     @FXML
     private ListView plainText;
@@ -21,7 +24,25 @@ public class LogOutControllerClient extends SimpleController{
     @FXML
     private Button markButton;
 
-    //nastavi oznam o novych sprav
+    //inicializacia tabulkoveho vypisu
+    @FXML
+    public void initialize() {
+        plainText.setCellFactory(param -> new ListCell<Object>() {
+            @Override
+            protected void updateItem(Object item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null) {
+                    setText(null);
+                } else {
+                    setText(((Product) item).getInfo());
+                }
+            }
+        });
+    }
+
+    /**
+     * Sets the number of messages
+     */
     public void setMessText()
     {
         if (((Reader)lib.getSysAcc().getCurrUser().getOwner()).getMyMessages() == null)
@@ -34,7 +55,9 @@ public class LogOutControllerClient extends SimpleController{
 
         setStatusBar();
     }
-
+    /**
+     * Sets test for status bar in the scene
+     */
     public void setStatusBar()
     {
         statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());
@@ -61,11 +84,14 @@ public class LogOutControllerClient extends SimpleController{
             AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si žiadnu knihu");
         }
         else {
-            if (!lib.getSysReq().existsBookReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()))
-                lib.getSysReq().addNewBookReq(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser());
-            else
-            {
-                AlertSystem alertWindow = new AlertSystem("Pozor", "Zadana požiadavka už existuje");
+            if (((Book)plainText.getSelectionModel().getSelectedItem()).getReserve()) {
+                AlertSystem alertWindow = new AlertSystem("Pozor", "Zadaná kniha už je rezervovaná.");
+            } else {
+                if (!lib.getSysReq().existsBookReq((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser()))
+                    lib.getSysReq().addNewBookReq(lib.getSysBook().findBook(((Book) plainText.getSelectionModel().getSelectedItem()).getID()), lib.getSysAcc().getCurrUser());
+                else {
+                    AlertSystem alertWindow = new AlertSystem("Pozor", "Zadaná požiadavka už existuje");
+                }
             }
         }
     }
@@ -78,7 +104,7 @@ public class LogOutControllerClient extends SimpleController{
             AlertSystem alertWindow = new AlertSystem("Pozor", "Nevybral si žiadnu knihu");
         }
         else {
-            ((Worker)lib.getSysAcc().getFirstWorker().getOwner()).unreserveBook((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser());
+            ((Worker)lib.getSysAcc().getWorker().getOwner()).unreserveBook((Book) plainText.getSelectionModel().getSelectedItem(), lib.getSysAcc().getCurrUser());
             myBookShow(event);
         }
     }

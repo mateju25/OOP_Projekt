@@ -1,6 +1,15 @@
 package systems;
 
+/**
+ * This class checks correctness of password
+ * @author Matej Delincak
+ */
 public class PasswordChecker {
+    /**
+     * function checks potential password if it fulfills the conditions (length of 8 chars, one big letter and one number)
+     * @param potentialPass potential password
+     * @throws WrongPasswordException
+     */
     public void checkPass(String potentialPass) throws WrongPasswordException
     {
         if (potentialPass.length() < 8) throw new WrongPasswordException();

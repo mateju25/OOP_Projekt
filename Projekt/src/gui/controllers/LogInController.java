@@ -7,8 +7,9 @@ import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
+/**
+ * This controller provides handlers for log in scene
+ */
 public class LogInController extends SimpleController {
     @FXML
     private TextField loginText;
@@ -19,7 +20,7 @@ public class LogInController extends SimpleController {
     //stlacenie prihlasovancieho tlacidla
     @FXML
     private void logInButtonClicked(ActionEvent event) {
-        if(lib.getSysAcc().logUser(loginText.getText(), passText.getText()) == 1) {
+        if(lib.getSysAcc().logUser(loginText.getText(), passText.getText())) {
             switchScene(lib.getSysAcc().getCurrUser().getOwner().startScene(), event);
         }
         else {

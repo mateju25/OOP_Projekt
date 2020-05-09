@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import products.Book;
 import systems.LibraryEvidenceSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,27 +11,47 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This controller provides basic operations for all controllers
+ */
 public class SimpleController {
-    //atributes
+    /**
+     * Library system
+     */
     protected LibraryEvidenceSystem lib;
+    /**
+     * Main window of the program
+     */
     protected Stage mainWindow;
 
-    //methods
+    /**
+     * transfers data between controllers
+     * @param paLib {@link LibraryEvidenceSystem}
+     * @param window main window of the program
+     */
     public void transferData(LibraryEvidenceSystem paLib, Stage window)
     {
         this.lib = paLib;
         this.mainWindow = window;
     }
 
+    /**
+     * saves data
+     */
     @FXML
     public void saveLibrary() {
-        System.out.println("saved");
         try {
             lib.serializeOffice();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+    /**
+     * switches scenes between controllers
+     * @param s name of the file for switching
+     * @param event event that has started
+     */
     public void switchScene(String s, ActionEvent event)
     {
         FXMLLoader loader = new FXMLLoader((getClass().getResource(s)));

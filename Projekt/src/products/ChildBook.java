@@ -2,19 +2,39 @@ package products;
 
 import java.io.Serializable;
 
+/**
+ * Special type of book available for kids (but adults can access it too)
+ * @author Matej Delincak
+ */
 public class ChildBook extends Book implements Serializable {
-	//constructor
-	public ChildBook(int paId, String paTitle, int paNumOfPages, String paISBN, String review)
+	/**
+	 * creates child book with review
+	 * @param paID if of the book
+	 * @param paTitle title of the book
+	 * @param paNumOfPages number of pages
+	 * @param paISBN isbn of the book
+	 * @param review review of the book
+	 */
+	public ChildBook(int paID, String paTitle, int paNumOfPages, String paISBN, String review)
 	{
-		super(paId, paTitle, paNumOfPages, paISBN, review);
-	}
-	public ChildBook(int paId, String paTitle, int paNumOfPages, String paISBN)
-	{
-		super(paId, paTitle, paNumOfPages, paISBN);
+		super(paID, paTitle, paNumOfPages, paISBN, review);
 	}
 
-	//getters
-	//vrati info o knihe vo forme Stringu
+	/**
+	 * creates child book without review
+	 * @param paID if of the book
+	 * @param paTitle title of the book
+	 * @param paNumOfPages number of pages
+	 * @param paISBN isbn of the book
+	 */
+	public ChildBook(int paID, String paTitle, int paNumOfPages, String paISBN)
+	{
+		super(paID, paTitle, paNumOfPages, paISBN);
+	}
+
+	/**
+	 * @return info about child book
+	 */
 	@Override
 	public String getInfo() {
 		{

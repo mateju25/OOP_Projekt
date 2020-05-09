@@ -9,22 +9,38 @@ import products.Request;
 import java.io.*;
 import java.util.LinkedList;
 
+/**
+ * Main class of library evidence system
+ * @author Matej Delincak
+ */
 public class LibraryEvidenceSystem {
     private AccountSystem sysAcc = new AccountSystem();
-    private final BookSystem sysBook = new BookSystem();
+    private BookSystem sysBook = new BookSystem();
     private RequestSystem sysReq = new RequestSystem();
 
+    /**
+     * @return system for accounts
+     */
     public AccountSystem getSysAcc() {
         return sysAcc;
     }
+    /**
+     * @return system for books
+     */
     public BookSystem getSysBook() {
         return sysBook;
     }
+
+    /**
+     * @return system for requests
+     */
     public RequestSystem getSysReq() {
         return sysReq;
     }
 
-    //constructor
+    /**
+     * creates library system a load all data
+     */
     public LibraryEvidenceSystem() {
         sysAcc.addNewUserChildReader("Matej Delincák", "x", "x", true);
         sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x", true);
@@ -46,7 +62,10 @@ public class LibraryEvidenceSystem {
 
     }
 
-    //serializuje celu kniznicu
+    /**
+     * serializes all systems in library - uses multithreading
+     * @throws InterruptedException
+     */
     public void serializeOffice() throws InterruptedException {
         Thread t1 = new Thread (sysAcc, "Account system");
         t1.start();
@@ -59,7 +78,9 @@ public class LibraryEvidenceSystem {
         t3.join();
     }
 
-    //deserializuje celu kniznicu a opravi prepojenia medzi objektami, ktore boli stratene pri serializacii
+    /**
+     * deserializes all system from files a build connections between systems
+     */
     public void deserializeOffice() {
         try {
             sysAcc.deserialize("accounts.out");

@@ -4,10 +4,25 @@ import people.Worker;
 
 import java.io.Serializable;
 
+/**
+ * simple request object
+ * @author Matej Delincak
+ */
 public abstract class Request implements Serializable, Product {
-    //getters
+    /**
+     * @return requester of demand
+     */
     public abstract Account getRequester();
-    //methods
+
+    /**
+     * accepts request by {@link Worker}
+     * @param paAccepter {@link Worker}
+     */
     public abstract void acceptRequest(Worker paAccepter);
-    public abstract void declineRequest();
+
+    /**
+     * declines request by {@link Worker}
+     * @param paAccepter {@link Worker}
+     */
+    public abstract void declineRequest(Worker paAccepter);
 }

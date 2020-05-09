@@ -2,19 +2,39 @@ package products;
 
 import java.io.Serializable;
 
+/**
+ * Special type of book only available for adults
+ * @author Matej Delincak
+ */
 public class AdultBook extends Book  implements Serializable {
-	//constructor
+	/**
+	 * creates adult book with review
+	 * @param paId if of the book
+	 * @param paTitle title of the book
+	 * @param paNumOfPages number of pages
+	 * @param paISBN isbn of the book
+	 * @param review review of the book
+	 */
 	public AdultBook(int paId, String paTitle, int paNumOfPages, String paISBN, String review)
 	{
 		super(paId, paTitle, paNumOfPages, paISBN, review);
 	}
+
+	/**
+	 * creates adult book without review
+	 * @param paId if of the book
+	 * @param paTitle title of the book
+	 * @param paNumOfPages number of pages
+	 * @param paISBN isbn of the book
+	 */
 	public AdultBook(int paId, String paTitle, int paNumOfPages, String paISBN)
 	{
 		super(paId, paTitle, paNumOfPages, paISBN);
 	}
 
-	//getters
-	//vrati info o knihe vo forme Stringu
+	/**
+	 * @return info about adult book
+	 */
 	@Override
 	public String getInfo() {
 		{

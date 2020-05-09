@@ -1,27 +1,34 @@
 package systems;
 
-import people.AdultReader;
-import people.BookStocker;
-import people.ChildReader;
-import people.Librarian;
-import products.AdultBook;
-import products.Book;
-import products.ChildBook;
-
+import people.*;
+import products.*;
 import java.io.*;
 import java.util.LinkedList;
 
+/**
+ * System that holds and manages books in library
+ * @author Matej Delincak
+ */
 public class BookSystem extends SimpleSystem implements Serializable {
     //atributes
     private static int maxID = 0;
 
-    //getters
-    //vrati zoznam knih na zaklade ziadatela
+    /**
+     * funcion that returns list of books - possible only for {@link AdultReader}
+     * @param person {@link AdultReader}
+     * @return list of books in system
+     */
     @Override
     public LinkedList getList(AdultReader person) {
 
         return ((LinkedList<Book>)list);
     }
+
+    /**
+     * funcion that returns list of books available only for kids - possible only for  {@link ChildReader}
+     * @param person {@link ChildReader}
+     * @return list of books in system
+     */
     @Override
     public LinkedList getList(ChildReader person) {
         LinkedList<Book> childBooks = new LinkedList<Book>();
@@ -30,19 +37,34 @@ public class BookSystem extends SimpleSystem implements Serializable {
         }
         return childBooks;
     }
+
+    /**
+     * funcion that returns list of books - possible only for  {@link Librarian}
+     * @param person {@link Librarian}
+     * @return list of books in system
+     */
     @Override
     public LinkedList getList(Librarian person) {
 
         return ((LinkedList<Book>)list);
     }
 
+    /**
+     * funcion that returns list of books - possible only for  {@link BookStocker}
+     * @param person {@link BookStocker}
+     * @return list of books in system
+     */
     @Override
     public LinkedList getList(BookStocker person) {
 
         return ((LinkedList<Book>)list);
     }
 
-    //methods
+    /**
+     * finds book based on its ID
+     * @param paID id of the book
+     * @return book with specific paID
+     */
     public Book findBook(int paID) {
         for(Book book : ((LinkedList<Book>)list))
         {
@@ -50,31 +72,65 @@ public class BookSystem extends SimpleSystem implements Serializable {
         }
         return null;
     }
+
+    /**
+     * adds new child book into the system
+     * @param creator {@link BookStocker}
+     * @param title title of the book
+     * @param pages number of the pages
+     * @param ISBN isbn of the book
+     * @param review review of the book
+     */
     public void addNewChildBook(BookStocker creator, String title, int pages, String ISBN, String review) {
         creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, pages, ISBN, review));
         maxID++;
     }
+
+    /**
+     * adds new child book into the system
+     * @param creator {@link BookStocker}
+     * @param title title of the book
+     * @param pages number of the pages
+     * @param ISBN isbn of the book
+     */
     public void addNewChildBook(BookStocker creator,String title, int pages, String ISBN) {
         creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, pages, ISBN));
         maxID++;
     }
+
+    /**
+     * adds new adult book into the system
+     * @param creator {@link BookStocker}
+     * @param title title of the book
+     * @param pages number of the pages
+     * @param ISBN isbn of the book
+     * @param review review of the book
+     */
     public void addNewAdultBook(BookStocker creator,String title, int pages, String ISBN, String review)  {
         creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, pages, ISBN, review));
         maxID++;
     }
+
+    /**
+     * adds new adult book into the system
+     * @param creator {@link BookStocker}
+     * @param title title of the book
+     * @param pages number of the pages
+     * @param ISBN isbn of the book
+     */
     public void addNewAdultBook(BookStocker creator,String title, int pages, String ISBN)  {
         creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, pages, ISBN));
         maxID++;
     }
 
-    //serialization
+    /**
+     * serializes book system into file "book.out"
+     */
     public void run() {
-        //System.out.println("Book start");
         try {
             serialize("books.out");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println("Book end");
     }
 }

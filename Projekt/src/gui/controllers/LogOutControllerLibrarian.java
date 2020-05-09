@@ -1,20 +1,38 @@
 package gui.controllers;
 
-import products.Account;
-import products.Book;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import products.Product;
 
-import java.io.IOException;
-
+/**
+ * This controller provides handlers for basic scene for {@link people.Librarian}
+ */
 public class LogOutControllerLibrarian extends SimpleController{
     @FXML
     private ListView plainText;
     @FXML
     private Label statusBar;
 
+    //inicializacia tabulkoveho vypisu
+    @FXML
+    public void initialize() {
+        plainText.setCellFactory(param -> new ListCell<Object>() {
+            @Override
+            protected void updateItem(Object item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null) {
+                    setText(null);
+                } else {
+                    setText(((Product) item).getInfo());
+                }
+            }
+        });
+    }
 
+    /**
+     * Sets test for status bar in the scene
+     */
     public void setStatusBar()
     {
         statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());

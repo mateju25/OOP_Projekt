@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import people.BookStocker;
 import systems.AlertSystem;
 import systems.PasswordChecker;
 import systems.WrongPasswordException;
@@ -8,7 +9,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
-
+/**
+ * This controller provides handlers for register scene
+ */
 public class RegisterSceneController extends SimpleController {
     @FXML
     private TextField nameText;
@@ -19,15 +22,19 @@ public class RegisterSceneController extends SimpleController {
     @FXML
     private ChoiceBox comboBox;
 
-    private final String pass = "";
-    private final int currLet = 0;
-
+    /**
+     * initialize choice box of the scene
+     */
     @FXML
     public void initialize() {
         comboBox.getItems().addAll("Detské konto", "Konto pre dospelých", "Knihovník", "Skladník");
     }
 
-    //registrovanie noveho uzivatela
+    /**
+     * new user registration button
+     * @param actionEvent event that was started
+     * @throws InterruptedException
+     */
     public void registerButtonClick(ActionEvent actionEvent) throws InterruptedException {
         if (nameText.getText().equals("") || loginText.getText().equals("") || passText.getText().equals("") || comboBox.getSelectionModel().isEmpty()) {
             AlertSystem errorWindow = new AlertSystem("Pozor", "Nevyplnil si všetky údaje");
@@ -71,7 +78,10 @@ public class RegisterSceneController extends SimpleController {
     }
 
 
-    //registrovanie noveho uzivatela
+    /**
+     * going back button (to log in scene)
+     * @param actionEvent event that was started
+     */
     public void goBackButton(ActionEvent actionEvent) {
         switchScene("../View/logInScene.fxml", actionEvent);
     }
