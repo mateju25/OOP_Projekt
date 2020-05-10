@@ -45,7 +45,7 @@ public class AdultReader extends Reader implements Serializable {
     @Override
     public String getInfo()
     {
-        return String.format("%4d - Zakaznik(Dospelý):  %s", this.dataId, this.name);
+        return String.format("%4d - Zakazník(Dospelý):  %s", this.dataId, this.name);
     }
 
     /**

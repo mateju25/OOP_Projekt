@@ -1,11 +1,19 @@
 package gui.controllers;
 
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import people.BookStocker;
+import products.Account;
+import products.Book;
 import products.Product;
 import systems.AlertSystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * This controller provides handlers for basic scene for {@link BookStocker}
@@ -34,8 +42,10 @@ public class LogOutControllerBookStocker extends SimpleController{
                 super.updateItem(item, empty);
                 if (item == null) {
                     setText(null);
+                } else if (item instanceof Account) {
+                    setText(((Account) item).getOwner().getInfo());
                 } else {
-                    setText(((Product) item).getInfo());
+                    setText(((Book) item).getInfo());
                 }
             }
         });
@@ -47,6 +57,12 @@ public class LogOutControllerBookStocker extends SimpleController{
     public void setStatusBar()
     {
         statusBar.setText("  Prihlásený užívateľ: " + lib.getSysAcc().getCurrUser().getOwner().getName());
+    }
+
+    @FXML
+    private void openDoc(ActionEvent event) throws InterruptedException, IOException {
+        File htmlFile = new File("D:\\Skola\\2_semester\\OOP-projekt\\docs\\index.html");
+        Desktop.getDesktop().browse(htmlFile.toURI());
     }
 
     //stlacenie odhlasovacieho tlacidla

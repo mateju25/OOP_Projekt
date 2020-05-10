@@ -37,17 +37,6 @@ public class Account implements Serializable {
     {
         return login;
     }
-    /**
-     * @return info about account
-     */
-    public String getInfo() {
-        String s;
-        if(owner instanceof Librarian)
-            s = String.format("%4d - Pracovnik: %s", this.owner.getID(), this.owner.getName());
-        else
-            s = String.format("%4d - Zakaznik: %s", this.owner.getID(), this.owner.getName());
-        return s;
-    }
 
     /**
      * verifies book if verified is true

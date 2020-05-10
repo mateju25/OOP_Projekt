@@ -40,9 +40,9 @@ public class AdultBook extends Book  implements Serializable {
 		{
 			String s;
 			if(reserved)
-				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre doslepých", this.dataId, "rezervovaná", this.title, this.ISBN);
+				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre dospelých", this.dataId, "rezervovaná", this.title, this.ISBN);
 			else
-				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre doslepých", this.dataId, "voľná", this.title, this.ISBN);
+				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre dospelých", this.dataId, "voľná", this.title, this.ISBN);
 			return s;
 		}
 	}

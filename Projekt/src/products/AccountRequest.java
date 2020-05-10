@@ -1,6 +1,6 @@
 package products;
 
-import people.Worker;
+import people.*;
 
 /**
  * Account request when registration of new user occurs
@@ -32,7 +32,20 @@ public class AccountRequest extends Request {
      */
     @Override
     public String getInfo() {
-        return requester.getOwner().getName() + " požiadal o vytvorenie nového úctu. \n";
+        String s = null;
+        if (requester.getOwner() instanceof ChildReader) {
+            s = requester.getOwner().getName() + " požiadal o vytvorenie nového detského účtu. \n";
+        }
+        if (requester.getOwner() instanceof AdultReader) {
+            s = requester.getOwner().getName() + " požiadal o vytvorenie nového účtu pre dospelého. \n";
+        }
+        if (requester.getOwner() instanceof Librarian) {
+            s = requester.getOwner().getName() + " požiadal o vytvorenie nového účtu pre pracovníka. \n";
+        }
+        if (requester.getOwner() instanceof BookStocker) {
+            s = requester.getOwner().getName() + " požiadal o vytvorenie nového účtu pre skladníka. \n";
+        }
+        return s;
     }
 
     /**

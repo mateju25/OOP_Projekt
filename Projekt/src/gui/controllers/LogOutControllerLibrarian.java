@@ -3,7 +3,15 @@ package gui.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import products.Account;
+import products.Book;
 import products.Product;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.LinkedList;
 
 /**
  * This controller provides handlers for basic scene for {@link people.Librarian}
@@ -23,8 +31,10 @@ public class LogOutControllerLibrarian extends SimpleController{
                 super.updateItem(item, empty);
                 if (item == null) {
                     setText(null);
+                } else if (item instanceof Account) {
+                    setText(((Account) item).getOwner().getInfo());
                 } else {
-                    setText(((Product) item).getInfo());
+                    setText(((Book) item).getInfo());
                 }
             }
         });
@@ -45,6 +55,13 @@ public class LogOutControllerLibrarian extends SimpleController{
         lib.getSysAcc().getCurrUser().userLogOut();
         switchScene("../View/logInScene.fxml", event);
     }
+
+    @FXML
+    private void openDoc(ActionEvent event) throws InterruptedException, IOException {
+        File htmlFile = new File("D:\\Skola\\2_semester\\OOP-projekt\\docs\\index.html");
+        Desktop.getDesktop().browse(htmlFile.toURI());
+    }
+
     //zobraz ucty
     @FXML
     private void showAccountsButton(ActionEvent event) {

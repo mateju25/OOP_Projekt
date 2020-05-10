@@ -5,55 +5,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts.out" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books.out" beforeDir="false" afterPath="$PROJECT_DIR$/books.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/AccountRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/AccountRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/AdultBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/AdultBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Book$Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Book$Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/BookRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/BookRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Products/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Products/Request.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/AccountSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/AccountSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/AlertSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/AlertSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/BookSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/BookSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/PasswordChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/PasswordChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/RequestSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/RequestSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/SimpleSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/SimpleSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/Systems/WrongPasswordException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/Systems/WrongPasswordException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/LogInController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/LogOutControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/LogOutControllerClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/RegisterSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/RegisterSceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/RequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/gui/controllers/RequestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projekt/systems/LibraryEvidenceSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projekt/systems/LibraryEvidenceSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/LogOutControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/LogOutControllerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/LogOutControllerLibrarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/LogOutControllerLibrarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/RegisterSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/RegisterSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/controllers/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/RequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controllers/SimpleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controllers/SimpleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/logOutSceneBookStocker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logOutSceneBookStocker.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/logOutSceneClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logOutSceneClient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/logOutSceneLibrarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/logOutSceneLibrarian.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/view/requestScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view/requestScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/people/AdultReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/AdultReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/people/BookStocker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/BookStocker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/ChildReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/ChildReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Worker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/products/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/products/AccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/AccountRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/products/AdultBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/AdultBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products/BookRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/BookRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products/ChildBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/ChildBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/products/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/products/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/AccountSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/AccountSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/AlertSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/AlertSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/BookSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/BookSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/LibraryEvidenceSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/LibraryEvidenceSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/PasswordChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/PasswordChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/RequestSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/RequestSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/SimpleSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/SimpleSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/WrongPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/WrongPasswordException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,6 +288,7 @@
       <workItem from="1588773700909" duration="4583000" />
       <workItem from="1588870901552" duration="5924000" />
       <workItem from="1589036991635" duration="4685000" />
+      <workItem from="1589119162258" duration="3759000" />
     </task>
     <task id="LOCAL-00001" summary="Information windows added for situations within login and request system">
       <created>1585235807029</created>
@@ -372,10 +342,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588780852080" />
-    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589041859464">
+    <state x="867" y="273" key="#xdebugger.XInspectDialog" timestamp="1589122296457">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1589041859464" />
+    <state x="867" y="273" key="#xdebugger.XInspectDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589122296457" />
+    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589119709593">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="718" y="401" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1589119709593" />
     <state x="603" y="115" key="CommitChangelistDialog2" timestamp="1585235803297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -388,38 +362,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588700985623" />
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1589042109455">
+    <state width="1877" height="386" key="GridCell.Tab.0.bottom" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589042109455" />
-    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1589042109455">
+    <state width="1877" height="386" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.0.center" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589042109455" />
-    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1589042109455">
+    <state width="1877" height="386" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.0.left" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589042109455" />
-    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1589042109455">
+    <state width="1877" height="386" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.0.right" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589042109455" />
-    <state width="1877" height="386" key="GridCell.Tab.1.bottom" timestamp="1588771713600">
+    <state width="1877" height="386" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.1.bottom" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588771713600" />
-    <state width="1877" height="386" key="GridCell.Tab.1.center" timestamp="1588771713600">
+    <state width="1877" height="386" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.1.center" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588771713600" />
-    <state width="1877" height="386" key="GridCell.Tab.1.left" timestamp="1588771713600">
+    <state width="1877" height="386" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.1.left" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588771713600" />
-    <state width="1877" height="386" key="GridCell.Tab.1.right" timestamp="1588771713600">
+    <state width="1877" height="386" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
+    <state width="1877" height="386" key="GridCell.Tab.1.right" timestamp="1589122876124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588771713600" />
+    <state width="1877" height="386" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589122876124" />
     <state x="514" y="118" width="1040" height="875" key="SettingsEditor" timestamp="1588702078072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,5 +1,7 @@
 package gui.controllers;
 
+import people.ChildReader;
+import people.Reader;
 import products.AccountRequest;
 import products.Request;
 import people.Worker;
@@ -10,6 +12,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * This controller provides handlers for handling requests scene for {@link people.Librarian}
@@ -60,7 +66,7 @@ public class RequestController extends SimpleController{
         else
         {
             if (lib.getSysAcc().getCurrUser().getOwner().accept(lib.getSysReq()).size() == 0) {
-                AlertSystem alertWindow = new AlertSystem("Informacia", "Ziadne dalsie poziadavky");
+                AlertSystem alertWindow = new AlertSystem("Informácia", "Žiadne dalšie požiadavky");
                 acceptButton.setDisable(true);
                 declineButton.setDisable(true);
                 accountInfo.setDisable(true);
@@ -82,7 +88,7 @@ public class RequestController extends SimpleController{
         } else
         {
             nextReq.setDisable(true);
-            AlertSystem alertWindow = new AlertSystem("Informacia", "Ziadne dalsie poziadavky");
+            AlertSystem alertWindow = new AlertSystem("Informácia", "Žiadne dalšie požiadavky");
         }
     }
     //akceptuj poziadavku od uzivatela
@@ -119,10 +125,30 @@ public class RequestController extends SimpleController{
             nextRequestButton(event);
     }
 
+    @FXML
+    private void openDoc(ActionEvent event) throws InterruptedException, IOException {
+        File htmlFile = new File("D:\\Skola\\2_semester\\OOP-projekt\\docs\\index.html");
+        Desktop.getDesktop().browse(htmlFile.toURI());
+    }
+
     //vypis okno a udajmi o ziadatelovi
     @FXML
     private void showUserData(ActionEvent event) {
         Account acc = lib.getSysReq().getCurrRequest().getRequester();
-        AlertSystem infoWindow = new AlertSystem("Info o žiadateľovi", "Meno a priezvisko: " + acc.getOwner().getName() + "\n");
+        if (acc.getOwner() instanceof ChildReader) {
+            AlertSystem infoWindow = new AlertSystem("Info o žiadateľovi",
+                    "Meno a priezvisko: " + acc.getOwner().getName() +
+                               "\nID: " + String.valueOf(acc.getOwner().getID()) +
+                               "\nPočet požičaných kníh: " + String.valueOf(((Reader) acc.getOwner()).getMyBooks().size()) +
+                               "\nTyp účtu: Dieťa");
+        }
+        else {
+            AlertSystem infoWindow = new AlertSystem("Info o žiadateľovi",
+                    "Meno a priezvisko: " + acc.getOwner().getName() +
+                            "\nID: " + String.valueOf(acc.getOwner().getID()) +
+                            "\nPočet požičaných kníh: " + String.valueOf(((Reader) acc.getOwner()).getMyBooks().size()) +
+                            "\nTyp účtu: Dospelý");
+        }
+
     }
 }

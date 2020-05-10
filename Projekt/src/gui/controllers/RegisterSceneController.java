@@ -68,10 +68,10 @@ public class RegisterSceneController extends SimpleController {
                         break;
                     }
                 }
-                AlertSystem errorWindow = new AlertSystem("Informácia", "Úcet vytvorený");
+                AlertSystem errorWindow = new AlertSystem("Informácia", "Účet vytvorený");
                 lib.getSysReq().addNewAccountReq(lib.getSysAcc().findAccountName(nameText.getText()));
                 lib.serializeOffice();
-                switchScene("logInScene.fxml", actionEvent);
+                switchScene("../View/logInScene.fxml", actionEvent);
             }
         }
 

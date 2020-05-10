@@ -43,7 +43,7 @@
             <MenuItem mnemonicParsing="false" onAction="#logOutButtonClicked" text="Odhlásiť sa"/>
          </Menu>
          <Menu mnemonicParsing="false" text="Pomoc">
-            <MenuItem mnemonicParsing="false" text="Dokumentácia"/>
+            <MenuItem mnemonicParsing="false" onAction="#openDoc"  text="Dokumentácia"/>
          </Menu>
       </MenuBar>
       <Label fx:id="statusBar" layoutY="674.0" prefHeight="25.0" prefWidth="1000.0" />

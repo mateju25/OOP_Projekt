@@ -27,7 +27,7 @@ public class LogInController extends SimpleController {
             AlertSystem wrongloginWindow;
             if (lib.getSysAcc().findAccountName(loginText.getText()) != null) {
                 if (!lib.getSysAcc().findAccountName(loginText.getText()).getVerified())
-                    wrongloginWindow = new AlertSystem("Pozor", "Úcet ešte nebol overený.");
+                    wrongloginWindow = new AlertSystem("Pozor", "Účet ešte nebol overený.");
                 else
                     wrongloginWindow = new AlertSystem("Pozor", "Zadaj správny login alebo heslo");
             }

@@ -45,4 +45,12 @@ public class BookStocker extends Librarian implements Serializable {
         return v.getList(this);
     }
 
+    /**
+     * @return info about book stocker
+     */
+    @Override
+    public String getInfo()
+    {
+        return String.format("%4d - Skladník: %s",(this).dataId, (this).getName());
+    }
 }
