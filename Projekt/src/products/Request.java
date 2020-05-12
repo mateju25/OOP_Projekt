@@ -1,6 +1,7 @@
 package products;
 
 import people.Worker;
+import systems.AccountSystem;
 
 import java.io.Serializable;
 
@@ -24,5 +25,5 @@ public abstract class Request implements Serializable, Product {
      * declines request by {@link Worker}
      * @param paAccepter {@link Worker}
      */
-    public abstract void declineRequest(Worker paAccepter);
+    public abstract void declineRequest(AccountSystem sys, Worker paAccepter);
 }

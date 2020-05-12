@@ -42,17 +42,19 @@ public class LibraryEvidenceSystem {
      * creates library system a load all data
      */
     public LibraryEvidenceSystem() {
-        sysAcc.addNewUserChildReader("Matej Delincák", "x", "x", true);
-        sysAcc.addNewUserAdultReader("Peter Plevko", "y", "x", true);
-        sysAcc.addNewUserWorker("Pirky", "z", "x", true);
-        sysAcc.addNewUserStocker("Booker", "c", "x", true);
-        BookStocker person = (BookStocker)sysAcc.findAccountName("Booker").getOwner();
-        sysBook.addNewChildBook(person, "Rozprávky Hansa Christiana Andersena", 592, "ISBN 80-7145-980-1");
-        sysBook.addNewAdultBook(person,"Teória literatúry", 254, "ISBN 80-85684-05-5", "Táto kniha je veľmi dobrá - odporúcam");
-        sysBook.addNewAdultBook(person,"Psychológia a pedagogika dieťaťa", 292, "ISBN 80-7178-585-7");
-
-        //sysReq.addNewBookReq(sysBook.findBook(0), sysAcc.findAccount(0));
-
+        sysAcc.addNewUserChildReader("Matej Delinčák", "xmatej", "Matej2000", true);
+        sysAcc.addNewUserAdultReader("Peter Plevko", "xpeter", "Peter2001", true);
+        sysAcc.addNewUserAdultReader("Martin Pažický", "xmartin", "MartinSuper19", true);
+        sysAcc.addNewUserWorker("Andrea Javoríková", "xaja", "Andrea1999", true);
+        sysAcc.addNewUserStocker("Roman Páleník", "xroman", "Roman1885", true);
+        BookStocker person = (BookStocker)sysAcc.findAccountName("Roman Páleník").getOwner();
+        sysBook.addNewChildBook(person, "Rozprávky Hansa Christiana Andersena", "Hans-Andersen", 592, "ISBN 80-7145-980-1");
+        sysBook.addNewAdultBook(person,"Teória literatúry", "Peter Párka", 254, "ISBN 80-85684-05-5", "Táto kniha je veľmi dobrá - odporúčam");
+        sysBook.addNewAdultBook(person,"Psychológia a pedagogika dieťaťa", "Jozef Mrkvička", 292, "ISBN 80-7178-585-7");
+        sysBook.addNewAdultBook(person,"Vojna a mier", "Leo Tolstoj", 1025, "ISBN 70-12384-05-5", "Veľmi zaujímavý príbeh");
+        sysBook.addNewAdultBook(person,"Objektovo-orientované programovanie", "Valentino Vranic", 150, "ISBN 32-1278-626-7");
+        sysBook.addNewChildBook(person, "Motýlia izba", "Lucinda Riley", 424, "ISBN 9788022211000");
+        sysBook.addNewChildBook(person, "Hravé úlohy pre škôlkarov 2", "EX book", 32, "ISBN 5556667778882");
         try {
             serializeOffice();
         } catch (InterruptedException e) {

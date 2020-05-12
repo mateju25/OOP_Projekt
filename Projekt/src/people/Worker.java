@@ -2,6 +2,7 @@ package people;
 
 import products.Book;
 import products.Account;
+import systems.AccountSystem;
 
 /**
  * Person that logs as worker
@@ -29,5 +30,5 @@ public abstract class Worker implements Human{
      * rejects new account
      * @param owner owner of the {@link Account}
      */
-    public abstract void declineNewAccount(Account owner);
+    public abstract void declineNewAccount(AccountSystem sys, Account owner);
 }

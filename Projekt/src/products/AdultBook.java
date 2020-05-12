@@ -12,12 +12,13 @@ public class AdultBook extends Book  implements Serializable {
 	 * @param paId if of the book
 	 * @param paTitle title of the book
 	 * @param paNumOfPages number of pages
+	 * @param paAuthor author of the book
 	 * @param paISBN isbn of the book
 	 * @param review review of the book
 	 */
-	public AdultBook(int paId, String paTitle, int paNumOfPages, String paISBN, String review)
+	public AdultBook(int paId, String paTitle, String paAuthor, int paNumOfPages, String paISBN, String review)
 	{
-		super(paId, paTitle, paNumOfPages, paISBN, review);
+		super(paId, paTitle, paAuthor, paNumOfPages, paISBN, review);
 	}
 
 	/**
@@ -25,11 +26,12 @@ public class AdultBook extends Book  implements Serializable {
 	 * @param paId if of the book
 	 * @param paTitle title of the book
 	 * @param paNumOfPages number of pages
+	 * @param paAuthor author of the book
 	 * @param paISBN isbn of the book
 	 */
-	public AdultBook(int paId, String paTitle, int paNumOfPages, String paISBN)
+	public AdultBook(int paId, String paTitle, String paAuthor,int paNumOfPages, String paISBN)
 	{
-		super(paId, paTitle, paNumOfPages, paISBN);
+		super(paId, paTitle, paAuthor, paNumOfPages, paISBN);
 	}
 
 	/**
@@ -40,9 +42,9 @@ public class AdultBook extends Book  implements Serializable {
 		{
 			String s;
 			if(reserved)
-				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre dospelých", this.dataId, "rezervovaná", this.title, this.ISBN);
+				s = String.format("%-40s, %-20s: %-12s: %-18s - Kniha pre dospelých", this.title, this.author, "rezervovaná", this.ISBN);
 			else
-				s = String.format("%3d: %-12s: %-40s %-18s - Kniha pre dospelých", this.dataId, "voľná", this.title, this.ISBN);
+				s = String.format("%-40s, %-20s: %-12s: %-18s - Kniha pre dospelých", this.title, this.author, "voľná", this.ISBN);
 			return s;
 		}
 	}

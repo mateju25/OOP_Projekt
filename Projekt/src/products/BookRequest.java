@@ -2,6 +2,7 @@ package products;
 
 import people.Reader;
 import people.Worker;
+import systems.AccountSystem;
 
 /**
  * Book request when user want some book
@@ -63,7 +64,7 @@ public class BookRequest extends Request {
      * @param paAccepter {@link Worker}
      */
     @Override
-    public void declineRequest(Worker paAccepter) {
+    public void declineRequest(AccountSystem sys, Worker paAccepter) {
         ((Reader)requester.getOwner()).addMessage(new Message("Vaša žiadost o knihu " + this.wantedBook.getTitle() + " bola zamietnutá."));
     }
 }

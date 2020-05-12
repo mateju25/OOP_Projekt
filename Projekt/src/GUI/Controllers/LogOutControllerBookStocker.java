@@ -31,6 +31,8 @@ public class LogOutControllerBookStocker extends SimpleController{
     private TextField ISBN;
     @FXML
     private TextField numOfPages;
+    @FXML
+    private TextField authorName;
 
 
     //inicializacia tabulkoveho vypisu
@@ -93,17 +95,17 @@ public class LogOutControllerBookStocker extends SimpleController{
     //vytvorenie knihy
     @FXML
     private void createBook(ActionEvent event) {
-        if ((bookName.getText().equals("")) || (ISBN.getText().equals("")) || (numOfPages.getText().equals("")) || (kindOfBook.getSelectionModel().getSelectedItem() == null)) {
+        if ((bookName.getText().equals("")) || (ISBN.getText().equals("")) || (authorName.getText().equals("")) || (numOfPages.getText().equals("")) || (kindOfBook.getSelectionModel().getSelectedItem() == null)) {
             AlertSystem alert = new AlertSystem("Pozor", "Zadaj všetky parametre pre vytvorenie knihy.");
         }
         else {
             switch ((String) kindOfBook.getSelectionModel().getSelectedItem()) {
                 case ("Kniha pre dospelých"): {
-                    lib.getSysBook().addNewAdultBook(((BookStocker) lib.getSysAcc().getCurrUser().getOwner()), bookName.getText(), Integer.parseInt(numOfPages.getText()), ISBN.getText());
+                    lib.getSysBook().addNewAdultBook(((BookStocker) lib.getSysAcc().getCurrUser().getOwner()), bookName.getText(), authorName.getText(), Integer.parseInt(numOfPages.getText()), ISBN.getText());
                     break;
                 }
                 case ("Kniha pre deti"): {
-                    lib.getSysBook().addNewChildBook(((BookStocker) lib.getSysAcc().getCurrUser().getOwner()), bookName.getText(), Integer.parseInt(numOfPages.getText()), ISBN.getText());
+                    lib.getSysBook().addNewChildBook(((BookStocker) lib.getSysAcc().getCurrUser().getOwner()), bookName.getText(), authorName.getText(), Integer.parseInt(numOfPages.getText()), ISBN.getText());
                     break;
                 }
             }

@@ -104,7 +104,7 @@ public class RequestController extends SimpleController{
     //zavrhni poziadavku od uzivatela
     @FXML
     private void declineRequestButton(ActionEvent event) throws InterruptedException {
-        lib.getSysReq().getCurrRequest().declineRequest((Worker)(lib.getSysAcc().getCurrUser().getOwner()));
+        lib.getSysReq().getCurrRequest().declineRequest(lib.getSysAcc(),(Worker)(lib.getSysAcc().getCurrUser().getOwner()));
         if (lib.getSysReq().getCurrRequest() instanceof AccountRequest) lib.getSysAcc().deleteAccount(lib.getSysReq().getCurrRequest().getRequester().getOwner().getID());
         lib.getSysReq().deleteRequest();
         plainText.clear();

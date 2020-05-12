@@ -16,6 +16,10 @@ public abstract class Book implements Serializable, Product {
 	 */
 	protected final String title;
 	/**
+	 * author of the book
+	 */
+	protected String author;
+	/**
 	 * number of pages in the book
 	 */
 	protected final int numOfPages;
@@ -57,30 +61,34 @@ public abstract class Book implements Serializable, Product {
 	 * @param paID if of the book
 	 * @param paTitle title of the book
 	 * @param paNumOfPages number of pages
+	 * @param paAuthor author of the book
 	 * @param paISBN isbn of the book
 	 * @param review review of the book
 	 */
-	protected Book(int paID, String paTitle, int paNumOfPages, String paISBN, String review) {
+	protected Book(int paID, String paTitle, String paAuthor,int paNumOfPages, String paISBN, String review) {
 		this.numOfPages = paNumOfPages;
 		this.title = paTitle;
 		this.dataId = paID;
 		this.ISBN = paISBN;
 		this.reserved = false;
+		this.author = paAuthor;
 		this.textReview = new Review(review);
 	}
 
 	/**
-	 * creates book with parameters but without review
+	 * creates book with parameters without review
 	 * @param paID if of the book
 	 * @param paTitle title of the book
 	 * @param paNumOfPages number of pages
+	 * @param paAuthor author of the book
 	 * @param paISBN isbn of the book
 	 */
-	protected Book(int paID, String paTitle, int paNumOfPages, String paISBN) {
+	protected Book(int paID, String paTitle, String paAuthor,int paNumOfPages, String paISBN) {
 		this.numOfPages = paNumOfPages;
 		this.title = paTitle;
 		this.dataId = paID;
 		this.ISBN = paISBN;
+		this.author = paAuthor;
 		this.reserved = false;
 	}
 

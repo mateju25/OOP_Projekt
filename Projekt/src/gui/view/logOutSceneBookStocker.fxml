@@ -32,20 +32,21 @@
         <ListView fx:id="plainText" layoutX="14.0" layoutY="36.0" prefHeight="625.0" prefWidth="607.0" stylesheets="@styles.css" />
         <MenuBar layoutY="-2.0" prefHeight="25.0" prefWidth="1000.0">
             <Menu mnemonicParsing="false" text="Systém">
-                <MenuItem mnemonicParsing="false" onAction="#saveLibrary" text="Uložiť"/>
-                <MenuItem mnemonicParsing="false" onAction="#logOutButtonClicked" text="Odhlásiť sa"/>
+                <MenuItem mnemonicParsing="false" onAction="#saveLibrary" text="Uložiť" />
+                <MenuItem mnemonicParsing="false" onAction="#logOutButtonClicked" text="Odhlásiť sa" />
             </Menu>
             <Menu mnemonicParsing="false" text="Pomoc">
-                <MenuItem mnemonicParsing="false" onAction="#openDoc" text="Dokumentácia"/>
+                <MenuItem mnemonicParsing="false" onAction="#openDoc" text="Dokumentácia" />
             </Menu>
         </MenuBar>
       <Label fx:id="statusBar" layoutY="674.0" prefHeight="25.0" prefWidth="1000.0" />
       <Separator layoutY="673.0" prefHeight="3.0" prefWidth="1000.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#88e81cbf" height="166.0" layoutX="718.0" layoutY="142.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" width="184.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#88e81cbf" height="193.0" layoutX="716.0" layoutY="140.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" width="188.0" />
       <TextField fx:id="bookName" layoutX="736.0" layoutY="159.0" promptText="Meno knihy" />
-      <TextField fx:id="ISBN" layoutX="736.0" layoutY="185.0" promptText="ISBN knihy" />
-      <TextField fx:id="numOfPages" layoutX="736.0" layoutY="211.0" promptText="Počet strán" />
-      <Button layoutX="767.0" layoutY="274.0" mnemonicParsing="false" onAction="#createBook" text="Vytvor knihu" />
-      <ChoiceBox fx:id="kindOfBook" layoutX="736.0" layoutY="237.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="ISBN" layoutX="736.0" layoutY="208.0" promptText="ISBN knihy" />
+      <TextField fx:id="numOfPages" layoutX="736.0" layoutY="233.0" promptText="Počet strán" />
+      <Button layoutX="769.0" layoutY="295.0" mnemonicParsing="false" onAction="#createBook" text="Vytvor knihu" />
+      <ChoiceBox fx:id="kindOfBook" layoutX="736.0" layoutY="258.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="authorName" layoutX="736.0" layoutY="184.0" promptText="Autor" />
     </Pane>
 </GridPane>

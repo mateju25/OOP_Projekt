@@ -1,6 +1,7 @@
 package products;
 
 import people.*;
+import systems.AccountSystem;
 
 /**
  * Account request when registration of new user occurs
@@ -62,7 +63,7 @@ public class AccountRequest extends Request {
      * @param paAccepter {@link Worker}
      */
     @Override
-    public void declineRequest(Worker paAccepter)  {
-        paAccepter.declineNewAccount(this.requester);
+    public void declineRequest(AccountSystem sys, Worker paAccepter)  {
+        paAccepter.declineNewAccount(sys, this.requester);
     }
 }

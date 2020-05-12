@@ -2,6 +2,7 @@ package people;
 
 import products.Book;
 import products.Account;
+import systems.AccountSystem;
 import systems.SimpleSystem;
 
 import java.io.Serializable;
@@ -89,8 +90,10 @@ public class Librarian extends Worker implements Serializable {
      * @param owner owner of the {@link Account}
      */
     @Override
-    public void declineNewAccount(Account owner) {
+    public void declineNewAccount(AccountSystem sys, Account owner) {
         owner.setVerified(false);
+        Account id = sys.findAccountName(owner.getOwner().getName());
+        sys.deleteAccount(id.getOwner().getID());
     }
 
     /**

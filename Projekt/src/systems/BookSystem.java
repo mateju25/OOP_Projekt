@@ -81,8 +81,8 @@ public class BookSystem extends SimpleSystem implements Serializable {
      * @param ISBN isbn of the book
      * @param review review of the book
      */
-    public void addNewChildBook(BookStocker creator, String title, int pages, String ISBN, String review) {
-        creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, pages, ISBN, review));
+    public void addNewChildBook(BookStocker creator, String title, String paAuthor, int pages, String ISBN, String review) {
+        creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, paAuthor, pages, ISBN, review));
         maxID++;
     }
 
@@ -93,8 +93,8 @@ public class BookSystem extends SimpleSystem implements Serializable {
      * @param pages number of the pages
      * @param ISBN isbn of the book
      */
-    public void addNewChildBook(BookStocker creator,String title, int pages, String ISBN) {
-        creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, pages, ISBN));
+    public void addNewChildBook(BookStocker creator,String title, String paAuthor, int pages, String ISBN) {
+        creator.addBook((LinkedList<Book>)list, new ChildBook(maxID, title, paAuthor, pages, ISBN));
         maxID++;
     }
 
@@ -106,8 +106,8 @@ public class BookSystem extends SimpleSystem implements Serializable {
      * @param ISBN isbn of the book
      * @param review review of the book
      */
-    public void addNewAdultBook(BookStocker creator,String title, int pages, String ISBN, String review)  {
-        creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, pages, ISBN, review));
+    public void addNewAdultBook(BookStocker creator,String title, String paAuthor, int pages, String ISBN, String review)  {
+        creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, paAuthor, pages, ISBN, review));
         maxID++;
     }
 
@@ -118,8 +118,8 @@ public class BookSystem extends SimpleSystem implements Serializable {
      * @param pages number of the pages
      * @param ISBN isbn of the book
      */
-    public void addNewAdultBook(BookStocker creator,String title, int pages, String ISBN)  {
-        creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, pages, ISBN));
+    public void addNewAdultBook(BookStocker creator,String title, String paAuthor, int pages, String ISBN)  {
+        creator.addBook((LinkedList<Book>)list, new AdultBook(maxID, title, paAuthor, pages, ISBN));
         maxID++;
     }
 
