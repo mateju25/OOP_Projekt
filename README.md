@@ -1,19 +1,18 @@
 # Dôveryhodný systém - LibBook
 ## Informačný systém pre knižnicu
 
-Tento softvér vytvoril Matej Delinčák. Softvér simuluje informačný systém virtuálnej knižnice. Dôveryhodný softvér je skrytý u mňa v login systéme. Ak sa užívateľ chce zaregistrovať, musí splniť určité požiadavky.
+Tento softvér vytvoril Matej Delinčák. Softvér simuluje informačný systém virtuálnej knižnice. Dôveryhodný softvér je skrytý u mňa v login systéme. Ak sa užívateľ chce zaregistrovať, musí splniť určité požiadavky. A zároveň tento nový učet musí pracovník potvrdiť v rámci aplikácie, inak je nefunkčný. Ak chcete program spustiť 
 
-Pre otestovanie programu mam troch pracovných uživateľov:
-- Dieťa: login: x heslo: x
-- Dospelý: login: y heslo: x
-- Pracovník: login: z heslo: x
-- Knihovník: login: c heslo: x
+Pre otestovanie programu mam štyroch uživateľov:
+- Dieťa - zákaznik: login: xmatej heslo: Matej2000
+- Dospelý - zákaznik: login: xpeter heslo: Peter2001
+- Pracovník: login: xaja heslo: Andrea1999
+- Knihovník: login: xroman heslo: Roman1885
 
-Softvér je zatiaľ len v stave pracovnom, ale už fungujú principiálne veci a to:
-
+Softvér dokáže:
 **Užívateľ (dva typy - Dieťa a Dospelý):**
   - si môže rezervovať knihy, 
-  - vypísať správy o tom ako dopadlo rezervovanie a násl, 
+  - vypísať správy o tom ako dopadlo rezervovanie a následne, 
   - zobraziť knihy jemu dostupné,
   - zobraziť  knihy, ktoré vlastní
   - zobraziť recenziu (ak existuje) knihy,
@@ -25,31 +24,41 @@ Softvér je zatiaľ len v stave pracovnom, ale už fungujú principiálne veci a
   - potvrdiť rezervovanie knihy užívateľom (zobraziť účet žiadateľa),
   - alebo požiadavku zamietnuť
   
-Do prostredia si môžete vytvoriť aj vlastný účet, ale s určitými podmienkami. Ale zatiaľ mám dočasne zakázané ukladanie nových užívateľov po vypnutí aplikácie z dôvodu rychlejšieho testovania.
+**Knihovník:**
+  - dokáže všetko čo obyčajný pracovník
+  - vie vytvárať nové knihy
+  
+Do prostredia si môžete vytvoriť aj vlastný účet, ale s určitými podmienkami. Heslo musí mať aspoň 8 znakov, jedno číslo a jedno veľké písmeno.
 
-V tejto aplikácií som zatiaľ využil:
+V tejto aplikácií som využil:
 
-**Dedenie**
+**Dve oddelené hierarchie tried**
 
-Vytvoril som rôzne hierarchie objektov (ešte ich budem rozšírovať). Hierarchia užívateľov, služieb(zatiaľ len kníh) a systémov, či kontrolérov. Toto je jedna z nich: 
+**Hierarchia ľudí**
 
-![Hierarchia](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Hierarchia.png)
+V tejto hierachií je uplatnené dedenie, polymorfizmus, je použité rozhranie, agregácia ako aj korektné zapuzdrenie.
+Dedenie môžme vidieť medzi pracovníkom a knihovníkom. Knihovník dedí privilégia pracovníka.
+Polymorfizmus môžme vidieť vo funkcií *startScene*, ktorá je prekrývaná jednotlivými triedami.
+Rozhranie *Human* spája dve vetvy ľuďí.
+Agregácia je schovaná v triede *Reader*, kde táto trieda vlastní knihy a správy.
+Všetky atribúty su buď private alebo protected, zároveň su k ním vytvorené public gettre a settre.
 
+![Hierarchia ľudí](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/HierarchiaHuman.png)
 
-**Polymorfizmus**
+**Hierarchia produktov**
 
-Polymorfizmus som uplatnil na triedach AdultBook a ChildBook v metóde *getInfo*. Pristupujem ku ním rovnako, ale každá vráti niečo iné.
-Tak isto aj v inom strome objektov a to napríklad AdultReader a Librarian v metóde *getInfo*.
+V tejto hierachií je uplatnené dedenie, polymorfizmus, je použité rozhranie, agregácia ako aj korektné zapuzdrenie.
+Dedenie môžme vidieť medzi Book a konkretnejšou triedou ChildBook.
+Polymorfizmus môžme vidieť vo funkcií *getInfo*, ktorá je prekrývaná každou triedo v strome.
+Rozhranie *Product* spája až tri vetvy tried.
+Agregácia je schovaná v triede *AccountRequest*, kde táto trieda vlastní Account ako atribut.
+Všetky atribúty su buď private alebo protected, zároveň su k ním vytvorené public gettre a settre.
 
-**Agregácia**
+![Hierarchia produktov](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/HierarchiaProduct.png)
 
-Agregácia je uplatnená aj napríklad v objekte LibraryEvidenceSystem, viď. obrázok. Tento objekt agreguje tri rôzne objekty - systémy.
+**Oddelenie aplikačnej logiky od GUI* a využitie grafikého rozhrania pre užívaťeľa*
 
-![Agregácia](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Agregácia.png)
-
-**Oddelenie aplikačnej logiky od GUI**
-
-Samotné GUI som umiestnil do vlastného package-u pod menom *gui*. V tejto zložke sa nachádzajú Controllery pre rôzne scény aplikácie. Pri stlačení nejakého tlačidla, sa vykoná prislušná funkcia, ktorej logika je umiestnená len v classe LibraryEvidenceSystem. V objektoch Controller sa nachádzajú aj spracovatele udalostí.
+Samotné GUI som umiestnil do vlastného package-u pod menom *gui*. V tejto zložke sa nachádzajú Controllery pre rôzne scény aplikácie. Pri stlačení nejakého tlačidla, sa vykoná prislušná funkcia, ktorej logika je umiestnená len v triede LibraryEvidenceSystem. V objektoch Controller sa nachádzajú aj spracovatele udalostí.
 
 **Použitie návrhového vzoru Visitor**
 
@@ -59,11 +68,11 @@ Využil som ho na upresnenie právomocí uživateľov. Napríklad čitateľ nem�
 
 **Použitie návrhového vzoru Model-view-controller**
 
-Tento návrhový vzor som použil pri implmentácií používateľského interface-u. Kde Model je moja aplikačná logika. View sú súbory zodpovedné za vizualizáciu (.fxml) a controller, sú všetky objekty s menom controller, ktoré updatujú aplikačnú logiku. 
+Tento návrhový vzor som použil pri implementácií používateľského interface-u. Kde Model je moja aplikačná logika. View sú súbory zodpovedné za vizualizáciu (.fxml) a controller, sú všetky objekty s menom controller, ktoré updatujú aplikačnú logiku. 
 
 **Vytvorenie vlastnej výnimky**
 
-Vytvoril som vlastnú výminku, ktorá zobrazí okno pri nesprávnom vytvorení hesla (nie sú splenené určité požiadavky). Táto podmienka je aj vyhadzovaná ako aj ošetrovaná.
+Vytvoril som vlastnú výminku, ktorá vlastní text o nesprávnom vytvorení hesla (nie sú splenené určité požiadavky). Táto podmienka je aj vyhadzovaná ako aj ošetrovaná.
 
 ![Exception](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Exception.png)
 
@@ -79,7 +88,7 @@ Vhniezdenú triedu som využil v classe Book. Definoval som v nej triedu Review,
 
 **Serializáciu a deserializáciu**
 
-Tento aspekt programu mam plne funkčný, ale momentálne je odstavený. Čiže program bude fungovať vždy rovnako po jeho spustení.
+Serializujem tri systémy. A to systém účtov, kníh a žiadostí. Pri deserializácií tieto prepojenie naspäť vytvorím a program bude bežať ďalej ako serializáciou a vypnutím.
 
 **Použitie viacniťovosti - multithreading**
 
@@ -93,3 +102,11 @@ Generická trieda SimpleSystem je rodič troch systémov. Tento objekt pracuje s
 
 ![Generická trieda](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/GenerickáTrieda.png)
 
+**Zoznam dôležitých comittov**
+Základné triedy: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/f0860f37af10336dac4ae9e96b6c79b8416cb791
+Viacero scén: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/ecf1dba55dcaa7bc489667dabb5af3bc570aab99
+Požiadavky: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/67ef2d4e1431536d7a721ca6adb0eb27e61afa47
+Login systém: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/0822ce88ec4cddc302c09c7bbd2827eed79f53e9
+Pridaný visitor: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/3b83f26fb35daae0e55df710b9094812ef7786b5
+Deserializácia: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/0df0f30a3f535247615a34a008b21850a4ed7d52
+Design pre GUI: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/ab6bb12362aa7a1bc063e2601005724da32f6b46
