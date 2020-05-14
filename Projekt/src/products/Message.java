@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Basic type of message to inform reader that his book was accepted
  */
-public class Message implements Serializable {
+public class Message implements Serializable, Product {
     //atributes
     private final String info;
 

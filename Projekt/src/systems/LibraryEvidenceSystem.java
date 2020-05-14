@@ -44,7 +44,6 @@ public class LibraryEvidenceSystem {
     public LibraryEvidenceSystem() {
         sysAcc.addNewUserChildReader("Matej Delinčák", "xmatej", "Matej2000", true);
         sysAcc.addNewUserAdultReader("Peter Plevko", "xpeter", "Peter2001", true);
-        sysAcc.addNewUserAdultReader("Martin Pažický", "xmartin", "MartinSuper19", true);
         sysAcc.addNewUserWorker("Andrea Javoríková", "xaja", "Andrea1999", true);
         sysAcc.addNewUserStocker("Roman Páleník", "xroman", "Roman1885", true);
         BookStocker person = (BookStocker)sysAcc.findAccountName("Roman Páleník").getOwner();
@@ -71,9 +70,9 @@ public class LibraryEvidenceSystem {
     public void serializeOffice() throws InterruptedException {
         Thread t1 = new Thread (sysAcc, "Account system");
         t1.start();
-        Thread t2 = new Thread (sysBook, "Account system");
+        Thread t2 = new Thread (sysBook, "Book system");
         t2.start();
-        Thread t3 = new Thread (sysReq, "Account system");
+        Thread t3 = new Thread (sysReq, "Request system");
         t3.start();
         t1.join();
         t2.join();

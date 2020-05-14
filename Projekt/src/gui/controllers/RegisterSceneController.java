@@ -48,6 +48,7 @@ public class RegisterSceneController extends SimpleController {
                 try {
                     checker.checkPass(passText.getText());
                 } catch (WrongPasswordException e) {
+                    AlertSystem window = new AlertSystem("Pozor", e.getMessage());
                     return;
                 }
                 switch ((String) comboBox.getSelectionModel().getSelectedItem()) {
