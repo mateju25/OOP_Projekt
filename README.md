@@ -102,7 +102,7 @@ Generická trieda SimpleSystem je rodič troch systémov. Tento objekt pracuje s
 
 ![Generická trieda](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/GenerickáTrieda.png)
 
-**Zoznam dôležitých comittov**
+**Zoznam dôležitých comittov**  
 Základné triedy: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/f0860f37af10336dac4ae9e96b6c79b8416cb791  
 Viacero scén: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/ecf1dba55dcaa7bc489667dabb5af3bc570aab99  
 Požiadavky: https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/commit/67ef2d4e1431536d7a721ca6adb0eb27e61afa47  
