@@ -1,7 +1,7 @@
 # Dôveryhodný systém - LibBook
 ## Informačný systém pre knižnicu
 
-Tento softvér vytvoril Matej Delinčák. Softvér simuluje informačný systém virtuálnej knižnice. Dôveryhodný softvér je skrytý u mňa v login systéme. Ak sa užívateľ chce zaregistrovať, musí splniť určité požiadavky. A zároveň tento nový učet musí pracovník potvrdiť v rámci aplikácie, inak je nefunkčný. Ak chcete program spustiť 
+Tento softvér vytvoril Matej Delinčák. Softvér simuluje informačný systém virtuálnej knižnice. Dôveryhodný softvér je skrytý u mňa v login systéme. Ak sa užívateľ chce zaregistrovať, musí splniť určité požiadavky. A zároveň tento nový učet musí pracovník potvrdiť v rámci aplikácie, inak je nefunkčný. Ak chcete program spustiť musia byť priložené súbory s dátami. Ak ich nemáte, v triede *LibraryEvidenceSystem* je zapoznamkovaný kód, ktorý vygeneruje vzorku.
 
 Pre otestovanie programu mam štyroch uživateľov:
 - Dieťa - zákaznik: login: xmatej heslo: Matej2000
