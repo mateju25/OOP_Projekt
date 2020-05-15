@@ -42,6 +42,7 @@ public class LibraryEvidenceSystem {
      * creates library system a load all data
      */
     public LibraryEvidenceSystem() {
+        /*//Vzor ak by neslo nacitat zo suborov
         sysAcc.addNewUserChildReader("Matej Delinčák", "xmatej", "Matej2000", true);
         sysAcc.addNewUserAdultReader("Peter Plevko", "xpeter", "Peter2001", true);
         sysAcc.addNewUserWorker("Andrea Javoríková", "xaja", "Andrea1999", true);
@@ -58,7 +59,7 @@ public class LibraryEvidenceSystem {
             serializeOffice();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         deserializeOffice();
 
     }
