@@ -30,6 +30,10 @@ Softvér dokáže:
   
 Do prostredia si môžete vytvoriť aj vlastný účet, ale s určitými podmienkami. Heslo musí mať aspoň 8 znakov, jedno číslo a jedno veľké písmeno.
 
+**Hlavný diagram:**
+
+![Aplikačná logika](https://github.com/OOP-FIIT/oop-2020-str-12-pu1-povazanova-mateju25/blob/master/docs/Hlavny_diagram.png)
+
 V tejto aplikácií som využil:
 
 **Dve oddelené hierarchie tried**
